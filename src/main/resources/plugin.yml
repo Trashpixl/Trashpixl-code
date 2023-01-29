@@ -1,0 +1,4 @@
+name: Trashpixl
+version: '${project.version}'
+main: trashpixl.trashpixl.Trashpixl
+api-version: 1.19
