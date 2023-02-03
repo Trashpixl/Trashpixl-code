@@ -1,15 +1,15 @@
 package trashpixl.trashpixl.handler // the package for this project
 
 import java.io.File // importing the file class
-import java.io.IOException // importing the ioexeption class
+import java.io.IOException // importing the ioexception class
 import java.util.* // importing all the java utils class
 import org.bukkit.Bukkit // importing bukkit
-import org.bukkit.Material // importing the material librairy
+import org.bukkit.Material // importing the material library
 import org.bukkit.event.EventHandler // importing the event handler class
 import org.bukkit.event.Listener // importing the event listener
 import org.bukkit.event.block.Action // importing the block action class
-import org.bukkit.event.player.PlayerInteractEvent // impoting the player interacte event class
-import org.bukkit.inventory.ItemStack // importing the itemstack class
+import org.bukkit.event.player.PlayerInteractEvent // importing the player interact event class
+import org.bukkit.inventory.ItemStack // importing the item-stack class
 import trashpixl.trashpixl.Zero // importing the zero class
 
 class Loot(plugin: Zero?) : Listener { // creating the class
@@ -24,43 +24,43 @@ class Loot(plugin: Zero?) : Listener { // creating the class
                 // non-nullable
                 val fileName = "Minigame.txt" // creating the file name variable
                 val actualFile = File(fileName) // creating the file var
-                var actualdata = 0 // creating the data from insdide the file variable
+                var actualdata = 0 // creating the data from inside the file variable
                 try { // trying the following code
                     if (actualFile.exists() && actualFile.isFile) { // check if the file exist
                         try { // try the following code
                             val reader = Scanner(actualFile) // creating the reader
-                            val data = reader.nextLine() // geting the first line of the file
+                            val data = reader.nextLine() // getting the first line of the file
                             actualdata = data.toInt() // converting the date to int
                             reader.close() // closing the reader
-                        } catch (e: IOException) { // catching the exeption
+                        } catch (e: IOException) { // catching the exception
                             throw RuntimeException(e) // throwing it
                         }
                     }
                 } catch (e: IOException) { // catching it.....
-                    throw RuntimeException(e) // throwing it the hardest we can so it wont come back
+                    throw RuntimeException(e) // throwing it the hardest we can, so it won't come back
                 }
 
                 if (actualdata == 3) { // check if the data equals 3
                     val p = e.player // creating the player variable
                     val fileName2 = "Server.txt" // creating the file name var
                     val actualFile2 = File(fileName2) // creating the file
-                    var Serv = 0 // creating the actual data var
+                    var serv = 0 // creating the actual data var
                     try { // trying the code
                         if (actualFile2.exists() && actualFile2.isFile
                         ) { // checking if actual file is a file
                             try {
                                 val reader2 = Scanner(actualFile2) // creating the scanner
                                 val data2 = reader2.nextLine() // reading the first line
-                                Serv = data2.toInt() // converting the data to an int
+                                serv = data2.toInt() // converting the data to an int
                                 reader2.close() // closing the reader
-                            } catch (e: IOException) { // catching the exeption
-                                throw RuntimeException(e) // trowing the exeption
+                            } catch (e: IOException) { // catching the exception
+                                throw RuntimeException(e) // trowing the exception
                             }
                         }
-                    } catch (e: IOException) { // catching the exeption
+                    } catch (e: IOException) { // catching the exception
                         throw RuntimeException(e) // trowing it again
                     }
-                    if (Serv == 1) {
+                    if (serv == 1) {
                         val kit = (1..6).random() // creating the random val between 1 and 6
                         if (kit == 1) { // checking if kit equals 1
                             val item1 =
@@ -77,7 +77,7 @@ class Loot(plugin: Zero?) : Listener { // creating the class
                             p.inventory.setItem(
                                     (1..36).random(),
                                     item1
-                            ) // puting it in an random inventory slot
+                            ) // putting it in a random inventory slot
                             p.inventory.setItem((1..36).random(), item2) // same as below
                         } else {
                             if (kit == 2) { // checking if kit equals 2
@@ -111,7 +111,7 @@ class Loot(plugin: Zero?) : Listener { // creating the class
                                         val item1 =
                                                 ItemStack(
                                                         Material.GOLDEN_CHESTPLATE
-                                                ) // "" w/ golden chestplate
+                                                ) // "" w/ golden chest-plate
                                         val item2 =
                                                 ItemStack(
                                                         Material.WOODEN_SWORD
@@ -147,7 +147,7 @@ class Loot(plugin: Zero?) : Listener { // creating the class
                                                 val item1 =
                                                         ItemStack(
                                                                 Material.CHAINMAIL_LEGGINGS
-                                                        ) // "" w/ chainmail leggins
+                                                        ) // "" w/ chain-mail leggings
                                                 val item2 = ItemStack(Material.STICK) // "" w/ stick
                                                 p.inventory.setItem(
                                                         (1..36).random(),

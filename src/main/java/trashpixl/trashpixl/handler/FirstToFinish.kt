@@ -3,7 +3,7 @@ package trashpixl.trashpixl.handler // the package for this project
 import com.google.common.io.ByteStreams
 import java.io.File // importing java file class
 import java.io.FileWriter // importing the file writer class
-import java.io.IOException // importing the io exeption class
+import java.io.IOException // importing the io exception class
 import java.util.* // importing the java util class
 import org.bukkit.Bukkit // import all the other class
 import org.bukkit.Material // import all the material
@@ -15,9 +15,9 @@ import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Zero // importing the zero class
 
 class FirstToFinish(plugin: Zero?, main: JavaPlugin) : Listener { // the implements for the listener
-    var mainPlugin = main
+    private var mainPlugin = main
     init { // the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!) // geting the plugin
+        Bukkit.getPluginManager().registerEvents(this, plugin!!) // getting the plugin
     }
     @EventHandler // define that the following code is an event handler
     fun pressurePlateHandler(e: PlayerInteractEvent) { // describes what the event is
@@ -31,44 +31,44 @@ class FirstToFinish(plugin: Zero?, main: JavaPlugin) : Listener { // the impleme
                 try { // trying the following code
                     if (actualFile.exists() && actualFile.isFile) { // checking if the file exist
                         try { // trying the following code
-                            val reader = Scanner(actualFile) // creting the reader
+                            val reader = Scanner(actualFile) // creating the reader
                             val data = reader.nextLine() // reading the first line
                             actualdata = data.toInt() // converting the data to int
                             reader.close() // closing the reader
-                        } catch (e: IOException) { // cathcing the exeption
+                        } catch (e: IOException) { // catching the exception
                             throw RuntimeException(
                                     e
-                            ) // throwing it the hardest we can so it wont come back for a long time
+                            ) // throwing it the hardest we can, so it won't come back for a long time
                         }
                     }
-                } catch (e: IOException) { // catching the exeption
+                } catch (e: IOException) { // catching the exception
                     throw RuntimeException(e) // throwing it
                 }
                 val p = e.player // create the local player id
                 if (actualdata == 4 || actualdata == 5
-                ) { // checking if the number in the file corepond to the number require to start
-                    // the exeption
+                ) { // checking if the number in the file correspond to the number require to start
+                    // the exception
                     val fileName2 = "Server.txt" // creating the file name var
                     val actualFile2 = File(fileName2) // creating the file
-                    var Serv = 0 // creating the actual data var
+                    var serv = 0 // creating the actual data var
                     try { // trying the code
                         if (actualFile2.exists() && actualFile2.isFile
                         ) { // checking if actual file is a file
                             try {
                                 val reader2 = Scanner(actualFile2) // creating the scanner
                                 val data2 = reader2.nextLine() // reading the first line
-                                Serv = data2.toInt() // converting the data to an int
+                                serv = data2.toInt() // converting the data to an int
                                 reader2.close() // closing the reader
-                            } catch (e: IOException) { // catching the exeption
-                                throw RuntimeException(e) // trowing the exeption
+                            } catch (e: IOException) { // catching the exception
+                                throw RuntimeException(e) // trowing the exception
                             }
                         }
-                    } catch (e: IOException) { // catching the exeption
+                    } catch (e: IOException) { // catching the exception
                         throw RuntimeException(e) // trowing it again
                     }
-                    if (Serv == 1) {
+                    if (serv == 1) {
                         p.sendMessage(p.name + " won the race") // sending the won message
-                        for (p2 in Bukkit.getServer().onlinePlayers) { // geting all online player
+                        for (p2 in Bukkit.getServer().onlinePlayers) { // getting all online player
                             // wrong type of tp
                             val connect = ByteStreams.newDataOutput()
                             connect.writeUTF("Connect")
@@ -87,14 +87,14 @@ class FirstToFinish(plugin: Zero?, main: JavaPlugin) : Listener { // the impleme
                                             ) // pointing the writer to the actual file
                                     myWriter.write(dataToWrite) // writing the data to the file
                                     myWriter.close() // closing the writer
-                                } catch (e: IOException) { // catching the exeption
+                                } catch (e: IOException) { // catching the exception
                                     throw java.lang.RuntimeException(e) // trowing it
                                 }
                             }
-                        } catch (e: IOException) { // cathing it...
+                        } catch (e: IOException) { // catching it...
                             throw java.lang.RuntimeException(
                                     e
-                            ) // throwing it the hardest we can, be gone exeption you have no friend
+                            ) // throwing it the hardest we can, be gone exception you have no friend
                             // :)
                         }
                     }
