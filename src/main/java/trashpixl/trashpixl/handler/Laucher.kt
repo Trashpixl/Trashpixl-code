@@ -16,8 +16,7 @@ import org.bukkit.event.player.PlayerInteractEvent // importing the player inter
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Zero // importing zero
 
-class Laucher(plugin: Zero?, main: JavaPlugin) :
-        Listener { // creating the class and extending it with the main class and implement the
+class Laucher(plugin: Zero?, main: JavaPlugin) : Listener { // creating the class and extending it with the main class and implement the
     // listener
     // the implements for the listener
     private var mainPlugin = main
