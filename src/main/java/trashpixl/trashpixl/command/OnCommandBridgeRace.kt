@@ -13,10 +13,7 @@ import java.io.FileWriter //importing the filterer class
 import java.io.IOException //importing the ioexception class
 import java.lang.RuntimeException //importing the runtime exception class
 
-
 class OnCommandBridgeRace : CommandExecutor { //creating the class death and implementing the listener
-    
-
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val fileName = "Minigame.txt" //create file class
@@ -53,7 +50,6 @@ class OnCommandBridgeRace : CommandExecutor { //creating the class death and imp
         catch(e: IOException){ //catching the exception
             throw RuntimeException(e) //throwing it
         }
-
 
         return false //return false so it doesn't create an error
     }
