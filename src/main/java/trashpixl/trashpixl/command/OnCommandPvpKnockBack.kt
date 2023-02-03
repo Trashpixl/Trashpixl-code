@@ -1,4 +1,4 @@
-package zero.zero.command
+package trashpixl.trashpixl.command
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -37,7 +37,7 @@ class OnCommandPvpKnockBack : CommandExecutor { //creating the class death and i
             p.inventory.clear()
             val item1 = ItemStack(Material.ELYTRA, 1) //creating an item stack with an iron sword inside
             val item2 = ItemStack(Material.STICK, 1) //creating an item stack with a random amount of golden apple in it 
-            p.inventory.setItem(1, item1) //puting it in an random inventory slot
+            p.inventory.setItem(1, item1) //putting it in a random inventory slot
             p.inventory.setItem(2, item2) //same as below
         }
         

@@ -1,5 +1,5 @@
 
-package zero.zero.command
+package trashpixl.trashpixl.command
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location

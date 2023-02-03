@@ -1,17 +1,17 @@
-package zero.zero.command //define the package
+package trashpixl.trashpixl.command //define the package
 
-import org.bukkit.Bukkit.getServer //import the get sevrer class
+import org.bukkit.Bukkit.getServer //import the get server class
 import org.bukkit.Location //import the location class
 import org.bukkit.Material //import the material lib
-import org.bukkit.World //import the world class
+import org.bukkit.World //import the world-class
 import org.bukkit.command.Command //import all thing needed to send the command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender //the import needed to get the sender
 import org.bukkit.inventory.ItemStack //importing the item stack class
 import java.io.File //importing the file class
-import java.io.FileWriter //importing the filewriter class
-import java.io.IOException //importing the ioexeption class
-import java.lang.RuntimeException //importing the runtime exeption class
+import java.io.FileWriter //importing the filterer class
+import java.io.IOException //importing the ioexception class
+import java.lang.RuntimeException //importing the runtime exception class
 
 
 class OnCommandBridgeRace : CommandExecutor { //creating the class death and implementing the listener
@@ -39,22 +39,22 @@ class OnCommandBridgeRace : CommandExecutor { //creating the class death and imp
 
         try{ //trying the code
             if(actualFile.exists() && actualFile.isFile){ //check if the file exist
-                val dataToWrite = "5" //create the data to write var with 5 inside so it tell wich handler to work
+                val dataToWrite = "5" //create the data to write var with 5 inside, so it tell which handler to work
                 val myWriter: FileWriter //create the file writer
                 try { //trying the following code
                     myWriter = FileWriter(actualFile) //pointing the writer to the actual file
                     myWriter.write(dataToWrite) //writing the data to the file
                     myWriter.close() //closing the writer
-                } catch (e: IOException) { //catching the exeption
-                    throw RuntimeException(e) //throwing the exeption 
+                } catch (e: IOException) { //catching the exception
+                    throw RuntimeException(e) //throwing the exception
                 }
             }
         }
-        catch(e: IOException){ //catching the exeption
+        catch(e: IOException){ //catching the exception
             throw RuntimeException(e) //throwing it
         }
 
 
-        return false //return false so it doesnt create an error
+        return false //return false so it doesn't create an error
     }
 }

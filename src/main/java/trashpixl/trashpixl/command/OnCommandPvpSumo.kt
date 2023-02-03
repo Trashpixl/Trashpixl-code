@@ -1,4 +1,4 @@
-package zero.zero.command
+package trashpixl.trashpixl.command
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -32,7 +32,7 @@ class OnCommandPvpSumo : CommandExecutor { //creating the class death and implem
             val to = Location(w, x, y, z) //move before for
             p.teleport(to)
             p.inventory.clear()
-            p.sendMessage("hi there")
+            //p.sendMessage("hi there")
             
         }
         try{

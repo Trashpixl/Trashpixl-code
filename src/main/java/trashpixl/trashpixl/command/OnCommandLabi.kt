@@ -1,15 +1,15 @@
-package zero.zero.command //link the package to the code
+package trashpixl.trashpixl.command //link the package to the code
 
-import org.bukkit.Bukkit.getServer //import the getserver class
+import org.bukkit.Bukkit.getServer //import the get server class
 import org.bukkit.Location //import the location to get the player world
-import org.bukkit.World //get the world libe
+import org.bukkit.World //get the world lib
 import org.bukkit.command.Command //to send a command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender //import this to get the player
 import java.io.File //import that to link the file
 import java.io.FileWriter //to write the file
-import java.io.IOException //import ioexeption
-import java.lang.RuntimeException //import the runtime exeption
+import java.io.IOException //import ioexception
+import java.lang.RuntimeException //import the runtime exception
 
 class OnCommandLabi : CommandExecutor { //creating the class death and implementing the listener
     
