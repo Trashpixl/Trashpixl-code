@@ -3,13 +3,12 @@ package trashpixl.trashpixl // the package of this project
 // import zero.zero.command.store.* //import all the class in store
 // import zero.zero.handler.shop.* //import all the handler related to store
 import java.io.File // importing java file class for writing the file
-import java.io.FileWriter // importing the file writer
-import java.io.IOException // importing the io exception class
-import java.util.* // importing all the java util class
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.command.* // importing all the command
 import trashpixl.trashpixl.handler.* // importing all the handler
 import trashpixl.trashpixl.runnable.environment
+import trashpixl.trashpixl.runnable.minigameFile
+import trashpixl.trashpixl.runnable.put
 
 class Trashpixl : JavaPlugin() {
         // creating the main class
@@ -141,50 +140,8 @@ class Trashpixl : JavaPlugin() {
                                                         OnCommandLabi()
                                         ) // init the command for the tag
                 }
-                try { // trying the following code
-                        if (actualFile.exists() && actualFile.isFile) { // check if the file exist
-                        } else {
-                                if (actualFile.createNewFile()) { // creating the new file
-                                        val dataToWrite = "0" // creating the data to write var
-                                        val myWriter: FileWriter // create the file writer
-                                        try { // trying the following code
-                                                myWriter =
-                                                                FileWriter(
-                                                                                actualFile
-                                                                ) // pointing the writer to the
-                                                // actual file
-                                                myWriter.write(
-                                                                dataToWrite
-                                                ) // writing the data to the file
-                                                myWriter.close() // closing the writer
-                                        } catch (e: IOException) { // catching the exeption
-                                                throw RuntimeException(e) // throwing it the hardest we can, so it won't come back
-                                        }
-                                }
-                        }
-                } catch (e: IOException) { // catching the exception
-                        throw RuntimeException(e) // create the actual error message
-                }
-                /*try { //trying the following code
-                    if (actualFile2.exists() && actualFile2.isFile) { //check if the file exist
-                    } else {
-                        if (actualFile2.createNewFile()) { //creating the new file
-                            val dataToWrite2 = "0" //creating the data to write var
-                            val myWriter2: FileWriter //create the file writer
-                            try { //trying the following code
-                                myWriter2 = FileWriter(actualFile2) //pointing the writer to the actual file
-                                myWriter2.write(dataToWrite2) //writing the data to the file
-                                myWriter2.close() //closing the writer
-                            } catch (e: IOException) { //catching the exception
-                                throw RuntimeException(e) //throwing it the hardest we can, so it won't come back
-                            }
-                        } else {
-                            println("something went wrong while creating the file") //says that something went from while creating the file
-                        }
-                    }
-                } catch (e: IOException) { //catching the exception
-                    throw RuntimeException(e) //create the actual error message
-                }*/
+               put(minigameFile, 0)
+
 
         }
         override fun onDisable() {
