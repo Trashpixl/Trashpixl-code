@@ -6,6 +6,8 @@ import org.bukkit.World
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
+import trashpixl.trashpixl.runnable.minigameFile
+import trashpixl.trashpixl.runnable.put
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
@@ -23,8 +25,7 @@ class OnCommandParkour : CommandExecutor { //creating the class death and implem
 
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-        val fileName = "Minigame.txt"
-        val actualFile = File(fileName)
+
         val x = 191.0
         val y = -59.0
         val z = 300.0
@@ -40,22 +41,8 @@ class OnCommandParkour : CommandExecutor { //creating the class death and implem
 
             
         }
-        try{
-            if(actualFile.exists() && actualFile.isFile){
-                val dataToWrite = "5"
-                val myWriter: FileWriter //create the file writer
-                try {
-                    myWriter = FileWriter(actualFile) //pointing the writer to the actual file
-                    myWriter.write(dataToWrite) //writing the data to the file
-                    myWriter.close() //closing the writer
-                } catch (e: IOException) {
-                    throw RuntimeException(e)
-                }
-            }
-        }
-        catch(e: IOException){
-            throw RuntimeException(e)
-        }
+
+        put(minigameFile, 5)
         return false
 
     }

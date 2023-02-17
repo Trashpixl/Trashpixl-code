@@ -6,10 +6,8 @@ import org.bukkit.World //get the world lib
 import org.bukkit.command.Command //to send a command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender //import this to get the player
-import java.io.File //import that to link the file
-import java.io.FileWriter //to write the file
-import java.io.IOException //import ioexception
-import java.lang.RuntimeException //import the runtime exception
+import trashpixl.trashpixl.runnable.minigameFile
+import trashpixl.trashpixl.runnable.put
 
 class OnCommandLabi : CommandExecutor { //creating the class death and implementing the listener
     
@@ -19,8 +17,7 @@ class OnCommandLabi : CommandExecutor { //creating the class death and implement
 
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-        val fileName = "Minigame.txt" //create the file name val
-        val actualFile = File(fileName) //create the file ref
+
         val x = 284.5 //the x coord of the game
         val y = -60.0 //the y coord of the game
         val z = 284.5 //the z coord of the game
@@ -38,23 +35,7 @@ class OnCommandLabi : CommandExecutor { //creating the class death and implement
         }
 
 
-        try{
-            if(actualFile.exists() && actualFile.isFile){
-                val dataToWrite = "4"
-                val myWriter: FileWriter //create the file writer
-                try {
-                    myWriter = FileWriter(actualFile) //pointing the writer to the actual file
-                    myWriter.write(dataToWrite) //writing the data to the file
-                    myWriter.close() //closing the writer
-                } catch (e: IOException) {
-                    throw RuntimeException(e)
-                }
-            }
-        }
-        catch(e: IOException){
-            throw RuntimeException(e)
-        }
-
+        put(minigameFile, 4)
         return false
 
     }

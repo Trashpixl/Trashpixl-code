@@ -8,6 +8,8 @@ import org.bukkit.command.Command //import all thing needed to send the command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender //the import needed to get the sender
 import org.bukkit.inventory.ItemStack //importing the item stack class
+import trashpixl.trashpixl.runnable.minigameFile
+import trashpixl.trashpixl.runnable.put
 import java.io.File //importing the file class
 import java.io.FileWriter //importing the filterer class
 import java.io.IOException //importing the ioexception class
@@ -34,23 +36,8 @@ class OnCommandBridgeRace : CommandExecutor { //creating the class death and imp
             
         }
 
-        try{ //trying the code
-            if(actualFile.exists() && actualFile.isFile){ //check if the file exist
-                val dataToWrite = "5" //create the data to write var with 5 inside, so it tell which handler to work
-                val myWriter: FileWriter //create the file writer
-                try { //trying the following code
-                    myWriter = FileWriter(actualFile) //pointing the writer to the actual file
-                    myWriter.write(dataToWrite) //writing the data to the file
-                    myWriter.close() //closing the writer
-                } catch (e: IOException) { //catching the exception
-                    throw RuntimeException(e) //throwing the exception
-                }
-            }
-        }
-        catch(e: IOException){ //catching the exception
-            throw RuntimeException(e) //throwing it
-        }
 
+        put(minigameFile, 5)
         return false //return false so it doesn't create an error
     }
 }

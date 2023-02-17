@@ -19,8 +19,7 @@ class Trashpixl : JavaPlugin() {
                 ) // register the chanel
                 // getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord")
                 // //register the chanel
-                val fileName = "Minigame.txt" // creating the file name variable
-                val actualFile = File(fileName) // creating the file variable
+
                 // val fileName2 = "Store.txt"
                 // val actualFile2 = File(fileName2)
                 //logger.info("good jar ") // say that it's starting the plugin
