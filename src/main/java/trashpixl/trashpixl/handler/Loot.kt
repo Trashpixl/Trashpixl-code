@@ -1,18 +1,17 @@
 package trashpixl.trashpixl.handler // the package for this project
 
-import java.io.File // importing the file class
-import java.io.IOException // importing the ioexception class
-import java.util.* // importing all the java utils class
-import org.bukkit.Bukkit // importing bukkit
-import org.bukkit.Material // importing the material library
-import org.bukkit.event.EventHandler // importing the event handler class
-import org.bukkit.event.Listener // importing the event listener
-import org.bukkit.event.block.Action // importing the block action class
-import org.bukkit.event.player.PlayerInteractEvent // importing the player interact event class
-import org.bukkit.inventory.ItemStack // importing the item-stack class
-import trashpixl.trashpixl.Zero // importing the zero class
+import org.bukkit.Bukkit
+import org.bukkit.Material
+import org.bukkit.event.EventHandler
+import org.bukkit.event.Listener
+import org.bukkit.event.block.Action
+import org.bukkit.event.player.PlayerInteractEvent
+import org.bukkit.inventory.ItemStack
+import trashpixl.trashpixl.Trashpixl
+import trashpixl.trashpixl.runnable.environment
+import trashpixl.trashpixl.runnable.minigame
 
-class Loot(plugin: Zero?) : Listener { // creating the class
+class Loot(plugin: Trashpixl?) : Listener { // creating the class
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the plugin
     }
@@ -22,45 +21,12 @@ class Loot(plugin: Zero?) : Listener { // creating the class
             if (e.clickedBlock!!.type == Material.STONE_BUTTON
             ) { // compare what the player sept on to a stone pressure plate and is required a
                 // non-nullable
-                val fileName = "Minigame.txt" // creating the file name variable
-                val actualFile = File(fileName) // creating the file var
-                var actualdata = 0 // creating the data from inside the file variable
-                try { // trying the following code
-                    if (actualFile.exists() && actualFile.isFile) { // check if the file exist
-                        try { // try the following code
-                            val reader = Scanner(actualFile) // creating the reader
-                            val data = reader.nextLine() // getting the first line of the file
-                            actualdata = data.toInt() // converting the date to int
-                            reader.close() // closing the reader
-                        } catch (e: IOException) { // catching the exception
-                            throw RuntimeException(e) // throwing it
-                        }
-                    }
-                } catch (e: IOException) { // catching it.....
-                    throw RuntimeException(e) // throwing it the hardest we can, so it won't come back
-                }
 
-                if (actualdata == 3) { // check if the data equals 3
+
+                if (minigame() == 3) { // check if the data equals 3
                     val p = e.player // creating the player variable
-                    val fileName2 = "Server.txt" // creating the file name var
-                    val actualFile2 = File(fileName2) // creating the file
-                    var serv = 0 // creating the actual data var
-                    try { // trying the code
-                        if (actualFile2.exists() && actualFile2.isFile
-                        ) { // checking if actual file is a file
-                            try {
-                                val reader2 = Scanner(actualFile2) // creating the scanner
-                                val data2 = reader2.nextLine() // reading the first line
-                                serv = data2.toInt() // converting the data to an int
-                                reader2.close() // closing the reader
-                            } catch (e: IOException) { // catching the exception
-                                throw RuntimeException(e) // trowing the exception
-                            }
-                        }
-                    } catch (e: IOException) { // catching the exception
-                        throw RuntimeException(e) // trowing it again
-                    }
-                    if (serv == 1) {
+
+                    if (environment() == 1) {
                         val kit = (1..6).random() // creating the random val between 1 and 6
                         if (kit == 1) { // checking if kit equals 1
                             val item1 =

@@ -10,9 +10,10 @@ import org.bukkit.World
 import org.bukkit.event.EventHandler // import the event handler
 import org.bukkit.event.Listener // import all the listener
 import org.bukkit.event.player.PlayerJoinEvent // import the action related to the player
-import trashpixl.trashpixl.Zero // import zero
+import trashpixl.trashpixl.Trashpixl // import zero
+import trashpixl.trashpixl.runnable.environment
 
-class LauncherJoin(plugin: Zero?) : Listener { // the implements for the listener
+class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the listener
 
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the plugin
@@ -23,24 +24,8 @@ class LauncherJoin(plugin: Zero?) : Listener { // the implements for the listene
         val p = ev.player // create the local player id
         var playerCount = 0
         // p.connect("mini")
-        val fileName = "Server.txt" // creating the file name var
-        val actualFile = File(fileName) // creating the file
-        var serv = 0 // creating the actual data var
-        try { // trying the code
-            if (actualFile.exists() && actualFile.isFile) { // checking if actual file is a file
-                try {
-                    val reader = Scanner(actualFile) // creating the scanner
-                    val data = reader.nextLine() // reading the first line
-                    serv = data.toInt() // converting the data to an int
-                    reader.close() // closing the reader
-                } catch (e: IOException) { // catching the exception
-                    throw RuntimeException(e) // trowing the exception
-                }
-            }
-        } catch (e: IOException) { // catching the exception
-            throw RuntimeException(e) // trowing it again
-        }
-        if (serv == 1) {
+
+        if (environment() == 1) {
             val fileName2 = "S:\\Mini.txt" // creating the file name var
             val actualFile2 = File(fileName2) // creating the file
             val mini: Int // creating the actual data var
@@ -123,7 +108,7 @@ class LauncherJoin(plugin: Zero?) : Listener { // the implements for the listene
                 throw RuntimeException(e) // trowing it again
             }
         }
-        if (serv == 2) {
+        if (environment() == 2) {
             val x = 25.0
             val y = 81.0
             val z = 10.0
@@ -131,7 +116,7 @@ class LauncherJoin(plugin: Zero?) : Listener { // the implements for the listene
             val to = Location(w, x, y, z) // put together all the info
             p.teleport(to) // tp him
         }
-        if (serv == 0) {
+        if (environment() == 0) {
             val to: Location = p.bedSpawnLocation!! // get his bed location
             p.teleport(to) // tp him to his bed
         }

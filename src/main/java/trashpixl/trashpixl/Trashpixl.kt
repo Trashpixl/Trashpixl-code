@@ -9,8 +9,9 @@ import java.util.* // importing all the java util class
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.command.* // importing all the command
 import trashpixl.trashpixl.handler.* // importing all the handler
+import trashpixl.trashpixl.runnable.environment
 
-class Zero : JavaPlugin() {
+class Trashpixl : JavaPlugin() {
         // creating the main class
         override fun onEnable() { // plugin startup logic
                 server.messenger.registerOutgoingPluginChannel(
@@ -34,39 +35,10 @@ class Zero : JavaPlugin() {
                 Laucher(this, this) // init the launcher handler
                 FirstToFinish(this, this) // init the first to finish handler
                 Punch(this) // init the punch handler
-                //Respawn(this, this)
 
-                /*Exit(this)
-                Tool(this)
-                Food(this)
-                Block(this)
-                Small(this)
-                Armor(this)
-                Deco(this)
-                Potion(this)*/
-
-                //logger.info("starting the plugin") // say that it's starting the plugin
-                val fileName3 = "Server.txt" // creating the file name var
-                val actualFile3 = File(fileName3) // creating the file
-                var serv = 0 // creating the actual data var
-                try { // trying the code
-                        if (actualFile3.exists() && actualFile3.isFile
-                        ) { // checking if actual file is a file
-                                try {
-                                        val reader3 = Scanner(actualFile3) // creating the scanner
-                                        val data3 = reader3.nextLine() // reading the first line
-                                        serv = data3.toInt() // converting the data to an int
-                                        reader3.close() // closing the reader
-                                } catch (e: IOException) { // catching the exeption
-                                        throw RuntimeException(e) // trowing the exeption
-                                }
-                        }
-                } catch (e: IOException) { // catching the exeption
-                        throw RuntimeException(e) // trowing it again
+                if (environment() == 0) { // check if server equals 0
                 }
-                if (serv == 0) { // check if server equals 0
-                }
-                if (serv == 1) { // check if server equal 1
+                if (environment() == 1) { // check if server equal 1
 
                         this.getCommand("onCommandPvp")
                                         ?.setExecutor(
@@ -188,10 +160,6 @@ class Zero : JavaPlugin() {
                                         } catch (e: IOException) { // catching the exeption
                                                 throw RuntimeException(e) // throwing it the hardest we can, so it won't come back
                                         }
-                                } else {
-                                        //println(
-                                                       // "something went wrong while creating the file"
-                                        //) // says that something went from while creating the file
                                 }
                         }
                 } catch (e: IOException) { // catching the exception

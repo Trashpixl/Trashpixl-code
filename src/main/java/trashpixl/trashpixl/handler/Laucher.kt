@@ -4,7 +4,6 @@ import com.google.common.io.ByteStreams
 import java.io.File // importing the java file var
 import java.io.FileWriter // importing the file-writer
 import java.io.IOException // importing the io exception
-import java.util.* // importing all the java util class
 import org.bukkit.Bukkit // importing bukkit
 import org.bukkit.Material // importing the material library
 import org.bukkit.event.EventHandler // importing the event handler class
@@ -14,9 +13,10 @@ import org.bukkit.event.block.Action // importing the block action class to get 
 import org.bukkit.event.player.PlayerInteractEvent // importing the player interact event to get if
 // they click on something
 import org.bukkit.plugin.java.JavaPlugin
-import trashpixl.trashpixl.Zero // importing zero
+import trashpixl.trashpixl.Trashpixl // importing zero
+import trashpixl.trashpixl.runnable.environment
 
-class Laucher(plugin: Zero?, main: JavaPlugin) : Listener { // creating the class and extending it with the main class and implement the
+class Laucher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the class and extending it with the main class and implement the
     // listener
     // the implements for the listener
     private var mainPlugin = main
@@ -28,24 +28,8 @@ class Laucher(plugin: Zero?, main: JavaPlugin) : Listener { // creating the clas
     fun buttonHandler(ev: PlayerInteractEvent) { // describes what the event is
         if (ev.action == Action.RIGHT_CLICK_BLOCK) { // check if the action is physical
 
-            val fileName = "Server.txt" // creating the file name var
-            val actualFile = File(fileName) // creating the file
-            var serv = 0 // creating the actual data var
-            try { // trying the code
-                if (actualFile.exists() && actualFile.isFile) { // checking if actual file is a file
-                    try {
-                        val reader = Scanner(actualFile) // creating the scanner
-                        val data = reader.nextLine() // reading the first line
-                        serv = data.toInt() // converting the data to an int
-                        reader.close() // closing the reader
-                    } catch (e: IOException) { // catching the exception
-                        throw RuntimeException(e) // trowing the exception
-                    }
-                }
-            } catch (e: IOException) { // catching the exception
-                throw RuntimeException(e) // trowing it again
-            }
-            if (serv == 2) {
+
+            if (environment() == 2) {
 
                 if (ev.clickedBlock!!.type == Material.WHITE_TERRACOTTA
                 ) { // compare what the player sept on to white terracotta and is required a
