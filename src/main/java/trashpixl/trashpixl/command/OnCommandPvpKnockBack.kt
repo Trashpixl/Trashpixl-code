@@ -2,20 +2,16 @@ package trashpixl.trashpixl.command
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
+import org.bukkit.Material
 import org.bukkit.World
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
-import org.bukkit.Material
 import trashpixl.trashpixl.runnable.minigameFile
 import trashpixl.trashpixl.runnable.put
-import java.io.File
-import java.io.FileWriter
-import java.io.IOException
-import java.lang.RuntimeException
 
- //the package for this project
+//the package for this project
 
 
 

@@ -10,12 +10,8 @@ import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
 import trashpixl.trashpixl.runnable.minigameFile
 import trashpixl.trashpixl.runnable.put
-import java.io.File
-import java.io.FileWriter
-import java.io.IOException
-import java.lang.RuntimeException
 
- //the package for this project
+//the package for this project
 
 
 
