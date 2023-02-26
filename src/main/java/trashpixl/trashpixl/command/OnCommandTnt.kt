@@ -6,8 +6,6 @@ import org.bukkit.World
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
-import trashpixl.trashpixl.runnable.minigameFile
-import trashpixl.trashpixl.runnable.put
 
 class OnCommandTnt : CommandExecutor { //creating the class death and implementing the listener
 

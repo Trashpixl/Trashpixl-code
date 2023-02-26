@@ -1,13 +1,11 @@
 package trashpixl.trashpixl.command //link the package to the code
 
-import org.bukkit.Bukkit.getServer //import the get server class
-import org.bukkit.Location //import the location to get the player world
-import org.bukkit.World //get the world lib
-import org.bukkit.command.Command //to send a command
+import org.bukkit.Bukkit.getServer
+import org.bukkit.Location
+import org.bukkit.World
+import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
-import org.bukkit.command.CommandSender //import this to get the player
-import trashpixl.trashpixl.runnable.minigameFile
-import trashpixl.trashpixl.runnable.put
+import org.bukkit.command.CommandSender
 
 class OnCommandLabi : CommandExecutor { //creating the class death and implementing the listener
 

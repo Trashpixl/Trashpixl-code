@@ -8,8 +8,6 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
-import trashpixl.trashpixl.runnable.minigameFile
-import trashpixl.trashpixl.runnable.put
 
 class OnCommandBridgeRace : CommandExecutor { //creating the class death and implementing the listener
 
