@@ -2,3 +2,31 @@ name: Trashpixl
 version: '${project.version}'
 main: trashpixl.trashpixl.Trashpixl
 api-version: 1.19
+commands:
+  onCommandLabi:
+    description: command for labi
+    usage: /<command>
+  onCommandBridgeRace:
+    description: command for bridge race
+    usage: /<command>
+  onCommandPvpBow:
+    description: command for pvpbow
+    usage: /<command>
+  onCommandPvpSumo:
+    description: command for pvp Sumo
+    usage: /<command>
+  onCommandPvp:
+    description: command for pvp
+    usage: /<command>
+  onCommandTnt:
+    description: command for tnt
+    usage: /<command>
+  onCommandPvpKnockBack:
+    description: command for pvp knock back
+    usage: /<command>
+  onCommandPvpLoot:
+    description: command for pvp loot
+    usage: /<command>
+  onCommandParkour:
+    description: command for Parkour race
+    usage: /<command>
