@@ -10,7 +10,6 @@ import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
 import trashpixl.trashpixl.runnable.minigameFile
 import trashpixl.trashpixl.runnable.put
-import java.io.File
 
 class OnCommandBridgeRace : CommandExecutor { //creating the class death and implementing the listener
 
@@ -21,15 +20,15 @@ class OnCommandBridgeRace : CommandExecutor { //creating the class death and imp
         val z = 265.3 //the z coord of the game
 
         for (p in getServer().onlinePlayers) { //get all the online player
-           
-                val item1 = ItemStack(Material.BLACK_WOOL, 64) //create the item stack with 64 black wool inside
-                p.health = 20.0 //set the health to 20
-                val w: World = p.world //create the world var 
-                val to = Location(w, x, y, z) //create game location
-                p.teleport(to) //tp the player
-                p.inventory.clear() //clear their inventory
-                p.inventory.setItem(1, item1) //give them the wool
-            
+
+            val item1 = ItemStack(Material.BLACK_WOOL, 64) //create the item stack with 64 black wool inside
+            p.health = 20.0 //set the health to 20
+            val w: World = p.world //create the world var
+            val to = Location(w, x, y, z) //create game location
+            p.teleport(to) //tp the player
+            p.inventory.clear() //clear their inventory
+            p.inventory.setItem(1, item1) //give them the wool
+
         }
 
 

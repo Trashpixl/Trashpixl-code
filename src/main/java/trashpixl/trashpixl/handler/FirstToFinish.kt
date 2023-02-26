@@ -16,9 +16,11 @@ import trashpixl.trashpixl.runnable.put
 
 class FirstToFinish(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the implements for the listener
     private var mainPlugin = main
+
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // getting the plugin
     }
+
     @EventHandler // define that the following code is an event handler
     fun pressurePlateHandler(e: PlayerInteractEvent) { // describes what the event is
         if (e.action == Action.PHYSICAL) { // check if the action is physical

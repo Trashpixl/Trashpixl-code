@@ -13,6 +13,7 @@ import trashpixl.trashpixl.runnable.environment
 
 class PlateHandler(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the implements for the listener
     private val mainPlugin = main
+
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the plugin
     }

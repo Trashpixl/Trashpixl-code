@@ -12,12 +12,7 @@ import trashpixl.trashpixl.runnable.put
 //the package for this project
 
 
-
 class OnCommandParkour : CommandExecutor { //creating the class death and implementing the listener
-    
-
-
-    
 
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
@@ -28,14 +23,14 @@ class OnCommandParkour : CommandExecutor { //creating the class death and implem
 
 
         for (p in getServer().onlinePlayers) {
-         
+
             p.health = 20.0
             val w: World = p.world
             val to = Location(w, x, y, z) //move before for
             p.teleport(to) //bob
             p.inventory.clear()
 
-            
+
         }
 
         put(minigameFile, 5)

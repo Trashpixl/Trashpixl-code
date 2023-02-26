@@ -15,12 +15,14 @@ import trashpixl.trashpixl.runnable.minigame
 class Death(plugin: Trashpixl?, main: JavaPlugin) :
         Listener { // creating the class death and implementing the listener
     private val mainPlugin = main
+
     // the implements for the listener
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // linking it to the main code
     }
+
     @EventHandler // says that this is an event handler
-    fun onPlayerDead(e: PlayerRespawnEvent) { 
+    fun onPlayerDead(e: PlayerRespawnEvent) {
         // creating the on player death event function and importing the death class
         val connect = ByteStreams.newDataOutput()
         connect.writeUTF("Connect")

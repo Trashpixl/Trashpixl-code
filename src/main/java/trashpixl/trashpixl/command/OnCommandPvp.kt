@@ -8,18 +8,11 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
-import trashpixl.trashpixl.runnable.minigameFile
-import trashpixl.trashpixl.runnable.put
 
 //the package for this project
 
 
-
 class OnCommandPvp : CommandExecutor { //creating the class death and implementing the listener
-
-
-
-
 
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
@@ -29,7 +22,7 @@ class OnCommandPvp : CommandExecutor { //creating the class death and implementi
         val z = 279.0
 
         for (p in getServer().onlinePlayers) {
-            
+
             p.health = 20.0
             val w: World = p.world
             val to = Location(w, x, y, z) //move before for
@@ -37,11 +30,11 @@ class OnCommandPvp : CommandExecutor { //creating the class death and implementi
             p.teleport(to)
             p.inventory.clear()
             p.inventory.setItemInMainHand(item)
-            
+
 
         }
 
-        put(minigameFile, 1)
+        //if(put(minigameFile, 1)){ }
         return false
 
     }

@@ -1,25 +1,28 @@
 package trashpixl.trashpixl.handler // the package for this project
 
-import com.google.common.io.ByteStreams
-import java.io.File // importing the java file var
-import java.io.FileWriter // importing the file-writer
-import java.io.IOException // importing the io exception
-import org.bukkit.Bukkit // importing bukkit
-import org.bukkit.Material // importing the material library
-import org.bukkit.event.EventHandler // importing the event handler class
-import org.bukkit.event.Listener // importing the event listener class
-import org.bukkit.event.block.Action // importing the block action class to get if they set on a
 // block
-import org.bukkit.event.player.PlayerInteractEvent // importing the player interact event to get if
 // they click on something
+import com.google.common.io.ByteStreams
+import org.bukkit.Bukkit
+import org.bukkit.Material
+import org.bukkit.event.EventHandler
+import org.bukkit.event.Listener
+import org.bukkit.event.block.Action
+import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.plugin.java.JavaPlugin
-import trashpixl.trashpixl.Trashpixl // importing zero
+import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.environment
+import trashpixl.trashpixl.runnable.minigameFile
+import trashpixl.trashpixl.runnable.put
+import java.io.File
+import java.io.FileWriter
+import java.io.IOException
 
 class Laucher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the class and extending it with the main class and implement the
     // listener
     // the implements for the listener
     private var mainPlugin = main
+
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the handler
     }
@@ -42,28 +45,7 @@ class Laucher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the
                         connect.writeUTF("mini")
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
-                    val fileName2 = "S:\\Mini.txt" // creating the file name var
-                    val actualFile2 = File(fileName2) // creating the file
-
-                    try { // trying the code
-                        if (actualFile2.exists() && actualFile2.isFile
-                        ) { // checking if the file exist
-                            val dataToWrite = "1" // creating the data to write var
-                            val myWriter: FileWriter // create the file writer
-                            try { // trying the code
-                                myWriter =
-                                        FileWriter(
-                                                actualFile2
-                                        ) // pointing the writer to the actual file
-                                myWriter.write(dataToWrite) // writing the data to the file
-                                myWriter.close() // closing the writer
-                            } catch (e: IOException) { // catching the exception
-                                throw RuntimeException(e) // trowing the exception
-                            }
-                        }
-                    } catch (e: IOException) { // catching the exception
-                        throw RuntimeException(e) // throwing the exception
-                    }
+                    put(minigameFile, 1)
 
                     // Bukkit.dispatchCommand(p, "oncommandpvp") //dispatchCommand for parkour
                 }

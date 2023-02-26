@@ -14,7 +14,6 @@ import trashpixl.trashpixl.runnable.put
 //the package for this project
 
 
-
 class OnCommandPvpKnockBack : CommandExecutor { //creating the class death and implementing the listener
 
 
@@ -26,7 +25,7 @@ class OnCommandPvpKnockBack : CommandExecutor { //creating the class death and i
 
 
         for (p in getServer().onlinePlayers) {
-       
+
             p.health = 20.0
             val w: World = p.world
             val to = Location(w, x, y, z) //move before for

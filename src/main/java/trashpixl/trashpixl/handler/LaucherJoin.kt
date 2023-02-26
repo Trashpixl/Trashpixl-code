@@ -1,17 +1,15 @@
 package trashpixl.trashpixl.handler // the package for this project
 
-import java.io.File // importing the java file var
-import java.io.IOException // importing the io exception
-import java.util.* // importing all the java util class
-import org.bukkit.Bukkit // importing bukkit
-import org.bukkit.Bukkit.getServer // importing the get server class
+import org.bukkit.Bukkit
+import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
 import org.bukkit.World
-import org.bukkit.event.EventHandler // import the event handler
-import org.bukkit.event.Listener // import all the listener
-import org.bukkit.event.player.PlayerJoinEvent // import the action related to the player
-import trashpixl.trashpixl.Trashpixl // import zero
+import org.bukkit.event.EventHandler
+import org.bukkit.event.Listener
+import org.bukkit.event.player.PlayerJoinEvent
+import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.environment
+import trashpixl.trashpixl.runnable.minigame
 
 class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the listener
 
@@ -26,86 +24,75 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
         // p.connect("mini")
 
         if (environment() == 1) {
-            val fileName2 = "S:\\Mini.txt" // creating the file name var
-            val actualFile2 = File(fileName2) // creating the file
-            val mini: Int // creating the actual data var
-            try { // trying the code
-                if (actualFile2.exists() && actualFile2.isFile
-                ) { // checking if actual file is a file
-                    try {
-                        val reader2 = Scanner(actualFile2) // creating the scanner
-                        val data2 = reader2.nextLine() // reading the first line
-                        mini = data2.toInt() // converting the data to an int
-                        reader2.close() // closing the reader
-                        for (playerCountloop in getServer().onlinePlayers) {
-                            playerCount++
-                        }
-                        if (playerCount == 10) {
-                            if (mini == 1) {
-                                Bukkit.dispatchCommand(
-                                        p,
-                                        "oncommandpvp"
-                                ) // dispatchCommand for parkour
-                            }
-                            if (mini == 2) {
-                                Bukkit.dispatchCommand(
-                                        p,
-                                        "oncommandpvpsumo"
-                                ) // dispatchCommand for parkour
-                            }
-                            if (mini == 3) {
-                                Bukkit.dispatchCommand(
-                                        p,
-                                        "oncommandpvpbow"
-                                ) // dispatchCommand for parkour
-                            }
-                            if (mini == 4) {
-                                Bukkit.dispatchCommand(
-                                        p,
-                                        "oncommandpvploot"
-                                ) // dispatchCommand for parkour
-                            }
-                            if (mini == 5) {
-                                Bukkit.dispatchCommand(
-                                        p,
-                                        "oncommandbridgerace"
-                                ) // dispatchCommand for bridge
-                            }
-                            if (mini == 6) {
-                                Bukkit.dispatchCommand(
-                                        p,
-                                        "oncommandparkour"
-                                ) // dispatchCommand for parkour
-                            }
-                            if (mini == 7) {
-                                Bukkit.dispatchCommand(
-                                        p,
-                                        "oncommandpvpknockback"
-                                ) // dispatchCommand for pvp knock back
-                            }
-                            if (mini == 8) {
-                                Bukkit.dispatchCommand(
-                                        p,
-                                        "oncommandlabi"
-                                ) // dispatchCommand for parkour
-                            }
-                            if (mini == 9) {
-                                Bukkit.dispatchCommand(
-                                        p,
-                                        "oncommandtnt"
-                                ) // dispatchCommand for tnt race
-                            }
-                            if (mini == 10) {
-                                // add cps test
-                                Bukkit.dispatchCommand(p, "oncommandcpstest")
-                            }
-                        }
-                    } catch (e: IOException) { // catching the exception
-                        throw RuntimeException(e) // trowing it again
-                    }
+
+            for (playerCountloop in getServer().onlinePlayers) {
+                playerCount++
+
+
+            }
+
+            if (playerCount == 1) {
+
+                if (minigame() == 1) {
+                    Bukkit.dispatchCommand(
+                            p,
+                            "oncommandpvp"
+                    ) // dispatchCommand for parkour
                 }
-            } catch (e: IOException) { // catching the exception
-                throw RuntimeException(e) // trowing it again
+                if (minigame() == 2) {
+                    Bukkit.dispatchCommand(
+                            p,
+                            "oncommandpvpsumo"
+                    ) // dispatchCommand for parkour
+                }
+                if (minigame() == 3) {
+                    Bukkit.dispatchCommand(
+                            p,
+                            "oncommandpvpbow"
+                    ) // dispatchCommand for parkour
+                }
+                if (minigame() == 4) {
+                    Bukkit.dispatchCommand(
+                            p,
+                            "oncommandpvploot"
+                    ) // dispatchCommand for parkour
+                }
+                if (minigame() == 5) {
+                    Bukkit.dispatchCommand(
+                            p,
+                            "oncommandbridgerace"
+                    ) // dispatchCommand for bridge
+                }
+                if (minigame() == 6) {
+                    Bukkit.dispatchCommand(
+                            p,
+                            "oncommandparkour"
+                    ) // dispatchCommand for parkour
+                }
+                if (minigame() == 7) {
+                    Bukkit.dispatchCommand(
+                            p,
+                            "oncommandpvpknockback"
+                    ) // dispatchCommand for pvp knock back
+                }
+                if (minigame() == 8) {
+                    Bukkit.dispatchCommand(
+                            p,
+                            "oncommandlabi"
+                    ) // dispatchCommand for parkour
+                }
+                if (minigame() == 9) {
+                    Bukkit.dispatchCommand(
+                            p,
+                            "oncommandtnt"
+                    ) // dispatchCommand for tnt race
+                }
+                if (minigame() == 10) {
+                    // add cps test
+                    Bukkit.dispatchCommand(p, "oncommandcpstest")
+                }
+
+
             }
         }
         if (environment() == 2) {

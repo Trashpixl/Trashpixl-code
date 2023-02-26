@@ -15,6 +15,7 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the plugin
     }
+
     @EventHandler // say that it is an event handler
     fun buttonHandler(e: PlayerInteractEvent) { // describes what the event is
         if (e.action == Action.RIGHT_CLICK_BLOCK) { // check if the action is physical

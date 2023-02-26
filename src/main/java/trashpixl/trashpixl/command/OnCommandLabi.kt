@@ -10,10 +10,6 @@ import trashpixl.trashpixl.runnable.minigameFile
 import trashpixl.trashpixl.runnable.put
 
 class OnCommandLabi : CommandExecutor { //creating the class death and implementing the listener
-    
-
-
-    
 
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
@@ -24,14 +20,14 @@ class OnCommandLabi : CommandExecutor { //creating the class death and implement
 
         for (p in getServer().onlinePlayers) {
             //println(p.name)
-         
-            
+
+
             p.health = 20.0
             val w: World = p.world
             val to = Location(w, x, y, z) //move before for
             p.teleport(to)
             p.inventory.clear()
-            
+
         }
 
 

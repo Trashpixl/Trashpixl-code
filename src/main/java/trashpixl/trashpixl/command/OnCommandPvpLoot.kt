@@ -12,9 +12,8 @@ import trashpixl.trashpixl.runnable.put
 //the package for this project
 
 
-
 class OnCommandPvpLoot : CommandExecutor { //creating the class death and implementing the listener
-    
+
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val x = 121.3
@@ -23,17 +22,16 @@ class OnCommandPvpLoot : CommandExecutor { //creating the class death and implem
 
         for (p in getServer().onlinePlayers) {
 
-           
-                p.health = 20.0
+
+            p.health = 20.0
             val w: World = p.world
             val to = Location(w, x, y, z) //move before for
             p.teleport(to)
             p.inventory.clear()
 
 
-           
         }
-       put(minigameFile, 3)
+        put(minigameFile, 3)
         return false
 
     }
