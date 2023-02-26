@@ -1,5 +1,5 @@
 
-package trashpixl.trashpixl.command
+package trashpixl.trashpixl.useless
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender
 
 
 
-class OnCommandHorseRace : CommandExecutor { //creating the class death and implementing the listener
+class OnCommandFindMe : CommandExecutor { //creating the class death and implementing the listener
     
 
 
@@ -24,6 +24,7 @@ class OnCommandHorseRace : CommandExecutor { //creating the class death and impl
         val x = 247.0
         val y = -58.0
         val z = 250.0
+
 
         
 

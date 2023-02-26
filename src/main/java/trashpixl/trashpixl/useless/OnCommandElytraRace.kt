@@ -1,5 +1,5 @@
 
-package trashpixl.trashpixl.command
+package trashpixl.trashpixl.useless
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender
 
 
 
-class OnCommandDodgeBall : CommandExecutor { //creating the class death and implementing the listener
+class OnCommandElytraRace : CommandExecutor { //creating the class death and implementing the listener
     
 
 

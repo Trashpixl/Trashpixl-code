@@ -1,5 +1,5 @@
 
-package trashpixl.trashpixl.command
+package trashpixl.trashpixl.useless
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -8,13 +8,25 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 
-class OnCommandCaptureFlag : CommandExecutor { //creating the class death and implementing the listener
+ //the package for this project
+
+
+
+class OnCommandFireTrap : CommandExecutor { //creating the class death and implementing the listener
+    
+
+
+    
+
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
 
         val x = 247.0
         val y = -58.0
         val z = 250.0
+
+
+        
 
         for (p in getServer().onlinePlayers) {
             //println(p.name)
@@ -27,6 +39,9 @@ class OnCommandCaptureFlag : CommandExecutor { //creating the class death and im
             p.inventory.clear()
             }
         }
+
+
+
 
         return false
 

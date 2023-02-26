@@ -24,9 +24,4 @@ import java.io.IOException
             throw java.lang.RuntimeException(e) // throwing it the hardest we can, be gone exception you have no friend
         }
     }
-    fun getFrom(){
-    //function to get something from the database
-    }
-    fun erase(){
-    //erase something from the database
-    }
+

@@ -2,13 +2,13 @@ package trashpixl.trashpixl // the package of this project
 
 // import zero.zero.command.store.* //import all the class in store
 // import zero.zero.handler.shop.* //import all the handler related to store
-import java.io.File // importing java file class for writing the file
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.command.* // importing all the command
 import trashpixl.trashpixl.handler.* // importing all the handler
 import trashpixl.trashpixl.runnable.environment
 import trashpixl.trashpixl.runnable.minigameFile
 import trashpixl.trashpixl.runnable.put
+import trashpixl.trashpixl.useless.*
 
 class Trashpixl : JavaPlugin() {
         // creating the main class

@@ -1,5 +1,5 @@
 
-package trashpixl.trashpixl.command
+package trashpixl.trashpixl.useless
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender
 
 
 
-class OnCommandClimbFast : CommandExecutor { //creating the class death and implementing the listener
+class OnCommandHideAndSeek : CommandExecutor { //creating the class death and implementing the listener
     
 
 
@@ -25,6 +25,8 @@ class OnCommandClimbFast : CommandExecutor { //creating the class death and impl
         val y = -58.0
         val z = 250.0
 
+
+        
 
         for (p in getServer().onlinePlayers) {
             //println(p.name)

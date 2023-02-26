@@ -9,10 +9,6 @@ import org.bukkit.command.CommandSender
 import trashpixl.trashpixl.runnable.minigameFile
 import trashpixl.trashpixl.runnable.put
 
-
-//the package for this project
-
-
 class OnCommandTnt : CommandExecutor { //creating the class death and implementing the listener
 
 

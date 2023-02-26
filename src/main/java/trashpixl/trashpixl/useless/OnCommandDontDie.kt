@@ -1,5 +1,4 @@
-
-package trashpixl.trashpixl.command
+package trashpixl.trashpixl.useless
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -12,7 +11,7 @@ import org.bukkit.command.CommandSender
 
 
 
-class OnCommandHideAndSeek : CommandExecutor { //creating the class death and implementing the listener
+class OnCommandDontDie : CommandExecutor { //creating the class death and implementing the listener
     
 
 
@@ -21,27 +20,21 @@ class OnCommandHideAndSeek : CommandExecutor { //creating the class death and im
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
 
-        val x = 247.0
+        val x = 189.0
         val y = -58.0
-        val z = 250.0
+        val z = 278.0
 
-
-        
 
         for (p in getServer().onlinePlayers) {
-            //println(p.name)
             if(p.world.environment == World.Environment.NORMAL){
-            
             p.health = 20.0
             val w: World = p.world
             val to = Location(w, x, y, z) //move before for
             p.teleport(to)
             p.inventory.clear()
             }
+            
         }
-
-
-
 
         return false
 

@@ -1,5 +1,5 @@
 
-package trashpixl.trashpixl.command
+package trashpixl.trashpixl.useless
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -12,21 +12,13 @@ import org.bukkit.command.CommandSender
 
 
 
-class OnCommandElytraRace : CommandExecutor { //creating the class death and implementing the listener
-    
-
-
-    
-
+class OnCommandChaiseMusical : CommandExecutor { //creating the class death and implementing the listener
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
 
         val x = 247.0
         val y = -58.0
         val z = 250.0
-
-
-        
 
         for (p in getServer().onlinePlayers) {
             //println(p.name)
@@ -39,9 +31,6 @@ class OnCommandElytraRace : CommandExecutor { //creating the class death and imp
             p.inventory.clear()
             }
         }
-
-
-
 
         return false
 

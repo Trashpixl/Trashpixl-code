@@ -1,5 +1,5 @@
 
-package trashpixl.trashpixl.command
+package trashpixl.trashpixl.useless
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -8,28 +8,20 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 
- //the package for this project
 
-
-
-class OnCommandRockPaperCisor : CommandExecutor { //creating the class death and implementing the listener
-    
-
-
-    
+class OnCommandCpsTest : CommandExecutor { //creating the class death and implementing the listener
 
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
 
-        val x = 247.0
-        val y = -58.0
-        val z = 250.0
+        val x = 0.0
+        val y = 0.0
+        val z = 0.0
 
-        
 
         for (p in getServer().onlinePlayers) {
             //println(p.name)
-            if(p.world.environment == World.Environment.NORMAL){
+            if(p.location.world.name.endsWith("world")){
             
             p.health = 20.0
             val w: World = p.world
@@ -38,9 +30,6 @@ class OnCommandRockPaperCisor : CommandExecutor { //creating the class death and
             p.inventory.clear()
             }
         }
-
-
-
 
         return false
 

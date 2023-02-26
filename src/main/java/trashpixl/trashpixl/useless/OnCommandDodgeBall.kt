@@ -1,5 +1,5 @@
 
-package trashpixl.trashpixl.command
+package trashpixl.trashpixl.useless
 
 import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender
 
 
 
-class OnCommandFireTrap : CommandExecutor { //creating the class death and implementing the listener
+class OnCommandDodgeBall : CommandExecutor { //creating the class death and implementing the listener
     
 
 
@@ -30,14 +30,14 @@ class OnCommandFireTrap : CommandExecutor { //creating the class death and imple
 
         for (p in getServer().onlinePlayers) {
             //println(p.name)
-            if(p.world.environment == World.Environment.NORMAL){
+
             
             p.health = 20.0
             val w: World = p.world
             val to = Location(w, x, y, z) //move before for
             p.teleport(to)
             p.inventory.clear()
-            }
+
         }
 
 
