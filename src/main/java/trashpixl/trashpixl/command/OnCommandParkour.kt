@@ -33,7 +33,7 @@ class OnCommandParkour : CommandExecutor { //creating the class death and implem
 
         }
 
-        put(minigameFile, 5)
+
         return false
 
     }

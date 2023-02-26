@@ -38,7 +38,7 @@ class OnCommandPvpBow : CommandExecutor { //creating the class death and impleme
 
 
         }
-        put(minigameFile, 1)
+
 
         return false
 

@@ -36,7 +36,7 @@ class OnCommandPvpKnockBack : CommandExecutor { //creating the class death and i
             p.inventory.setItem(1, item1) //putting it in a random inventory slot
             p.inventory.setItem(2, item2) //same as below
         }
-        put(minigameFile, 1)
+
 
 
 

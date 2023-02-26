@@ -31,7 +31,7 @@ class OnCommandPvpSumo : CommandExecutor { //creating the class death and implem
 
 
         }
-        put(minigameFile, 6)
+
         return true
 
     }

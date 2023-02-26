@@ -62,25 +62,7 @@ class Laucher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the
                     val fileName2 = "S:\\Mini.txt" // creating the file name var
                     val actualFile2 = File(fileName2) // creating the file
 
-                    try { // trying the code
-                        if (actualFile2.exists() && actualFile2.isFile
-                        ) { // checking if the file exist
-                            val dataToWrite = "2" // creating the data to write var
-                            val myWriter: FileWriter // create the file writer
-                            try { // trying the code
-                                myWriter =
-                                        FileWriter(
-                                                actualFile2
-                                        ) // pointing the writer to the actual file
-                                myWriter.write(dataToWrite) // writing the data to the file
-                                myWriter.close() // closing the writer
-                            } catch (e: IOException) { // catching the exception
-                                throw RuntimeException(e) // trowing the exception
-                            }
-                        }
-                    } catch (e: IOException) { // catching the exception
-                        throw RuntimeException(e) // throwing the exception
-                    }
+                    put(minigameFile, 2)
                     // Bukkit.dispatchCommand(p, "oncommandpvpsumo") //dispatchCommand for parkour
                 }
 

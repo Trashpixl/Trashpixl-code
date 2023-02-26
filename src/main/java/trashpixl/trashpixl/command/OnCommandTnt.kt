@@ -26,7 +26,7 @@ class OnCommandTnt : CommandExecutor { //creating the class death and implementi
             p.teleport(to) //tp him
             p.inventory.clear() //clear his inventory
         }
-        put(minigameFile, 1)
+
 
 
         return false

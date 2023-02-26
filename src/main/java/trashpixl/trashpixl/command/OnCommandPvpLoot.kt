@@ -31,7 +31,7 @@ class OnCommandPvpLoot : CommandExecutor { //creating the class death and implem
 
 
         }
-        put(minigameFile, 3)
+
         return false
 
     }

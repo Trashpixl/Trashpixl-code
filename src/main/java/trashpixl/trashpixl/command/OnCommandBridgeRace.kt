@@ -32,7 +32,7 @@ class OnCommandBridgeRace : CommandExecutor { //creating the class death and imp
         }
 
 
-        put(minigameFile, 5)
+
         return false //return false so it doesn't create an error
     }
 }

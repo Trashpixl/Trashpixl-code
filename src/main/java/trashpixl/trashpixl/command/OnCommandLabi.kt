@@ -31,7 +31,6 @@ class OnCommandLabi : CommandExecutor { //creating the class death and implement
         }
 
 
-        put(minigameFile, 4)
         return false
 
     }
