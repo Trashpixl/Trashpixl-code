@@ -14,9 +14,6 @@ import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.environment
 import trashpixl.trashpixl.runnable.minigameFile
 import trashpixl.trashpixl.runnable.put
-import java.io.File
-import java.io.FileWriter
-import java.io.IOException
 
 class Laucher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the class and extending it with the main class and implement the
     // listener
