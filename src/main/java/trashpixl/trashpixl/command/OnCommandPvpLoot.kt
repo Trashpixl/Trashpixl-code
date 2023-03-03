@@ -12,25 +12,17 @@ import org.bukkit.command.CommandSender
 
 class OnCommandPvpLoot : CommandExecutor { //creating the class death and implementing the listener
 
-
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val x = 121.3
         val y = -59.0
         val z = 258.3
-
         for (p in getServer().onlinePlayers) {
-
-
             p.health = 20.0
             val w: World = p.world
             val to = Location(w, x, y, z) //move before for
             p.teleport(to)
             p.inventory.clear()
-
-
         }
-
         return false
-
     }
 }

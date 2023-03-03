@@ -9,14 +9,10 @@ import org.bukkit.command.CommandSender
 
 class OnCommandTnt : CommandExecutor { //creating the class death and implementing the listener
 
-
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-
-
         val x = 247.0
         val y = -58.0
         val z = 250.0
-
         for (p in getServer().onlinePlayers) { //get all the player in the server
             p.health = 20.0 //set the health to 20
             val w: World = p.world //get the player world
@@ -24,10 +20,6 @@ class OnCommandTnt : CommandExecutor { //creating the class death and implementi
             p.teleport(to) //tp him
             p.inventory.clear() //clear his inventory
         }
-
-
-
         return false
-
     }
 }

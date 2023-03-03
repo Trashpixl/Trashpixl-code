@@ -14,14 +14,11 @@ import trashpixl.trashpixl.runnable.environment
 class WoodPlateHandler(plugin: Trashpixl?) : Listener { // create the class and implement the listener
 
     init { // the constructor for the handler
-        Bukkit.getPluginManager()
-                .registerEvents(this, plugin!!) // says that this need the plugin base model
+        Bukkit.getPluginManager().registerEvents(this, plugin!!) // says that this need the plugin base model
     }
 
     @EventHandler // define that the methode is an event handler
-    fun pressurePlateHandler(
-            ev: PlayerInteractEvent
-    ) { // create the function with the argument the player event
+    fun pressurePlateHandler(ev: PlayerInteractEvent) { // create the function with the argument the player event
         if (ev.action == Action.PHYSICAL
         ) { // check if the action is physical like step on or software like open the inventory
             if (ev.clickedBlock!!.type == Material.OAK_PRESSURE_PLATE

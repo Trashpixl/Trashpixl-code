@@ -24,8 +24,7 @@ class FirstToFinish(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the im
     @EventHandler // define that the following code is an event handler
     fun pressurePlateHandler(e: PlayerInteractEvent) { // describes what the event is
         if (e.action == Action.PHYSICAL) { // check if the action is physical
-            if (e.clickedBlock!!.type == Material.WARPED_PRESSURE_PLATE
-            ) { // compare what the player step on to a stone pressure plate and is required a
+            if (e.clickedBlock!!.type == Material.WARPED_PRESSURE_PLATE) { // compare what the player step on to a stone pressure plate and is required a
                 // non-nullable
 
                 val p = e.player // create the local player id

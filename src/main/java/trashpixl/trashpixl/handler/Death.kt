@@ -12,10 +12,8 @@ import trashpixl.trashpixl.Trashpixl // importing the whole package
 import trashpixl.trashpixl.runnable.environment
 import trashpixl.trashpixl.runnable.minigame
 
-class Death(plugin: Trashpixl?, main: JavaPlugin) :
-        Listener { // creating the class death and implementing the listener
+class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the class death and implementing the listener
     private val mainPlugin = main
-
     // the implements for the listener
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // linking it to the main code
@@ -28,20 +26,14 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) :
         connect.writeUTF("Connect")
         connect.writeUTF("lobby")
         var playerCount: Int
-
         if (minigame() == 1 || minigame() == 5 || minigame() == 3 || minigame() == 6) { // check if the data that we found correspond to the one require to start the handler
             val name: String = e.player.name // name variable to store the player name
             if (environment() == 1) {
-
                 e.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                 playerCount = 0
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
                     playerCount++
-                    p.sendMessage(
-                            "$name  died an is now out of the game"
-                    ) // send the message of who won the match
-                    // Bukkit.dispatchCommand(p, "server lobby") //if they are in the right world tp
-                    // them in the lobby
+                    p.sendMessage("$name  died an is now out of the game") // send the message of who won the match
                 }
                 if (playerCount == 1) {
                     for (p in getServer().onlinePlayers) {

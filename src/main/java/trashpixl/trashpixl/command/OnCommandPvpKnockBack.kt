@@ -14,16 +14,11 @@ import org.bukkit.inventory.ItemStack
 
 class OnCommandPvpKnockBack : CommandExecutor { //creating the class death and implementing the listener
 
-
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-
         val x = 239.0
         val y = -58.0
         val z = 279.0
-
-
         for (p in getServer().onlinePlayers) {
-
             p.health = 20.0
             val w: World = p.world
             val to = Location(w, x, y, z) //move before for
@@ -34,11 +29,6 @@ class OnCommandPvpKnockBack : CommandExecutor { //creating the class death and i
             p.inventory.setItem(1, item1) //putting it in a random inventory slot
             p.inventory.setItem(2, item2) //same as below
         }
-
-
-
-
         return false
-
     }
 }

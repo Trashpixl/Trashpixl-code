@@ -21,62 +21,41 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
     fun onJoin(ev: PlayerJoinEvent) { // describes what the event is
         val p = ev.player // create the local player id
         var playerCount = 0
-        // p.connect("mini")
-
         if (environment() == 1) {
-
             for (playerCountLoop in getServer().onlinePlayers) {
                 playerCount++
-
-
             }
 
             if (playerCount == 1) {
 
                 if (minigame() == 1) {
-                    Bukkit.dispatchCommand(p, "oncommandpvp") // dispatchCommand for parkour
+                    Bukkit.dispatchCommand(p, "onCommandPvp") // dispatchCommand for parkour
                 }
                 if (minigame() == 2) {
-                    Bukkit.dispatchCommand(p, "oncommandpvpsumo") // dispatchCommand for parkour
+                    Bukkit.dispatchCommand(p, "onCommandPvpSumo") // dispatchCommand for parkour
                 }
                 if (minigame() == 3) {
-                    Bukkit.dispatchCommand(p, "oncommandpvpbow"
-                    ) // dispatchCommand for parkour
+                    Bukkit.dispatchCommand(p, "onCommandPvpBow") // dispatchCommand for parkour
                 }
                 if (minigame() == 4) {
-                    Bukkit.dispatchCommand(p, "oncommandpvploot") // dispatchCommand for parkour
+                    Bukkit.dispatchCommand(p, "onCommandPvpLoot") // dispatchCommand for parkour
                 }
                 if (minigame() == 5) {
-                    Bukkit.dispatchCommand(p, "oncommandbridgerace") // dispatchCommand for bridge
+                    Bukkit.dispatchCommand(p, "onCommandBridgeRace") // dispatchCommand for bridge
                 }
                 if (minigame() == 6) {
-                    Bukkit.dispatchCommand(
-                            p,
-                            "oncommandparkour"
-                    ) // dispatchCommand for parkour
+                    Bukkit.dispatchCommand(p, "onCommandParkour") // dispatchCommand for parkour
                 }
                 if (minigame() == 7) {
-                    Bukkit.dispatchCommand(
-                            p,
-                            "oncommandpvpknockback"
-                    ) // dispatchCommand for pvp knock back
+                    Bukkit.dispatchCommand(p, "onCommandPvpKnockBack") // dispatchCommand for pvp knock back
                 }
                 if (minigame() == 8) {
-                    Bukkit.dispatchCommand(
-                            p,
-                            "oncommandlabi"
-                    ) // dispatchCommand for parkour
+                    Bukkit.dispatchCommand(p, "onCommandLabi") // dispatchCommand for parkour
                 }
                 if (minigame() == 9) {
-                    Bukkit.dispatchCommand(
-                            p,
-                            "oncommandtnt"
-                    ) // dispatchCommand for tnt race
+                    Bukkit.dispatchCommand(p, "onCommandTnt") // dispatchCommand for tnt race
                 }
-                if (minigame() == 10) {
-                    // add cps test
-                    Bukkit.dispatchCommand(p, "oncommandcpstest")
-                }
+
 
 
             }
