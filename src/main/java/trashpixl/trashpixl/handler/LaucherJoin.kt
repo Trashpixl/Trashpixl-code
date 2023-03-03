@@ -25,7 +25,7 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
 
         if (environment() == 1) {
 
-            for (playerCountloop in getServer().onlinePlayers) {
+            for (playerCountLoop in getServer().onlinePlayers) {
                 playerCount++
 
 
@@ -34,34 +34,20 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
             if (playerCount == 1) {
 
                 if (minigame() == 1) {
-                    Bukkit.dispatchCommand(
-                            p,
-                            "oncommandpvp"
-                    ) // dispatchCommand for parkour
+                    Bukkit.dispatchCommand(p, "oncommandpvp") // dispatchCommand for parkour
                 }
                 if (minigame() == 2) {
-                    Bukkit.dispatchCommand(
-                            p,
-                            "oncommandpvpsumo"
-                    ) // dispatchCommand for parkour
+                    Bukkit.dispatchCommand(p, "oncommandpvpsumo") // dispatchCommand for parkour
                 }
                 if (minigame() == 3) {
-                    Bukkit.dispatchCommand(
-                            p,
-                            "oncommandpvpbow"
+                    Bukkit.dispatchCommand(p, "oncommandpvpbow"
                     ) // dispatchCommand for parkour
                 }
                 if (minigame() == 4) {
-                    Bukkit.dispatchCommand(
-                            p,
-                            "oncommandpvploot"
-                    ) // dispatchCommand for parkour
+                    Bukkit.dispatchCommand(p, "oncommandpvploot") // dispatchCommand for parkour
                 }
                 if (minigame() == 5) {
-                    Bukkit.dispatchCommand(
-                            p,
-                            "oncommandbridgerace"
-                    ) // dispatchCommand for bridge
+                    Bukkit.dispatchCommand(p, "oncommandbridgerace") // dispatchCommand for bridge
                 }
                 if (minigame() == 6) {
                     Bukkit.dispatchCommand(
