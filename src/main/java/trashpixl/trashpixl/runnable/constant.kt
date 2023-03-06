@@ -2,6 +2,7 @@ package trashpixl.trashpixl.runnable
 
 import java.io.File
 import java.io.IOException
+import java.lang.Thread.sleep
 import java.util.*
 
 
@@ -50,7 +51,7 @@ fun minigame(): Int {
     return minigameData
 }
 fun os(): File {
-    if (System.getProperty("os.name") == "Windows") {
+    if (System.getProperty("os.name") == "Windows 11") {
         return minigameFileWindows
     }
     if (System.getProperty("os.name") == "Linux") {
