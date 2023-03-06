@@ -7,7 +7,7 @@ import java.io.IOException
 //defining the class package
 
 
-fun put(file: File, data: Int): Boolean {
+fun put(file: File, data: Int) {
     //function to send packet to database
     try { // trying the following code
         if (file.exists() && file.isFile) { // checking if the file exist
@@ -25,6 +25,6 @@ fun put(file: File, data: Int): Boolean {
         throw java.lang.RuntimeException(e) // throwing it the hardest we can, be gone exception you have no friend
     }
 
-    return true
+
 }
 

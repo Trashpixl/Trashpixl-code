@@ -2,7 +2,6 @@ package trashpixl.trashpixl.runnable
 
 import java.io.File
 import java.io.IOException
-import java.lang.Thread.sleep
 import java.util.*
 
 

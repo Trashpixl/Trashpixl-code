@@ -13,9 +13,7 @@ import trashpixl.trashpixl.runnable.put
 class Trashpixl : JavaPlugin() {
     // creating the main class
     override fun onEnable() { // plugin startup logic
-        val osName = System.getProperty("os.name")
-        val osVersion = System.getProperty("os.version")
-        logger.warning("Operating system: $osName $osVersion")
+
         server.messenger.registerOutgoingPluginChannel(this, "BungeeCord") // register the chanel
 
         Death(this, this) // init the death handler
