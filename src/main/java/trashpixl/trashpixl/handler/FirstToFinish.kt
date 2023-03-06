@@ -28,7 +28,7 @@ class FirstToFinish(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the im
                 // non-nullable
 
                 val p = e.player // create the local player id
-                if (minigame() == 4 || minigame() == 5) { // checking if the number in the file correspond to the number require to start
+                if (minigame() == 8 || minigame() == 5 || minigame() == 6) { // checking if the number in the file correspond to the number require to start
                     // the exception
 
                     if (environment() == 1) {

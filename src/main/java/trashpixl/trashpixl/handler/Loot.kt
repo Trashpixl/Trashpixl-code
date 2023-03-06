@@ -1,6 +1,7 @@
 package trashpixl.trashpixl.handler // the package for this project
 
 import org.bukkit.Bukkit
+import org.bukkit.Location
 import org.bukkit.Material
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -23,7 +24,7 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
                 // non-nullable
 
 
-                if (minigame() == 3) { // check if the data equals 3
+                if (minigame() == 4) { // check if the data equals 3
                     val p = e.player // creating the player variable
 
                     if (environment() == 1) {
@@ -70,6 +71,20 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
                                 }
                             }
                         }
+                        //add the code here
+                       when ((1..10).random()){
+                           1 -> p.teleport(Location(p.world, 137.0, -62.0, 279.0))
+                           2 -> p.teleport(Location(p.world, 135.0, -62.0, 277.0))
+                           3 -> p.teleport(Location(p.world, 133.0, -62.0, 275.0))
+                           4 -> p.teleport(Location(p.world, 130.0, -62.0, 273.0))
+                           5 -> p.teleport(Location(p.world, 127.0, -62.0, 270.0))
+                           6 -> p.teleport(Location(p.world, 125.0, -62.0, 268.0))
+                           7 -> p.teleport(Location(p.world, 123.0, -62.0, 266.0))
+                           8 -> p.teleport(Location(p.world, 121.5, -62.0, 264.0))
+                           9 -> p.teleport(Location(p.world, 120.0, -62.0, 262.0))
+                           10 -> p.teleport(Location(p.world, 119.0, -62.0, 260.0))
+
+                       }
                     }
                 }
             }
