@@ -55,6 +55,9 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
                 if (minigame() == 9) {
                     Bukkit.dispatchCommand(p, "onCommandTnt") // dispatchCommand for tnt race
                 }
+                if (minigame() == 10) {
+                    Bukkit.dispatchCommand(p, "onCommandButton4") // dispatchCommand for tnt race
+                }
 
 
 

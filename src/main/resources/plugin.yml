@@ -30,3 +30,6 @@ commands:
   onCommandParkour:
     description: command for Parkour race
     usage: /<command>
+  onCommandButton4:
+    description: command for button 4
+    usage: /<command>

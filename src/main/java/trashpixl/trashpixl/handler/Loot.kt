@@ -19,13 +19,14 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
 
     @EventHandler // say that it is an event handler
     fun buttonHandler(e: PlayerInteractEvent) { // describes what the event is
+        val p = e.player // creating the player variable
         if (e.action == Action.RIGHT_CLICK_BLOCK) { // check if the action is physical
             if (e.clickedBlock!!.type == Material.STONE_BUTTON) { // compare what the player sept on to a stone pressure plate and is required a
                 // non-nullable
 
 
                 if (minigame() == 4) { // check if the data equals 3
-                    val p = e.player // creating the player variable
+
 
                     if (environment() == 1) {
                         val kit = (1..6).random() // creating the random val between 1 and 6
@@ -85,6 +86,13 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
                            10 -> p.teleport(Location(p.world, 119.0, -62.0, 260.0))
 
                        }
+                    }
+                }
+                if (minigame() == 10){
+                    if(environment() == 1){
+                        if((1..10).random() == 1){
+                            p.health = 0.0
+                        }
                     }
                 }
             }

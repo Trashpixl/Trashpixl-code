@@ -9,10 +9,7 @@ import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
-import trashpixl.trashpixl.runnable.environment
-import trashpixl.trashpixl.runnable.minigame
-import trashpixl.trashpixl.runnable.minigameFile
-import trashpixl.trashpixl.runnable.put
+import trashpixl.trashpixl.runnable.*
 
 class FirstToFinish(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the implements for the listener
     private var mainPlugin = main
@@ -41,7 +38,7 @@ class FirstToFinish(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the im
                             p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                         }
                         //write zero in the minigame file
-                        put(minigameFile, 0)
+                        put(os(), 0)
                     }
                 }
             }

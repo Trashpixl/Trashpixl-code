@@ -5,7 +5,8 @@ import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.command.* // importing all the command
 import trashpixl.trashpixl.handler.* // importing all the handler
 import trashpixl.trashpixl.runnable.environment
-import trashpixl.trashpixl.runnable.minigameFile
+
+import trashpixl.trashpixl.runnable.os
 import trashpixl.trashpixl.runnable.put
 
 
@@ -34,8 +35,9 @@ class Trashpixl : JavaPlugin() {
             this.getCommand("onCommandParkour")?.setExecutor(OnCommandParkour()) // init the command for the parkour
             this.getCommand("onCommandBridgeRace")?.setExecutor(OnCommandBridgeRace()) // init the command for the tag
             this.getCommand("onCommandLabi")?.setExecutor(OnCommandLabi()) // init the command for the tag
+            this.getCommand("OnCommandButton4")?.setExecutor(OnCommandButton4())
         }
-        put(minigameFile, 0)
+        put(os(), 0)
 
 
     }

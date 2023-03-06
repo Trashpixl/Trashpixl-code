@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.environment
-import trashpixl.trashpixl.runnable.minigameFile
+import trashpixl.trashpixl.runnable.os
 import trashpixl.trashpixl.runnable.put
 
 class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the class and extending it with the main class and implement the listener
@@ -34,7 +34,7 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         connect.writeUTF("mini")
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
-                    put(minigameFile, 1)
+                    put(os(), 1)
 
                     // Bukkit.dispatchCommand(p, "onCommandPvp") //dispatchCommand for parkour
                 }
@@ -48,7 +48,7 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
 
-                    put(minigameFile, 2)
+                    put(os(), 2)
                     // Bukkit.dispatchCommand(p, "onCommandPvpSumo") //dispatchCommand for parkour
                 }
 
@@ -60,7 +60,7 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
 
-                    put(minigameFile, 3)
+                    put(os(), 3)
                     // Bukkit.dispatchCommand(p, "onCommandPvpBow") //dispatchCommand for parkour
 
                 }
@@ -73,7 +73,7 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
 
-                    put(minigameFile, 4)
+                    put(os(), 4)
                     // Bukkit.dispatchCommand(p, "onCommandPvpLoot") //dispatchCommand for parkour
                 }
 
@@ -84,7 +84,7 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         connect.writeUTF("mini")
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
-                  put(minigameFile, 5)
+                  put(os(), 5)
                     // Bukkit.dispatchCommand(p, "onCommandBridge") //dispatchCommand for bridge
                 }
 
@@ -95,23 +95,10 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         connect.writeUTF("mini")
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
-                  put(minigameFile, 6)
+                  put(os(), 6)
                     // Bukkit.dispatchCommand(p, "onCommandParkour") //dispatchCommand for parkour
 
-                } /*
-                  if (ev.clickedBlock!!.type == Material.PINK_TERRACOTTA) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandCaptureFlag") //dispatchCommand for capture flag
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.GRAY_TERRACOTTA) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandDontDie") //dispatchCommand for don't die
-                      }
-                  }
-                  */
+                }
                 if (ev.clickedBlock!!.type == Material.LIGHT_GRAY_TERRACOTTA) { // check if the block is light gray terracotta
                     for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
                         val connect = ByteStreams.newDataOutput()
@@ -119,24 +106,11 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         connect.writeUTF("mini")
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
-                   put(minigameFile, 7)
+                   put(os(), 7)
                     // Bukkit.dispatchCommand(p, "onCommandPvpKnockBack") //dispatchCommand for pvp
                     // knock back
 
-                } /*
-                  if (ev.clickedBlock!!.type == Material.CYAN_TERRACOTTA) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandChaiseMusical") //dispatchCommand for chaise musical
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.PURPLE_TERRACOTTA) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandClimbFast") //dispatchCommand for climb fast
-                      }
-                  }
-                  */
+                }
                 if (ev.clickedBlock!!.type == Material.BLUE_TERRACOTTA) { // check if the block is blue terracotta
                     for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
                         val connect = ByteStreams.newDataOutput()
@@ -144,83 +118,10 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         connect.writeUTF("mini")
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
-                   put(minigameFile, 8)
+                   put(os(), 8)
                     // Bukkit.dispatchCommand(p, "onCommandCpsTest") //dispatchCommand for parkour
 
-                } /*
-                  if (ev.clickedBlock!!.type == Material.BROWN_TERRACOTTA) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandDodgeBall") //dispatch command for dodge ball
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.GREEN_TERRACOTTA) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandElytraRace") //dispatchCommand for elytra race
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.RED_TERRACOTTA) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandFallTrap") //dispatchCommand for fall trap
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.BLACK_TERRACOTTA) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandFindMe") //dispatchCommand for findMe
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.TERRACOTTA) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandFiretrap") //dispatchCommand for firetrap
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.STONE_STAIRS) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                         //Bukkit.dispatchCommand(p, "onCommandHideAndSeek") //dispatchCommand for hide and seek
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.STONE_STAIRS) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandHorseRace") //dispatchCommand for horse race
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.STONE_STAIRS) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandMlg") //dispatchCommand for mlg
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.STONE_STAIRS) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandRockPaperScissor") //dispatchCommand for rock paper scissor
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.STONE_STAIRS) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                         //Bukkit.dispatchCommand(p, "onCommandSkyWars") //dispatchCommand for SkyWars
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.STONE_STAIRS) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandSwimFast") //dispatchCommand for swim fast
-                      }
-                  }
-                  if (ev.clickedBlock!!.type == Material.STONE_STAIRS) {
-                      if (p.location.world.name.endsWith("lobby_server")) {
-                          p.sendMessage("not available yet")
-                          //Bukkit.dispatchCommand(p, "onCommandTag") //dispatchCommand for tag
-                      }
-                  }
-                  */
+                }
                 if (ev.clickedBlock!!.type == Material.BLACK_CONCRETE) { // check if the block is black concrete
                     for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
                         val connect = ByteStreams.newDataOutput()
@@ -228,9 +129,18 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         connect.writeUTF("mini")
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
-                   put(minigameFile, 9)
+                   put(os(), 9)
                 }
                 // Bukkit.dispatchCommand(p, "onCommandTnt") //dispatchCommand for tnt race
+                if (ev.clickedBlock!!.type == Material.GRAY_TERRACOTTA) { // check if the block is black concrete
+                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                        val connect = ByteStreams.newDataOutput()
+                        connect.writeUTF("Connect")
+                        connect.writeUTF("mini")
+                        p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+                    }
+                    put(os(), 10)
+                }
 
             }
         }

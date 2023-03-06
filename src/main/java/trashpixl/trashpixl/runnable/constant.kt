@@ -5,10 +5,14 @@ import java.io.IOException
 import java.util.*
 
 
-const val minigameFileName = "C:\\Users\\thier\\Desktop\\testServer\\Minigame.txt" //create a var with the filename in it
-val minigameFile = File(minigameFileName) //create the file reference
+const val minigameFileNameWindows = "C:\\Users\\thier\\Desktop\\testServer\\Minigame.txt" //create a var with the filename in it
+val minigameFileWindows = File(minigameFileNameWindows) //create the file reference
+const val minigameFileNameLinux = "C:\\Users\\thier\\Desktop\\testServer\\Minigame.txt" //create a var with the filename in it
+val minigameFileLinux = File(minigameFileNameLinux) //create the file reference
 const val serverFileName = "Server.txt" //create a var with the filename in it
 val serverFile = File(serverFileName) //create the file reference
+const val minigameFileNameNull = "" //create a var with the filename in it
+val minigameFileNull = File(minigameFileNameNull) //create the file reference
 
 fun environment(): Int {
     var serverType = 0
@@ -29,11 +33,11 @@ fun environment(): Int {
 }
 
 fun minigame(): Int {
-    var minigameData: Int = 0
+    var minigameData = 0
     try { // trying the code
-        if (minigameFile.exists() && minigameFile.isFile) { // checking if actual file is a file
+        if (os().exists() && os().isFile) { // checking if actual file is a file
             try {
-                val reader = Scanner(minigameFile) // creating the scanner
+                val reader = Scanner(os()) // creating the scanner
                 minigameData = reader.nextLine().toInt() // reading the first line
                 reader.close() // closing the reader
             } catch (e: IOException) { // catching the exception
@@ -45,6 +49,20 @@ fun minigame(): Int {
     }
     return minigameData
 }
+fun os(): File {
+    if (System.getProperty("os.name") == "Windows") {
+        return minigameFileWindows
+    }
+    if (System.getProperty("os.name") == "Linux") {
+        return minigameFileLinux
+    }
+    else{
+        return minigameFileNull
+    }
+}
+
+
+
 
 
 

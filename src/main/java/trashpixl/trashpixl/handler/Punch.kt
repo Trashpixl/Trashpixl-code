@@ -20,7 +20,7 @@ class Punch(plugin: Trashpixl?) : Listener { // the implements for the listener
 
         if (environment() == 1) {
 
-            if (minigame() == 5 || minigame() == 6 || minigame() == 8) { // check if the data equal 6
+            if (minigame() == 5 || minigame() == 6 || minigame() == 8 || minigame() == 10) { // check if the data equal 6
                 if (ev.entity is Player) {
                     if (ev.cause == EntityDamageEvent.DamageCause.ENTITY_ATTACK || ev.cause == EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK) { // check if the damage is caused by an entity attack or sweep attack
                         (ev.entity as Player).health = 20.0 // set the player health to 20
