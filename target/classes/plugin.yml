@@ -4,13 +4,13 @@ main: trashpixl.trashpixl.Trashpixl
 api-version: 1.19
 commands:
   onCommandLabi:
-    description: command for labi
+    description: command for Labi
     usage: /<command>
   onCommandBridgeRace:
     description: command for bridge race
     usage: /<command>
   onCommandPvpBow:
-    description: command for pvpbow
+    description: command for pvpBow
     usage: /<command>
   onCommandPvpSumo:
     description: command for pvp Sumo
