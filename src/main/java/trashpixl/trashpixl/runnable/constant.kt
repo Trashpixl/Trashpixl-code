@@ -53,11 +53,10 @@ fun os(): File {
     if (System.getProperty("os.name") == "Windows 11") {
         return minigameFileWindows
     }
-    if (System.getProperty("os.name") == "Linux") {
-        return minigameFileLinux
-    }
-    else{
-        return minigameFileNull
+    return if (System.getProperty("os.name") == "Linux") {
+        minigameFileLinux
+    } else{
+        minigameFileNull
     }
 }
 
