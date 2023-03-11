@@ -2,20 +2,28 @@ package trashpixl.trashpixl // the package of this project
 
 
 import org.bukkit.plugin.java.JavaPlugin
+import org.bukkit.scheduler.BukkitRunnable
 import trashpixl.trashpixl.command.* // importing all the command
 import trashpixl.trashpixl.handler.* // importing all the handler
 import trashpixl.trashpixl.runnable.environment
 
 import trashpixl.trashpixl.runnable.os
 import trashpixl.trashpixl.runnable.put
+import trashpixl.trashpixl.runnable.timer
 
 
 class Trashpixl : JavaPlugin() {
     // creating the main class
     override fun onEnable() { // plugin startup logic
 
-        server.messenger.registerOutgoingPluginChannel(this, "BungeeCord") // register the chanel
 
+        server.messenger.registerOutgoingPluginChannel(this, "BungeeCord") // register the chanel
+        object : BukkitRunnable() {
+            override fun run() {
+                // Do something on each server tick
+                timer()
+            }
+        }.runTaskTimer(this, 0L, 1L)
         Death(this, this) // init the death handler
         Loot(this) // init the loot handler
         PlateHandler(this, this) // init the plate handler

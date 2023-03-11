@@ -93,6 +93,7 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
                         if((1..10).random() == 1){
                             p.health = 0.0
                         }
+
                     }
                 }
             }
