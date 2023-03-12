@@ -5,11 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.scheduler.BukkitRunnable
 import trashpixl.trashpixl.command.* // importing all the command
 import trashpixl.trashpixl.handler.* // importing all the handler
-import trashpixl.trashpixl.runnable.environment
-
-import trashpixl.trashpixl.runnable.os
-import trashpixl.trashpixl.runnable.put
-import trashpixl.trashpixl.runnable.timer
+import trashpixl.trashpixl.runnable.*
 
 
 class Trashpixl : JavaPlugin() {
@@ -24,6 +20,8 @@ class Trashpixl : JavaPlugin() {
                 timer()
             }
         }.runTaskTimer(this, 0L, 1L)
+        Join(this)
+        Quit(this)
         Death(this, this) // init the death handler
         Loot(this) // init the loot handler
         PlateHandler(this, this) // init the plate handler
@@ -47,7 +45,7 @@ class Trashpixl : JavaPlugin() {
             this.getCommand("OnCommandButton4")?.setExecutor(OnCommandButton4())
         }
         put(os(), 0)
-
+        Variable.playerCount = 0
 
     }
 

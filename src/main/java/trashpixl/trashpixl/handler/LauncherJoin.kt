@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
 import trashpixl.trashpixl.Trashpixl
+import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.environment
 import trashpixl.trashpixl.runnable.minigame
 
@@ -22,11 +23,8 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
         val p = ev.player // create the local player id
         var playerCount = 0
         if (environment() == 1) {
-            for (playerCountLoop in getServer().onlinePlayers) {
-                playerCount++
-            }
 
-            if (playerCount == 1) {
+            if (Variable.playerCount == 1) {
 
                 if (minigame() == 1) {
                     Bukkit.dispatchCommand(p, "onCommandPvp") // dispatchCommand for parkour
