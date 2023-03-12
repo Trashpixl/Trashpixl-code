@@ -19,7 +19,7 @@ class Trashpixl : JavaPlugin() {
                 // Do something on each server tick
                 timer()
             }
-        }.runTaskTimer(this, 0L, 1L)
+        }.runTaskTimer(this, 0L, 10L)
         Join(this)
         Quit(this)
         Death(this, this) // init the death handler

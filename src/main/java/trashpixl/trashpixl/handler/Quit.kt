@@ -6,6 +6,8 @@ import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerQuitEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
+import trashpixl.trashpixl.runnable.os
+import trashpixl.trashpixl.runnable.put
 
 class Quit (plugin: Trashpixl?) : Listener {
     init { // the constructor of this handler
@@ -15,5 +17,9 @@ class Quit (plugin: Trashpixl?) : Listener {
     @EventHandler // says that this is an event handler
     fun onPlayerDead(e: PlayerQuitEvent) {
         Variable.playerCount--
+        if(Variable.playerCount == 0){
+            put(os(), 0)
+        }
+
     }
 }

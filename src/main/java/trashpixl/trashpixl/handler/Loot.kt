@@ -98,7 +98,11 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
                                 p.health = 0.0
                             }
                             else {
-                                Variable.playerArrayNumber++
+                                if(Variable.playerArray!!.size <= Variable.playerArrayNumber){
+                                Variable.playerArrayNumber++}
+                                else{
+                                    Variable.playerArrayNumber = 0
+                                }
                                 for (player in Bukkit.getServer().onlinePlayers) {
                                     if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {
                                         player.sendMessage("its your turn")

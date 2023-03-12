@@ -8,9 +8,8 @@ import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerRespawnEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
-import trashpixl.trashpixl.runnable.Variable
-import trashpixl.trashpixl.runnable.environment
-import trashpixl.trashpixl.runnable.minigame
+import trashpixl.trashpixl.runnable.*
+import java.time.LocalTime
 
 class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the class death and implementing the listener
     private val mainPlugin = main
@@ -57,8 +56,9 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the c
                 }
 
                 Variable.playerArray!!.sort()
-                Variable.time = null
+                Variable.time = LocalTime.now()
                 Variable.playerArrayNumber = 0
+
             }
         }
     }
