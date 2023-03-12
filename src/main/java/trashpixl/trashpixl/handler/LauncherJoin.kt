@@ -1,7 +1,6 @@
 package trashpixl.trashpixl.handler // the package for this project
 
 import org.bukkit.Bukkit
-import org.bukkit.Bukkit.getServer
 import org.bukkit.Location
 import org.bukkit.World
 import org.bukkit.event.EventHandler
@@ -21,7 +20,7 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
     @EventHandler
     fun onJoin(ev: PlayerJoinEvent) { // describes what the event is
         val p = ev.player // create the local player id
-        var playerCount = 0
+
         if (environment() == 1) {
 
             if (Variable.playerCount == 1) {
