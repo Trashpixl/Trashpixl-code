@@ -1,14 +1,14 @@
 package trashpixl.trashpixl.handler // the package for this project
 
 import com.google.common.io.ByteStreams
-
-import org.bukkit.Bukkit // importing bukkit
-import org.bukkit.Bukkit.getServer // importing the get server class
-import org.bukkit.event.EventHandler // importing the event handler
-import org.bukkit.event.Listener // importing the listener
+import org.bukkit.Bukkit
+import org.bukkit.Bukkit.getServer
+import org.bukkit.event.EventHandler
+import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerRespawnEvent
 import org.bukkit.plugin.java.JavaPlugin
-import trashpixl.trashpixl.Trashpixl // importing the whole package
+import trashpixl.trashpixl.Trashpixl
+import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.environment
 import trashpixl.trashpixl.runnable.minigame
 
@@ -45,6 +45,20 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the c
                         p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                     }
                 }
+            }
+        }
+        if(minigame() == 11){
+            if (environment() == 1) {
+                e.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+                Variable.playerArray = mutableListOf()
+
+                for (player in getServer().onlinePlayers) {
+                    Variable.playerArray!!.add(player.name)
+                }
+
+                Variable.playerArray!!.sort()
+                Variable.time = null
+                Variable.playerArrayNumber = 0
             }
         }
     }

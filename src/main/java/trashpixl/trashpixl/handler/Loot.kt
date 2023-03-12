@@ -9,6 +9,7 @@ import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.inventory.ItemStack
 import trashpixl.trashpixl.Trashpixl
+import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.environment
 import trashpixl.trashpixl.runnable.minigame
 
@@ -89,11 +90,27 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
                     }
                 }
                 if (minigame() == 10){
-                    if(environment() == 1){
-                        if((1..10).random() == 1){
-                            p.health = 0.0
-                        }
+                    if(environment() == 1) {
+                        if (p.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {
 
+
+                            if ((1..10).random() == 1) {
+                                p.health = 0.0
+                            }
+                            else {
+                                Variable.playerArrayNumber++
+                                for (player in Bukkit.getServer().onlinePlayers) {
+                                    if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {
+                                        player.sendMessage("its your turn")
+
+                                    }
+                                }
+                            }
+
+                        }
+                        else{
+                            p.sendMessage("its not your turn yet, its ${Variable.playerArray?.get(Variable.playerArrayNumber)} turn")
+                        }
                     }
                 }
             }
