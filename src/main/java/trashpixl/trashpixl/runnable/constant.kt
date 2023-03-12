@@ -14,6 +14,7 @@ val serverFile = File(serverFileName) //create the file reference
 const val minigameFileNameNull = "" //create a var with the filename in it
 val minigameFileNull = File(minigameFileNameNull) //create the file reference
 
+
 fun environment(): Int {
     var serverType = 0
     try { // trying the code

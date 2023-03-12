@@ -20,6 +20,8 @@ class Trashpixl : JavaPlugin() {
                 timer()
             }
         }.runTaskTimer(this, 0L, 10L)
+        Break(this)
+        Place(this)
         Join(this)
         Quit(this)
         Death(this, this) // init the death handler

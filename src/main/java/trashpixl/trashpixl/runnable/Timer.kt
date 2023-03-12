@@ -1,9 +1,9 @@
 package trashpixl.trashpixl.runnable
 
-import org.bukkit.Bukkit
 import org.bukkit.Bukkit.getLogger
 import org.bukkit.Bukkit.getServer
 import java.time.LocalTime
+
 fun timer(){
     if(Variable.time != null) {
         if (LocalTime.now() >= Variable.time?.plusSeconds(10) && environment() == 1 && minigame() == 10) {

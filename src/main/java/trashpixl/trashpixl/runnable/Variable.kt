@@ -4,6 +4,8 @@ import java.time.LocalTime
 
 class Variable {
     companion object {
+        var preventPlacedBlock = false
+        var preventBreakedBlock = false
         var playerCount = 0
         var activeMinigame = false
         var time: LocalTime? = null
