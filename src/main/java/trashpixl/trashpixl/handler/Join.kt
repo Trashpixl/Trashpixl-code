@@ -13,8 +13,8 @@ class Join (plugin: Trashpixl?) : Listener {
         }
 
         @EventHandler // says that this is an event handler
-        fun onPlayerDead(e: PlayerJoinEvent) {
-            Variable.playerCount++
+        fun onPlayerDead(e: PlayerJoinEvent) {//execute when a player join the server
+            Variable.playerCount++//add one to the player count
 
         }
     }

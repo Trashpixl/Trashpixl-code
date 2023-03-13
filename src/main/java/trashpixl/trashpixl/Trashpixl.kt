@@ -19,11 +19,11 @@ class Trashpixl : JavaPlugin() {
                 // Do something on each server tick
                 timer()
             }
-        }.runTaskTimer(this, 0L, 10L)
-        Break(this)
-        Place(this)
-        Join(this)
-        Quit(this)
+        }.runTaskTimer(this, 0L, 10L)//run the timer imediatly and at every 10 tick
+        Break(this)//start the break handler
+        Place(this)//start the place handler
+        Join(this)//start the join handler
+        Quit(this)//start the quit handler
         Death(this, this) // init the death handler
         Loot(this) // init the loot handler
         PlateHandler(this, this) // init the plate handler

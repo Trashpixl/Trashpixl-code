@@ -15,8 +15,8 @@ class Place (plugin: Trashpixl?) : Listener { // the implements for the listener
 
     @EventHandler
     fun breakABlock(ev: BlockPlaceEvent) { // describes what the event is
-        if(Variable.preventPlacedBlock){
-            ev.isCancelled = true
+        if(Variable.preventPlacedBlock){//check if we intend player to place block
+            ev.isCancelled = true//cancel the event if true
         }
 
     }

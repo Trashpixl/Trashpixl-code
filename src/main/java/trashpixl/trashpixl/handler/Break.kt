@@ -14,8 +14,8 @@ class Break(plugin: Trashpixl?) : Listener { // the implements for the listener
 
     @EventHandler
     fun breakABlock(ev: BlockBreakEvent) { // describes what the event is
-        if(Variable.preventBreakedBlock){
-            ev.isCancelled = true
+        if(Variable.preventBreakedBlock){//check if we intend to prevent player from breaking block
+            ev.isCancelled = true//cancelled the event if true
         }
     }
 }
