@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerJoinEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
 
-class Join (plugin: Trashpixl?) : Listener {
+class Join (plugin: Trashpixl?) : Listener {//create the class and implement the listener
         init { // the constructor of this handler
             Bukkit.getPluginManager().registerEvents(this, plugin!!) // linking it to the main code
         }

@@ -17,9 +17,9 @@ class Trashpixl : JavaPlugin() {
         object : BukkitRunnable() {
             override fun run() {
                 // Do something on each server tick
-                timer()
+                timer()//run timer
             }
-        }.runTaskTimer(this, 0L, 10L)//run the timer imediatly and at every 10 tick
+        }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
         Break(this)//start the break handler
         Place(this)//start the place handler
         Join(this)//start the join handler
@@ -46,8 +46,8 @@ class Trashpixl : JavaPlugin() {
             this.getCommand("onCommandLabi")?.setExecutor(OnCommandLabi()) // init the command for the tag
             this.getCommand("OnCommandButton4")?.setExecutor(OnCommandButton4())
         }
-        put(os(), 0)
-        Variable.playerCount = 0
+        put(os(), 0)//put the minigame file to zero
+        Variable.playerCount = 0//reinitialize player count
 
     }
 
