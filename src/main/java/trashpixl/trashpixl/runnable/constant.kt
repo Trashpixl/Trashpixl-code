@@ -15,8 +15,8 @@ const val minigameFileNameNull = "" //create a var with the filename in it
 val minigameFileNull = File(minigameFileNameNull) //create the file reference
 
 
-fun environment(): Int {//check wich type of server we are in 
-    var serverType = 0//store temporaly the server type
+fun environment(): Int {//check which type of server we are in
+    var serverType = 0//store temporally the server type
     try { // trying the code
         if (serverFile.exists() && serverFile.isFile) { // checking if actual file is a file
             try {
