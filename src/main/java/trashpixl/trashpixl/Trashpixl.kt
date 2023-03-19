@@ -48,6 +48,7 @@ class Trashpixl : JavaPlugin() {
             this.getCommand("onCommandLabi")?.setExecutor(OnCommandLabi()) // init the command for the tag
             this.getCommand("onCommandButton4")?.setExecutor(OnCommandButton4())
             this.getCommand("onCommandHideAndSeek")?.setExecutor(OnCommandHideAndSeek())
+            this.getCommand("onCommandTag")?.setExecutor(OnCommandTag())
         }
         put(os(), 0)//put the minigame file to zero
         Variable.playerCount = 0//reinitialize player count

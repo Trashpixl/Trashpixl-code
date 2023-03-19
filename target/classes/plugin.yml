@@ -33,3 +33,9 @@ commands:
   onCommandButton4:
     description: command for button 4
     usage: /<command>
+  onCommandHideAndSeek:
+    description: command for hide and seek
+    usage: /<command>
+  onCommandTag:
+    description: command for tag
+    usage: /<command>

@@ -18,7 +18,7 @@ class OnCommandHideAndSeek : CommandExecutor { //creating the class death and im
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val x = 0.0//the x coord of the game
         val y = 0.0 //the y coord of the game
-        val z = 0.0 //the z coord of the game
+        val z = 0.0 //the z coord of the game TODO change the coord
         for (p in Bukkit.getServer().onlinePlayers) { //get all the online player
 
             p.health = 20.0 //set the health to 20
@@ -26,12 +26,13 @@ class OnCommandHideAndSeek : CommandExecutor { //creating the class death and im
             val to = Location(w, x, y, z) //create game location
             p.teleport(to) //tp the player
             p.inventory.clear() //clear their inventory
-            Variable.finder = getRandomPlayer()
-            Variable.finder?.sendMessage("you are the finder")
-            val blackoutEffect = PotionEffect(PotionEffectType.BLINDNESS, 8 * 20, 1)
-            Variable.finder?.addPotionEffect(blackoutEffect)
-            Variable.isBlindFinder = true
+
         }
+        Variable.finder = getRandomPlayer()
+        Variable.finder?.sendMessage("you are the finder")
+        val blackoutEffect = PotionEffect(PotionEffectType.BLINDNESS, 8 * 20, 1)
+        Variable.finder?.addPotionEffect(blackoutEffect)
+        Variable.isBlindFinder = true
         return false //return false so it doesn't create an error
     }
     private fun getRandomPlayer(): Player? {

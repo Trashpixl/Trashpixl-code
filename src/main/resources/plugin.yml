@@ -36,3 +36,6 @@ commands:
   onCommandHideAndSeek:
     description: command for hide and seek
     usage: /<command>
+  onCommandTag:
+    description: command for tag
+    usage: /<command>
