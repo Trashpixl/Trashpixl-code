@@ -1,5 +1,6 @@
 package trashpixl.trashpixl.runnable
 
+import org.bukkit.entity.Player
 import java.time.LocalTime
 
 class Variable {//create the variable class
@@ -13,5 +14,7 @@ class Variable {//create the variable class
         var time: LocalTime? = null//store the time for the timer
         var playerArrayNumber: Int = 0//store which player we are at for the array
         var playerArray: MutableList<String>? = null//store the name of all player
+        var finder: Player? = null
+        var isBlindFinder = true
     }
 }

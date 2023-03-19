@@ -18,6 +18,8 @@ class Trashpixl : JavaPlugin() {
             override fun run() {
                 // Do something on each server tick
                 timer()//run timer
+                lineOfSight()
+                isBlinded()
             }
         }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
         Break(this)//start the break handler
