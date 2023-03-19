@@ -141,7 +141,7 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                     }
                     put(os(), 10)//put 10 in the minigame file
                 }
-                if (ev.clickedBlock!!.type == Material.RED_TERRACOTTA) { // check if the block is black concrete TODO change the object
+                if (ev.clickedBlock!!.type == Material.RED_TERRACOTTA) { // check if the block is black concrete
                     for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
                         val connect = ByteStreams.newDataOutput()//create the new data stream
                         connect.writeUTF("Connect")//send the connects packet
@@ -150,7 +150,7 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                     }
                     put(os(), 11)//put 11 in the minigame file
                 }
-                if (ev.clickedBlock!!.type == Material.CYAN_TERRACOTTA) { // check if the block is black concrete TODO change the object
+                if (ev.clickedBlock!!.type == Material.CYAN_TERRACOTTA) { // check if the block is black concrete
                     for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
                         val connect = ByteStreams.newDataOutput()//create the new data stream
                         connect.writeUTF("Connect")//send the connects packet
