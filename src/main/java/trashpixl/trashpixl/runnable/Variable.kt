@@ -16,5 +16,6 @@ class Variable {//create the variable class
         var playerArray: MutableList<String>? = null//store the name of all player
         var finder: Player? = null
         var isBlindFinder = true
+        var tag: Player? = null
     }
 }
