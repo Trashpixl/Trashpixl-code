@@ -18,6 +18,8 @@ class Trashpixl : JavaPlugin() {
             override fun run() {
                 // Do something on each server tick
                 timer()//run timer
+                lineOfSight()
+                isBlinded()
             }
         }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
         Break(this)//start the break handler
@@ -44,7 +46,8 @@ class Trashpixl : JavaPlugin() {
             this.getCommand("onCommandParkour")?.setExecutor(OnCommandParkour()) // init the command for the parkour
             this.getCommand("onCommandBridgeRace")?.setExecutor(OnCommandBridgeRace()) // init the command for the tag
             this.getCommand("onCommandLabi")?.setExecutor(OnCommandLabi()) // init the command for the tag
-            this.getCommand("OnCommandButton4")?.setExecutor(OnCommandButton4())
+            this.getCommand("onCommandButton4")?.setExecutor(OnCommandButton4())
+            this.getCommand("onCommandHideAndSeek")?.setExecutor(OnCommandHideAndSeek())
         }
         put(os(), 0)//put the minigame file to zero
         Variable.playerCount = 0//reinitialize player count
