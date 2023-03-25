@@ -61,6 +61,9 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
                 if(minigame() == 12){
                     Bukkit.dispatchCommand(p, "onCommandTag")
                 }
+                if(minigame() == 13){
+                    Bukkit.dispatchCommand(p, "onCommandSearchAndFind")
+                }
 
 
 
