@@ -2,6 +2,7 @@ package trashpixl.trashpixl.command
 
 import org.bukkit.Bukkit
 import org.bukkit.Location
+import org.bukkit.Material
 import org.bukkit.World
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
@@ -23,7 +24,7 @@ class OnCommandSearchAndFind : CommandExecutor { //creating the class death and 
         }
         return false
     }
-    fun placeBlock(){
+    private fun placeBlock(){
         var x = 0.0
         var y = 0.0
         var z = 0.0
@@ -79,8 +80,11 @@ class OnCommandSearchAndFind : CommandExecutor { //creating the class death and 
                  y = 0.0
                  z = 0.0
             }
-        }
 
+        }
+        val location = Location(world, x, y, z)
+        val block = world?.getBlockAt(location)
+        block!!.type = Material.DIAMOND_BLOCK
 
     }
 }
