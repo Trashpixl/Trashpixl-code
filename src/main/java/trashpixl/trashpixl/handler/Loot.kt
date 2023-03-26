@@ -19,10 +19,10 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
     }
 
     @EventHandler // say that it is an event handler
-    fun buttonHandler(e: PlayerInteractEvent) { // describes what the event is
-        val p = e.player // creating the player variable
-        if (e.action == Action.RIGHT_CLICK_BLOCK) { // check if the action is physical
-            if (e.clickedBlock!!.type == Material.STONE_BUTTON) { // compare what the player sept on to a stone pressure plate and is required a
+    fun buttonHandler(ev: PlayerInteractEvent) { // describes what the event is
+        val p = ev.player // creating the player variable
+        if (ev.action == Action.RIGHT_CLICK_BLOCK) { // check if the action is physical
+            if (ev.clickedBlock!!.type == Material.STONE_BUTTON) { // compare what the player sept on to a stone pressure plate and is required a
                 // non-nullable
 
 

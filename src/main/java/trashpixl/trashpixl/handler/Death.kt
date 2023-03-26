@@ -19,16 +19,16 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the c
     }
 
     @EventHandler // says that this is an event handler
-    fun onPlayerDead(e: PlayerRespawnEvent) {
+    fun onPlayerDead(ev: PlayerRespawnEvent) {
         // creating the on player death event function and importing the death class
         val connect = ByteStreams.newDataOutput()
         connect.writeUTF("Connect")
         connect.writeUTF("lobby")
         var playerCount: Int
         if (minigame() in 1..7 || minigame()  in 9..12) { // check if the data that we found correspond to the one require to start the handler
-            val name: String = e.player.name // name variable to store the player name
+            val name: String = ev.player.name // name variable to store the player name
             if (environment() == 1) {
-                e.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                 playerCount = 0
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
                     playerCount++
@@ -36,7 +36,7 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the c
                 }
                 if (playerCount == 1) {
                     for (p in getServer().onlinePlayers) {
-                        if (p.name != e.player.name) {
+                        if (p.name != ev.player.name) {
                             p.sendMessage("congratulation you won the match")
                         } else {
                             p.sendMessage("how did you kill yourself")
@@ -48,7 +48,7 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the c
         }
         if(minigame() == 11){
             if (environment() == 1) {
-                e.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
                 Variable.playerArray = mutableListOf()
 
                 for (player in getServer().onlinePlayers) {

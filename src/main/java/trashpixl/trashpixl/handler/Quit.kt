@@ -13,7 +13,7 @@ class Quit (plugin: Trashpixl?) : Listener {
     }
 
     @EventHandler // says that this is an event handler
-    fun onPlayerQuit(e: PlayerQuitEvent) {//execute when a player quit the server
+    fun onPlayerQuit(ev: PlayerQuitEvent) {//execute when a player quit the server
 
         Variable.playerCount--//remove one player from the player count
         //if(Variable.playerCount == 0){
