@@ -22,6 +22,7 @@ class Trashpixl : JavaPlugin() {
                 isBlinded()
             }
         }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
+        Remove(this)
         Break(this)//start the break handler
         Place(this)//start the place handler
         Join(this)//start the join handler
