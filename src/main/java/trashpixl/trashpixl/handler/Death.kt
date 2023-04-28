@@ -21,43 +21,43 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the c
     @EventHandler // says that this is an event handler
     fun onPlayerDead(ev: PlayerRespawnEvent) {
         // creating the on player death event function and importing the death class
-        val connect = ByteStreams.newDataOutput()
-        connect.writeUTF("Connect")
-        connect.writeUTF("lobby")
-        var playerCount: Int
+        val connect = ByteStreams.newDataOutput()//create the byte stream
+        connect.writeUTF("Connect")//action connect
+        connect.writeUTF("lobby")//connect to the lobby
+        var playerCount: Int//create the player count var
         if (minigame() in 1..7 || minigame()  in 9..12) { // check if the data that we found correspond to the one require to start the handler
             val name: String = ev.player.name // name variable to store the player name
-            if (environment() == 1) {
-                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
-                playerCount = 0
+            if (environment() == 1) {//check if we are in the server 1
+                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                playerCount = 0//reset the player count
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
-                    playerCount++
+                    playerCount++//add one to the player count
                     p.sendMessage("$name  died an is now out of the game") // send the message of who won the match
                 }
-                if (playerCount == 1) {
-                    for (p in getServer().onlinePlayers) {
-                        if (p.name != ev.player.name) {
-                            p.sendMessage("congratulation you won the match")
+                if (playerCount == 1) {//check if the player count equals zero
+                    for (p in getServer().onlinePlayers) {//get all player in the server
+                        if (p.name != ev.player.name) {//check if the player name equal the actual event creator name
+                            p.sendMessage("congratulation you won the match")//send the win message
                         } else {
-                            p.sendMessage("how did you kill yourself")
+                            p.sendMessage("how did you kill yourself")//send the death message
                         }
-                        p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+                        p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player to the server
                     }
                 }
             }
         }
-        if(minigame() == 11){
-            if (environment() == 1) {
-                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+        if(minigame() == 11){//check if the minigame 11 is going
+            if (environment() == 1) {//check if we are in server one
+                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
                 Variable.playerArray = mutableListOf()
 
-                for (player in getServer().onlinePlayers) {
-                    Variable.playerArray!!.add(player.name)
+                for (player in getServer().onlinePlayers) {//get all the player in the server
+                    Variable.playerArray!!.add(player.name)//add all player to the array
                 }
 
-                Variable.playerArray!!.sort()
-                Variable.time = LocalTime.now()
-                Variable.playerArrayNumber = 0
+                Variable.playerArray!!.sort()//sort the array
+                Variable.time = LocalTime.now()//reset the time
+                Variable.playerArrayNumber = 0//reset the array cursor
 
             }
         }
