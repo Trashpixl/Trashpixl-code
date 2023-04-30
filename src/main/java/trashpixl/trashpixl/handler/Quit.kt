@@ -8,11 +8,11 @@ import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
 
 class Quit (plugin: Trashpixl?) : Listener {
-    init { // the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!) // linking it to the main code
+    init {//the constructor of this handler
+        Bukkit.getPluginManager().registerEvents(this, plugin!!)//linking it to the main code
     }
 
-    @EventHandler // says that this is an event handler
+    @EventHandler//says that this is an event handler
     fun onPlayerQuit(ev: PlayerQuitEvent) {//execute when a player quit the server
 
         Variable.playerCount--//remove one player from the player count
