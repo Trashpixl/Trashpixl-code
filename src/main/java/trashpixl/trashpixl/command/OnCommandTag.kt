@@ -23,11 +23,11 @@ class OnCommandTag : CommandExecutor { //creating the class death and implementi
             p.teleport(to) //tp him
             p.inventory.clear() //clear his inventory
         }
-        Variable.tag = getRandomPlayer()
-        Variable.tag?.sendMessage("your are the tag")
+        Variable.tag = getRandomPlayer()//get a random player
+        Variable.tag?.sendMessage("your are the tag")//send to message to indicate that the player is the tag
         return false
     }
-    private fun getRandomPlayer(): Player? {
+    private fun getRandomPlayer(): Player? {//a function that return a random player in the server
         val players = mutableListOf<Player>()
         for (player in Bukkit.getOnlinePlayers()) {
             players.add(player)

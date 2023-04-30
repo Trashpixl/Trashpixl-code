@@ -19,14 +19,14 @@ class Remove (plugin: Trashpixl?, main: JavaPlugin) : Listener { // the implemen
     fun breakABlock(ev: BlockBreakEvent) { // describes what the event is
         if(ev.block.type == Material.DIAMOND_BLOCK){//check if we intend to prevent player from breaking block
             val name: String = ev.player.name // name variable to store the player name
-            ev.player.sendMessage("you won")
-            val connect = ByteStreams.newDataOutput()
-            connect.writeUTF("Connect")
-            connect.writeUTF("lobby")
-            ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
-            for (p in Bukkit.getServer().onlinePlayers) {
-                p.sendMessage("you lose and $name won")
-                p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+            ev.player.sendMessage("you won")//send the win message
+            val connect = ByteStreams.newDataOutput()//create the byte stream
+            connect.writeUTF("Connect")//action connect
+            connect.writeUTF("lobby")//to the lobby
+            ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//send the player to the location
+            for (p in Bukkit.getServer().onlinePlayers) {//get all player in the server
+                p.sendMessage("you lose and $name won")//send the lose message to all of them
+                p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect each player
 
             }
             //TODO add the rest of the action
