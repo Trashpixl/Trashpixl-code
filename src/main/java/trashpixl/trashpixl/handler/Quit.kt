@@ -1,5 +1,6 @@
 package trashpixl.trashpixl.handler
 
+import com.google.errorprone.annotations.Var
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -16,8 +17,9 @@ class Quit (plugin: Trashpixl?) : Listener {
     fun onPlayerQuit(ev: PlayerQuitEvent) {//execute when a player quit the server
 
         Variable.playerCount--//remove one player from the player count
-        //if(Variable.playerCount == 0){
-           // put(os(), 0) }
+        if(Variable.playerCount == 0){
+          Variable.activeMinigame = false
+           }
 
     }
 }

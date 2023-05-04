@@ -1,11 +1,14 @@
 package trashpixl.trashpixl.handler
 
 import org.bukkit.Bukkit
+import org.bukkit.Location
+import org.bukkit.World
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
+import trashpixl.trashpixl.runnable.environment
 
 class Join (plugin: Trashpixl?) : Listener {//create the class and implement the listener
         init { // the constructor of this handler
@@ -14,7 +17,19 @@ class Join (plugin: Trashpixl?) : Listener {//create the class and implement the
 
         @EventHandler // says that this is an event handler
         fun onPlayerDead(ev: PlayerJoinEvent) {//execute when a player join the server
+            val p = ev.player
             Variable.playerCount++//add one to the player count
-
+            if (environment() == 2) {
+                val x = 25.0
+                val y = 81.0
+                val z = 10.0
+                val w: World = p.world // get the player world
+                val to = Location(w, x, y, z) // put together all the info
+                p.teleport(to) // tp him
+            }
+            if (environment() == 0) {
+                val to: Location = p.bedSpawnLocation!! // get his bed location
+                p.teleport(to) // tp him to his bed
+            }
         }
     }
