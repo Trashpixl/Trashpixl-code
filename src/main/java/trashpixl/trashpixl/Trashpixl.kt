@@ -10,7 +10,6 @@ import trashpixl.trashpixl.runnable.*
 
 class Trashpixl : JavaPlugin() {
     // creating the main class
-    bob
     override fun onEnable() { // plugin startup logic
 
 
