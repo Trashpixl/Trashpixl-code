@@ -9,7 +9,6 @@ class Variable {//create the variable class
         @Suppress("SpellCheckingInspection")
         var preventBreakedBlock = false//var that define if we can break block
         var playerCount = 0//count the player on the server
-        @Suppress("unused")
         var activeMinigame = false//store if there is an active minigame
         var time: LocalTime? = null//store the time for the timer
         var playerArrayNumber: Int = 0//store which player we are at for the array
@@ -17,5 +16,7 @@ class Variable {//create the variable class
         var finder: Player? = null//store the finder for hide ans seek
         var isBlindFinder = true//var to store the state of a player view
         var tag: Player? = null//store the tag for tag player
+        var blueTeam: MutableList<String>? = null//store the name of all player in blue team
+        var redTeam: MutableList<String>? = null//store the name of all player in red team
     }
 }
