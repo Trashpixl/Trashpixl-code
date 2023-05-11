@@ -1,6 +1,6 @@
 package trashpixl.trashpixl // the package of this project
 
-
+//test
 import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.scheduler.BukkitRunnable
 import trashpixl.trashpixl.command.* // importing all the command
