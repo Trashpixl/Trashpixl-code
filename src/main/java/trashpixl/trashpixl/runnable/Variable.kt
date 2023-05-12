@@ -1,7 +1,7 @@
-package trashpixl.trashpixl.runnable
+package trashpixl.trashpixl.runnable//package of the file
 
-import org.bukkit.entity.Player
-import java.time.LocalTime
+import org.bukkit.entity.Player//import the player
+import java.time.LocalTime//import the time
 
 class Variable {//create the variable class
     companion object {//create the companion object

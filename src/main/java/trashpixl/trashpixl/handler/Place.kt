@@ -1,11 +1,11 @@
-package trashpixl.trashpixl.handler
+package trashpixl.trashpixl.handler//the package for this project
 
-import org.bukkit.Bukkit
-import org.bukkit.event.EventHandler
-import org.bukkit.event.Listener
-import org.bukkit.event.block.BlockPlaceEvent
-import trashpixl.trashpixl.Trashpixl
-import trashpixl.trashpixl.runnable.Variable
+import org.bukkit.Bukkit//importing bukkit
+import org.bukkit.event.EventHandler//importing the event handler
+import org.bukkit.event.Listener//importing all the event listener
+import org.bukkit.event.block.BlockPlaceEvent//importing the block place event
+import trashpixl.trashpixl.Trashpixl//importing the main class
+import trashpixl.trashpixl.runnable.Variable//importing the variable class
 
 class Place (plugin: Trashpixl?) : Listener { // the implements for the listener
     init { // the constructor of this handler

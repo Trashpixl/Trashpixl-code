@@ -7,8 +7,8 @@ import org.bukkit.event.Listener//importing all the event listener
 import org.bukkit.event.entity.EntityDamageByEntityEvent//importing both damage event
 import org.bukkit.event.entity.EntityDamageEvent
 import trashpixl.trashpixl.Trashpixl//importing the main class
-import trashpixl.trashpixl.runnable.environment
-import trashpixl.trashpixl.runnable.minigame
+import trashpixl.trashpixl.runnable.environment//import the environment
+import trashpixl.trashpixl.runnable.minigame//import the minigame
 
 class Punch(plugin: Trashpixl?) : Listener {//the implements for the listener
     init {//the constructor of this handler

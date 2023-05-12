@@ -54,13 +54,16 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
                     Bukkit.dispatchCommand(p, "onCommandButton4") // dispatchCommand for tnt race
                 }
                 if (minigame() == 11 && Variable.playerCount == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandHideAndSeek")
+                    Bukkit.dispatchCommand(p, "onCommandHideAndSeek")// dispatch command for hide and seek
                 }
                 if (minigame() == 12 && Variable.playerCount == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandTag")
+                    Bukkit.dispatchCommand(p, "onCommandTag")// dispatch command for tag
                 }
                 if (minigame() == 13 && Variable.playerCount == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandSearchAndFind")
+                    Bukkit.dispatchCommand(p, "onCommandSearchAndFind")//dispatch command for search and find
+                }
+                if (minigame() == 14 && Variable.playerCount == 1) {
+                    Bukkit.dispatchCommand(p, "onCommandDodgeBall")//dispatch command for dodge ball
                 }
 
             }

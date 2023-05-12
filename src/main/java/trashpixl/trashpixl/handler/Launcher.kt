@@ -159,6 +159,24 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                     }
                     put(os(), 12)//put 11 in the minigame file
                 }
+                if (ev.clickedBlock!!.type == Material.PURPLE_TERRACOTTA) { // todo check for the block
+                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                        val connect = ByteStreams.newDataOutput()//create the new data stream
+                        connect.writeUTF("Connect")//send the connects packet
+                        connect.writeUTF("mini")//send the mini packet
+                        p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                    }
+                    put(os(), 13)//put 11 in the minigame file
+                }
+                if (ev.clickedBlock!!.type == Material.BROWN_TERRACOTTA){
+                    for(p2 in Bukkit.getServer().onlinePlayers){
+                        val connect = ByteStreams.newDataOutput()
+                        connect.writeUTF("Connect")
+                        connect.writeUTF("mini")
+                        p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+                    }
+                    put(os(), 14)
+                }
 
             }
         }

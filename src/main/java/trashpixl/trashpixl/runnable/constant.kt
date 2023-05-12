@@ -1,8 +1,8 @@
-package trashpixl.trashpixl.runnable
+package trashpixl.trashpixl.runnable//package of the file
 
-import java.io.File
-import java.io.IOException
-import java.util.*
+import java.io.File//import the file
+import java.io.IOException//import the io exception
+import java.util.*//import the util
 
 
 const val minigameFileNameWindows = "C:\\Users\\thier\\Desktop\\testServer\\Minigame.txt" //create a var with the filename in it

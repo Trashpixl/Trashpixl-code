@@ -1,14 +1,14 @@
-package trashpixl.trashpixl // the package of this project
+package trashpixl.trashpixl//package of the file
 
-//test
-import org.bukkit.plugin.java.JavaPlugin
-import org.bukkit.scheduler.BukkitRunnable
+
+import org.bukkit.plugin.java.JavaPlugin//import the java plugin
+import org.bukkit.scheduler.BukkitRunnable//import the bukkit runnable
 import trashpixl.trashpixl.command.* // importing all the command
 import trashpixl.trashpixl.handler.* // importing all the handler
-import trashpixl.trashpixl.runnable.*
+import trashpixl.trashpixl.runnable.*//importing all the runnable
 
 
-class Trashpixl : JavaPlugin() {
+class Trashpixl : JavaPlugin() {// the main class of the plugin
     // creating the main class
     override fun onEnable() { // plugin startup logic
 
@@ -18,8 +18,8 @@ class Trashpixl : JavaPlugin() {
             override fun run() {
                 // Do something on each server tick
                 timer()//run timer
-                lineOfSight()
-                isBlinded()
+                lineOfSight()//run line of sight
+                isBlinded()//run is blinded
             }
         }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
         Remove(this, this)
@@ -34,7 +34,8 @@ class Trashpixl : JavaPlugin() {
         Launcher(this, this) // init the launcher handler
         FirstToFinish(this, this) // init the first to finish handler
         Punch(this) // init the punch handler
-        LauncherJoin(this)
+        LauncherJoin(this)// init the launcher join handler
+        GetShot(this)// init the get shot handler
         //if (environment() == 0) { // check if server equals 0 }
         if (environment() == 1) { // check if server equal 1
 
@@ -47,11 +48,11 @@ class Trashpixl : JavaPlugin() {
             this.getCommand("onCommandParkour")?.setExecutor(OnCommandParkour()) // init the command for the parkour
             this.getCommand("onCommandBridgeRace")?.setExecutor(OnCommandBridgeRace()) // init the command for the tag
             this.getCommand("onCommandLabi")?.setExecutor(OnCommandLabi()) // init the command for the tag
-            this.getCommand("onCommandButton4")?.setExecutor(OnCommandButton4())
-            this.getCommand("onCommandHideAndSeek")?.setExecutor(OnCommandHideAndSeek())
-            this.getCommand("onCommandTag")?.setExecutor(OnCommandTag())
-            this.getCommand("onCommandSearchAndFind")?.setExecutor(OnCommandSearchAndFind())
-            this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())
+            this.getCommand("onCommandButton4")?.setExecutor(OnCommandButton4())// init the command for the button 4
+            this.getCommand("onCommandHideAndSeek")?.setExecutor(OnCommandHideAndSeek())// init the command for the hide and seek
+            this.getCommand("onCommandTag")?.setExecutor(OnCommandTag())// init the command for the tag
+            this.getCommand("onCommandSearchAndFind")?.setExecutor(OnCommandSearchAndFind())// init the command for the search and find
+            this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())// init the command for the dodge ball
         }
         put(os(), 0)//put the minigame file to zero
         Variable.playerCount = 0//reinitialize player count

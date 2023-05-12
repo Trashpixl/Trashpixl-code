@@ -1,4 +1,4 @@
-package trashpixl.trashpixl.handler
+package trashpixl.trashpixl.handler//the package for this project
 
 import org.bukkit.Bukkit
 import org.bukkit.Location
