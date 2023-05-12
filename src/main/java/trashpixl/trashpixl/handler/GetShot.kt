@@ -1,15 +1,10 @@
 package trashpixl.trashpixl.handler
 
 import org.bukkit.Bukkit
-import org.bukkit.Location
-import org.bukkit.World
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.ProjectileHitEvent
-import org.bukkit.event.player.PlayerJoinEvent
 import trashpixl.trashpixl.Trashpixl
-import trashpixl.trashpixl.runnable.Variable
-import trashpixl.trashpixl.runnable.environment
 
 class GetShot (plugin: Trashpixl?) : Listener {//create the class and implement the listener
 init { // the constructor of this handler
