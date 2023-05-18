@@ -14,8 +14,8 @@ class Trashpixl : JavaPlugin() {// the main class of the plugin
 
 
         server.messenger.registerOutgoingPluginChannel(this, "BungeeCord") // register the chanel
-        object : BukkitRunnable() {
-            override fun run() {
+        object : BukkitRunnable() {//create a new runnable
+            override fun run() {//run the runnable
                 // Do something on each server tick
                 timer()//run timer
                 lineOfSight()//run line of sight
