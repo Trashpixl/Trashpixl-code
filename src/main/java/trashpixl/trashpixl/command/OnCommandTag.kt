@@ -28,13 +28,13 @@ class OnCommandTag : CommandExecutor { //creating the class death and implementi
         return false
     }
     private fun getRandomPlayer(): Player? {//a function that return a random player in the server
-        val players = mutableListOf<Player>()
-        for (player in Bukkit.getOnlinePlayers()) {
-            players.add(player)
+        val players = mutableListOf<Player>()//create a list of player
+        for (player in Bukkit.getOnlinePlayers()) {//get all the player in the server
+            players.add(player)//add the player to the list
         }
-        return if (players.isNotEmpty()) {
-            players[Random.nextInt(players.size)]
-        } else {
+        return if (players.isNotEmpty()) {//if the list is not empty
+            players[Random.nextInt(players.size)]//return a random player
+        } else {//if the list is empty
             null
         }
     }

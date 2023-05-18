@@ -10,10 +10,9 @@ import org.bukkit.command.CommandSender
 class OnCommandTnt : CommandExecutor { //creating the class death and implementing the listener
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-        //coord for the game
-        val x = 247.0
-        val y = -58.0
-        val z = 250.0
+        val x = 247.0//the x coord of the game
+        val y = -58.0//the y coord of the game
+        val z = 250.0//the z coord of the game
         for (p in getServer().onlinePlayers) { //get all the player in the server
             p.health = 20.0 //set the health to 20
             val w: World = p.world //get the player world

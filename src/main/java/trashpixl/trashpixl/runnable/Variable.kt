@@ -8,7 +8,6 @@ class Variable {//create the variable class
         var preventPlacedBlock = false//var to define if we can place block
         @Suppress("SpellCheckingInspection")
         var preventBreakedBlock = false//var that define if we can break block
-        var playerCount = 0//count the player on the server
         var activeMinigame = false//store if there is an active minigame
         var time: LocalTime? = null//store the time for the timer
         var playerArrayNumber: Int = 0//store which player we are at for the array

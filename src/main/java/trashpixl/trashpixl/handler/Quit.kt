@@ -15,8 +15,8 @@ class Quit (plugin: Trashpixl?) : Listener {//the implements for the listener
     @EventHandler//says that this is an event handler
     fun onPlayerQuit(ev: PlayerQuitEvent) {//execute when a player quit the server
 
-        Variable.playerCount--//remove one player from the player count
-        if(Variable.playerCount == 0){//check if the player count is 0
+
+        if(Bukkit.getOnlinePlayers().isEmpty()){//check if the player count is 0
           Variable.activeMinigame = false//set the active minigame to false
            }
 

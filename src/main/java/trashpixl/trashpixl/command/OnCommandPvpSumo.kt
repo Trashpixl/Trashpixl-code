@@ -16,7 +16,7 @@ class OnCommandPvpSumo : CommandExecutor { //creating the class death and implem
         for (p in getServer().onlinePlayers) {
             p.health = 20.0
             val w: World = p.world
-            val to = Location(w, x, y, z) //move before for
+            val to = Location(w, x, y, z)
             p.teleport(to)
             p.inventory.clear()
         }

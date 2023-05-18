@@ -13,12 +13,12 @@ class OnCommandLabi : CommandExecutor { //creating the class death and implement
         val x = 284.5 //the x coord of the game
         val y = -60.0 //the y coord of the game
         val z = 284.5 //the z coord of the game
-        for (p in getServer().onlinePlayers) {
-            p.health = 20.0
-            val w: World = p.world
+        for (p in getServer().onlinePlayers) {//get all the player in the server
+            p.health = 20.0//set the health to 20
+            val w: World = p.world//get the player world
             val to = Location(w, x, y, z) //move before for
-            p.teleport(to)
-            p.inventory.clear()
+            p.teleport(to)//tp him
+            p.inventory.clear()//clear his inventory
         }
         return false
     }

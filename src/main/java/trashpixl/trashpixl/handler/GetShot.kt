@@ -5,6 +5,7 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.ProjectileHitEvent
 import trashpixl.trashpixl.Trashpixl
+import trashpixl.trashpixl.runnable.environment
 
 class GetShot (plugin: Trashpixl?) : Listener {//create the class and implement the listener
 init { // the constructor of this handler
@@ -14,7 +15,7 @@ init { // the constructor of this handler
     @EventHandler // says that this is an event handler
     //execute when a player get shot by a snowball
     fun playerGetShot(ev: ProjectileHitEvent){
-        if(ev.entity.shooter is org.bukkit.entity.Player && ev.entityType == org.bukkit.entity.EntityType.SNOWBALL){
+        if(ev.entity.shooter is org.bukkit.entity.Player && ev.entityType == org.bukkit.entity.EntityType.SNOWBALL && environment() == 2){//todo check teh real environment number
            if(ev.hitEntity is org.bukkit.entity.Player){
                val p = ev.hitEntity as org.bukkit.entity.Player
                val shooter = ev.entity.shooter as org.bukkit.entity.Player

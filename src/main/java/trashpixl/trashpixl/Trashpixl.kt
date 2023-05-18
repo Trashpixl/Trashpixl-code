@@ -55,7 +55,7 @@ class Trashpixl : JavaPlugin() {// the main class of the plugin
             this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())// init the command for the dodge ball
         }
         put(os(), 0)//put the minigame file to zero
-        Variable.playerCount = 0//reinitialize player count
+
 
     }
 
