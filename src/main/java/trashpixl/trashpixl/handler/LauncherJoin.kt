@@ -22,7 +22,7 @@ class LauncherJoin(plugin: Trashpixl?) : Listener { // the implements for the li
         if (environment() == 1) {
 
             if (!Variable.activeMinigame) {
-
+                Variable.activeMinigame = true
                 if (minigame() == 1 && Bukkit.getOnlinePlayers().size == 1) {
                     Bukkit.dispatchCommand(p, "onCommandPvp") // dispatchCommand for parkour
                 }

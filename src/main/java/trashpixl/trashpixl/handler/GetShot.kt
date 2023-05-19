@@ -15,12 +15,12 @@ init { // the constructor of this handler
     @EventHandler // says that this is an event handler
     //execute when a player get shot by a snowball
     fun playerGetShot(ev: ProjectileHitEvent){
-        if(ev.entity.shooter is org.bukkit.entity.Player && ev.entityType == org.bukkit.entity.EntityType.SNOWBALL && environment() == 2){//todo check teh real environment number
-           if(ev.hitEntity is org.bukkit.entity.Player){
-               val p = ev.hitEntity as org.bukkit.entity.Player
-               val shooter = ev.entity.shooter as org.bukkit.entity.Player
-               if(p != shooter){
-                   p.damage(3.0)
+        if(ev.entity.shooter is org.bukkit.entity.Player && ev.entityType == org.bukkit.entity.EntityType.SNOWBALL && environment() == 2){//todo check the real environment number
+           if(ev.hitEntity is org.bukkit.entity.Player){//if the entity is a player
+               val hitPlayer = ev.hitEntity as org.bukkit.entity.Player//store the hit entity in the var p
+               val shooter = ev.entity.shooter as org.bukkit.entity.Player//store the shooter in the var shooter
+               if(hitPlayer != shooter){//if the hit player is not the shooter
+                   hitPlayer.damage(3.0)//damage the hit player
                }
            }
         }
