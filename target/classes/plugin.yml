@@ -39,3 +39,6 @@ commands:
   onCommandTag:
     description: command for tag
     usage: /<command>
+  onCommandDodgeBall:
+    description: command for dodge ball
+    usage: /<command>

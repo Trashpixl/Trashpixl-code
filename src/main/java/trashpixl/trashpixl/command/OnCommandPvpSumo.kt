@@ -10,15 +10,15 @@ import org.bukkit.command.CommandSender
 class OnCommandPvpSumo : CommandExecutor { //creating the class death and implementing the listener
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-        val x = 239.0
-        val y = -58.0
-        val z = 279.0
-        for (p in getServer().onlinePlayers) {
-            p.health = 20.0
-            val w: World = p.world
-            val to = Location(w, x, y, z) //move before for
-            p.teleport(to)
-            p.inventory.clear()
+        val x = 239.0//the x coord of the game
+        val y = -58.0//the y coord of the game
+        val z = 279.0//the z coord of the game
+        for (p in getServer().onlinePlayers) {//get all the player in the server
+            p.health = 20.0//set the health to 20
+            val w: World = p.world//get the player world
+            val to = Location(w, x, y, z)//put together all the info
+            p.teleport(to)//tp him
+            p.inventory.clear()//clear his inventory
         }
         return false
     }

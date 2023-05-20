@@ -1,6 +1,6 @@
-package trashpixl.trashpixl.runnable
+package trashpixl.trashpixl.runnable//package of the file
 
-import org.bukkit.Bukkit
+import org.bukkit.Bukkit//import the bukkit
 
 
 fun lineOfSight(){

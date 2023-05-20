@@ -1,18 +1,18 @@
 package trashpixl.trashpixl.handler // the package for this project
 
-import com.google.common.io.ByteStreams
-import org.bukkit.Bukkit
-import org.bukkit.Material
-import org.bukkit.event.EventHandler
-import org.bukkit.event.Listener
-import org.bukkit.event.block.Action
-import org.bukkit.event.player.PlayerInteractEvent
-import org.bukkit.plugin.java.JavaPlugin
-import trashpixl.trashpixl.Trashpixl
-import trashpixl.trashpixl.runnable.environment
+import com.google.common.io.ByteStreams//import the byte stream
+import org.bukkit.Bukkit//import the bukkit
+import org.bukkit.Material//import the material
+import org.bukkit.event.EventHandler//import the event handler
+import org.bukkit.event.Listener//import the listener
+import org.bukkit.event.block.Action//import the action
+import org.bukkit.event.player.PlayerInteractEvent//import the player interact event
+import org.bukkit.plugin.java.JavaPlugin//import the java plugin
+import trashpixl.trashpixl.Trashpixl//import the main class
+import trashpixl.trashpixl.runnable.environment//import the environment
 
 class PlateHandler(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the implements for the listener
-    private val mainPlugin = main
+    private val mainPlugin = main//the main plugin
 
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the plugin
@@ -25,19 +25,19 @@ class PlateHandler(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the imp
                 // non-nullable
                 val p = ev.player // create the local player id
 
-                if (environment() == 0) {
+                if (environment() == 0) {//check if we are in server 0
 
-                    val connect = ByteStreams.newDataOutput()
-                    connect.writeUTF("Connect")
-                    connect.writeUTF("lobby")
-                    p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+                    val connect = ByteStreams.newDataOutput()//create the byte stream
+                    connect.writeUTF("Connect")//action connect
+                    connect.writeUTF("lobby")//to the lobby
+                    p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//send the player to the location
                 }
-                if (environment() == 2) {
+                if (environment() == 2) {//check if we are in server 2
 
-                    val connect = ByteStreams.newDataOutput()
-                    connect.writeUTF("Connect")
-                    connect.writeUTF("main")
-                    p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())
+                    val connect = ByteStreams.newDataOutput()//create the byte stream
+                    connect.writeUTF("Connect")//action connect
+                    connect.writeUTF("main")//to the main
+                    p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//send the player to the location
                 }
             }
         }

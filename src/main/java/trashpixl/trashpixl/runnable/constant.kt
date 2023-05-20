@@ -1,13 +1,13 @@
-package trashpixl.trashpixl.runnable
+package trashpixl.trashpixl.runnable//package of the file
 
-import java.io.File
-import java.io.IOException
-import java.util.*
+import java.io.File//import the file
+import java.io.IOException//import the io exception
+import java.util.*//import the util
 
 
-const val minigameFileNameWindows = "C:\\Users\\thier\\Desktop\\testServer\\Minigame.txt" //create a var with the filename in it
+const val minigameFileNameWindows = "F:\\testServer\\Minigame.txt" //create a var with the filename in it
 val minigameFileWindows = File(minigameFileNameWindows) //create the file reference
-const val minigameFileNameLinux = "C:\\Users\\thier\\Desktop\\testServer\\Minigame.txt" //create a var with the filename in it
+const val minigameFileNameLinux = "/home/server/Documents/server/Minigame.txt" //create a var with the filename in it
 val minigameFileLinux = File(minigameFileNameLinux) //create the file reference
 const val serverFileName = "Server.txt" //create a var with the filename in it
 val serverFile = File(serverFileName) //create the file reference
@@ -30,11 +30,11 @@ fun environment(): Int {//check which type of server we are in
     } catch (e: IOException) { // catching the exception
         throw RuntimeException(e) // trowing it again
     }
-    return serverType
+    return serverType//return the server type
 }
 
-fun minigame(): Int {
-    var minigameData = 0
+fun minigame(): Int {//check which type of minigame we are in
+    var minigameData = 0//store temporally the server type
     try { // trying the code
         if (os().exists() && os().isFile) { // checking if actual file is a file
             try {
@@ -48,16 +48,16 @@ fun minigame(): Int {
     } catch (e: IOException) { // catching the exception
         throw RuntimeException(e) // trowing it again
     }
-    return minigameData
+    return minigameData//return the minigame data
 }
-fun os(): File {
-    if (System.getProperty("os.name") == "Windows 11") {
-        return minigameFileWindows
+fun os(): File {//check which type of os we are in
+    if (System.getProperty("os.name") == "Windows 11") {//check if we are in windows
+        return minigameFileWindows//return the windows file
     }
-    return if (System.getProperty("os.name") == "Linux") {
-        minigameFileLinux
+    return if (System.getProperty("os.name") == "Linux") {//check if we are in linux
+        minigameFileLinux//return the linux file
     } else{
-        minigameFileNull
+        minigameFileNull//return the null file
     }
 }
 

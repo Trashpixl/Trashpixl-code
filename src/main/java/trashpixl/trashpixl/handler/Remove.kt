@@ -1,16 +1,16 @@
-package trashpixl.trashpixl.handler
+package trashpixl.trashpixl.handler//the package for this project
 
-import com.google.common.io.ByteStreams
-import org.bukkit.Bukkit
-import org.bukkit.Material
-import org.bukkit.event.EventHandler
-import org.bukkit.event.Listener
-import org.bukkit.event.block.BlockBreakEvent
-import org.bukkit.plugin.java.JavaPlugin
-import trashpixl.trashpixl.Trashpixl
+import com.google.common.io.ByteStreams//import the byte stream
+import org.bukkit.Bukkit//import the bukkit
+import org.bukkit.Material//import the material
+import org.bukkit.event.EventHandler//import the event handler
+import org.bukkit.event.Listener//import the listener
+import org.bukkit.event.block.BlockBreakEvent//import the block break event
+import org.bukkit.plugin.java.JavaPlugin//import the java plugin
+import trashpixl.trashpixl.Trashpixl//import the main class
 
 class Remove (plugin: Trashpixl?, main: JavaPlugin) : Listener { // the implements for the listener
-    private val mainPlugin = main
+    private val mainPlugin = main//the main plugin
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the plugin
     }

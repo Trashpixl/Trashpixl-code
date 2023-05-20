@@ -13,9 +13,9 @@ class OnCommandButton4: CommandExecutor { //creating the class death and impleme
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
 
-        val x = 187.0
-        val y = -58.0
-        val z = 261.0
+        val x = 187.0//the x coord of the game
+        val y = -58.0//the y coord of the game
+        val z = 261.0//the z coord of the game
         for (p in getServer().onlinePlayers) { //get all the player in the server
             p.health = 20.0 //set the health to 20
             val w: World = p.world //get the player world
@@ -24,19 +24,19 @@ class OnCommandButton4: CommandExecutor { //creating the class death and impleme
             p.inventory.clear() //clear his inventory
         }
 
-        Variable.playerArray = mutableListOf()
+        Variable.playerArray = mutableListOf()//clear the array
 
-        for (player in getServer().onlinePlayers) {
-            Variable.playerArray!!.add(player.name)
+        for (player in getServer().onlinePlayers) {//get all the player in the server
+            Variable.playerArray!!.add(player.name)//add the player name to the array
         }
-        var playerCount = 0
-        Variable.playerArray!!.sort()
-        Variable.time = LocalTime.now()
-        Variable.playerArrayNumber = 0
-        for (p in getServer().onlinePlayers) {
-            playerCount++
-            if (p.name == Variable.playerArray?.get(Variable.playerArrayNumber) && playerCount == 1) {
-                p.sendMessage("you start the round click the button one time")
+
+        Variable.playerArray!!.sort()//sort the array
+        Variable.time = LocalTime.now()//set the time
+        Variable.playerArrayNumber = 0//set the player number to 0
+        for (p in getServer().onlinePlayers) {//get all the player in the server
+
+            if (p.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {//if the player name is the same of the array
+                p.sendMessage("you start the round click the button one time")//send the message
             }
         }
         return false

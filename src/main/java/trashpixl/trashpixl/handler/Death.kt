@@ -25,7 +25,7 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the c
         connect.writeUTF("Connect")//action connect
         connect.writeUTF("lobby")//connect to the lobby
         var playerCount: Int//create the player count var
-        if (minigame() in 1..7 || minigame()  in 9..12) { // check if the data that we found correspond to the one require to start the handler
+        if (minigame() in 1..7 || minigame()  in 9..12 || minigame() == 14) { // check if the data that we found correspond to the one require to start the handler
             val name: String = ev.player.name // name variable to store the player name
             if (environment() == 1) {//check if we are in the server 1
                 ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player

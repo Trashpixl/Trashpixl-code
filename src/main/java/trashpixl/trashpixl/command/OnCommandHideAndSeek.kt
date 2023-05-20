@@ -28,22 +28,22 @@ class OnCommandHideAndSeek : CommandExecutor { //creating the class death and im
             p.inventory.clear() //clear their inventory
 
         }
-        Variable.finder = getRandomPlayer()
-        Variable.finder?.sendMessage("you are the finder")
-        val blackoutEffect = PotionEffect(PotionEffectType.BLINDNESS, 8 * 20, 1)
-        Variable.finder?.addPotionEffect(blackoutEffect)
-        Variable.isBlindFinder = true
-        return false //return false so it doesn't create an error
+        Variable.finder = getRandomPlayer()//get a random player
+        Variable.finder?.sendMessage("you are the finder")//send to message to indicate that the player is the tag
+        val blackoutEffect = PotionEffect(PotionEffectType.BLINDNESS, 8 * 20, 1)//create the potion effect
+        Variable.finder?.addPotionEffect(blackoutEffect)//add the potion effect to the player
+        Variable.isBlindFinder = true//set the player to be blind
+        return false//return false so it doesn't create an error
     }
-    private fun getRandomPlayer(): Player? {
-        val players = mutableListOf<Player>()
-        for (player in Bukkit.getOnlinePlayers()) {
-            players.add(player)
+    private fun getRandomPlayer(): Player? {//a function that return a random player in the server
+        val players = mutableListOf<Player>()//create a list of player
+        for (player in Bukkit.getOnlinePlayers()) {//get all the player in the server
+            players.add(player)//add the player to the list
         }
-        return if (players.isNotEmpty()) {
-            players[Random.nextInt(players.size)]
-        } else {
-            null
+        return if (players.isNotEmpty()) {//if the list is not empty
+            players[Random.nextInt(players.size)]//return a random player
+        } else {//if the list is empty
+            null//return null
         }
     }
 }

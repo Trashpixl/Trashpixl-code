@@ -8,8 +8,8 @@ import org.bukkit.event.EventHandler // import the event handler
 import org.bukkit.event.Listener // import the listener class
 import org.bukkit.event.block.Action // import all the action for block
 import org.bukkit.event.player.PlayerInteractEvent // import the player event
-import trashpixl.trashpixl.Trashpixl // import zero
-import trashpixl.trashpixl.runnable.environment
+import trashpixl.trashpixl.Trashpixl // import the main class
+import trashpixl.trashpixl.runnable.environment//import the environment
 
 class WoodPlateHandler(plugin: Trashpixl?) : Listener {//create the class and implement the listener
 

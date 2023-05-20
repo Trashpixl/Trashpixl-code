@@ -108,7 +108,6 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                     }
                    put(os(), 7)//put 7 in the minigame file
                     // Bukkit.dispatchCommand(p, "onCommandPvpKnockBack") //dispatchCommand for pvp
-                    // knock back
 
                 }
                 if (ev.clickedBlock!!.type == Material.BLUE_TERRACOTTA) { // check if the block is blue terracotta
@@ -157,7 +156,25 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                         connect.writeUTF("mini")//send the mini packet
                         p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
                     }
-                    put(os(), 12)//put 11 in the minigame file
+                    put(os(), 12)//put 12 in the minigame file
+                }
+                if (ev.clickedBlock!!.type == Material.PURPLE_TERRACOTTA) { // todo check for the block
+                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                        val connect = ByteStreams.newDataOutput()//create the new data stream
+                        connect.writeUTF("Connect")//send the connects packet
+                        connect.writeUTF("mini")//send the mini packet
+                        p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                    }
+                    put(os(), 13)//put 13 in the minigame file
+                }
+                if (ev.clickedBlock!!.type == Material.BROWN_TERRACOTTA){
+                    for(p2 in Bukkit.getServer().onlinePlayers){// taking all the player
+                        val connect = ByteStreams.newDataOutput()//create the new data stream
+                        connect.writeUTF("Connect")//send the connects packet
+                        connect.writeUTF("mini")//send the mini packet
+                        p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                    }
+                    put(os(), 14)//put 14 in the minigame file
                 }
 
             }

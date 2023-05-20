@@ -20,28 +20,25 @@ class OnCommandDodgeBall : CommandExecutor { //creating the class death and impl
         val xB = 0.0//todo add real coord
         val yB = 0.0
         val zB = 0.0
-        var playerCount = 0
+        var playerCount = 0 //count the number of player
         for (p in Bukkit.getServer().onlinePlayers) { //get all the player in the server
-            playerCount++
+            playerCount++//add 1 to the player count
             p.health = 20.0 //set the health to 20
             val w: World = p.world //get the player world
             //put the player in the blue team if it pair and red if odd
-            if(playerCount % 2 == 0){
+            if(playerCount % 2 == 0){//if the player is pair
                 val to = Location(w, xB, yB, zB) //put together all the info
                 p.teleport(to) //tp him
-                //add player to a list of blue team
-                Variable.blueTeam?.add(p.name)
+                Variable.blueTeam?.add(p.name)//add player to a list of the blue team's member
 
             }else{
                 val to = Location(w, xR, yR, zR) //put together all the info
                 p.teleport(to) //tp him
-                //add player to a list of red team
-                Variable.redTeam?.add(p.name)
+                Variable.redTeam?.add(p.name)//add player to a list of red team
             }
             p.inventory.clear() //clear his inventory
-            //give the player snowball
-            val item = ItemStack(Material.SNOWBALL, 64)
-            p.setItemOnCursor(item)
+            val snowball = ItemStack(Material.SNOWBALL, 64)//create 64 snowball
+            p.setItemOnCursor(snowball)//give him the snowball
         }
         return false
     }
