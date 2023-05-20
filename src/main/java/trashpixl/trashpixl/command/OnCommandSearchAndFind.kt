@@ -24,61 +24,71 @@ class OnCommandSearchAndFind : CommandExecutor { //creating the class death and 
         }
         return false
     }
-    private fun placeBlock(){
+
+    private fun placeBlock() {
         var x = 0.0
         var y = 0.0
         var z = 0.0
         val world = Bukkit.getWorld("world")
-        when ((1..10).random()){//TODO add the real coord to hide the block
+        when ((1..10).random()) {//TODO add the real coord to hide the block
             1 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
+
             2 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
+
             3 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
+
             4 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
+
             5 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
+
             6 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
+
             7 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
+
             8 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
+
             9 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
+
             10 -> {
-                 x = 0.0
-                 y = 0.0
-                 z = 0.0
+                x = 0.0
+                y = 0.0
+                z = 0.0
             }
 
         }

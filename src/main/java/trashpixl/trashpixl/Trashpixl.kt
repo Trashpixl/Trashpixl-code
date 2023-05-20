@@ -8,13 +8,15 @@ import trashpixl.trashpixl.handler.* // importing all the handler
 import trashpixl.trashpixl.runnable.*//importing all the runnable
 
 
-class Trashpixl : JavaPlugin() {// the main class of the plugin
+class Trashpixl : JavaPlugin() {
+    // the main class of the plugin
     // creating the main class
     override fun onEnable() { // plugin startup logic
 
 
         server.messenger.registerOutgoingPluginChannel(this, "BungeeCord") // register the chanel
-        object : BukkitRunnable() {//create a new runnable
+        object : BukkitRunnable() {
+            //create a new runnable
             override fun run() {//run the runnable
                 // Do something on each server tick
                 timer()//run timer

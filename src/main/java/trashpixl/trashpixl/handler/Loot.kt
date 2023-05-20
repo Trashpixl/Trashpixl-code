@@ -42,7 +42,7 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
                                 if (kit == 3) { // checking if kit equal 3
                                     val item1 = ItemStack(Material.WOODEN_AXE) // "" w/ wooden axe
                                     val item2 = ItemStack(Material.LEATHER_BOOTS)
-                                    p.inventory.setItem((1..36).random(),item1) // put it in random inv slot
+                                    p.inventory.setItem((1..36).random(), item1) // put it in random inv slot
                                     p.inventory.setItem((1..36).random(), item2) // same as below
                                 } else {
                                     if (kit == 4) { // checking if kit equal 4
@@ -69,32 +69,30 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
                             }
                         }
                         //add the code here
-                       when ((1..10).random()){
-                           1 -> p.teleport(Location(p.world, 137.0, -62.0, 279.0))
-                           2 -> p.teleport(Location(p.world, 135.0, -62.0, 277.0))
-                           3 -> p.teleport(Location(p.world, 133.0, -62.0, 275.0))
-                           4 -> p.teleport(Location(p.world, 130.0, -62.0, 273.0))
-                           5 -> p.teleport(Location(p.world, 127.0, -62.0, 270.0))
-                           6 -> p.teleport(Location(p.world, 125.0, -62.0, 268.0))
-                           7 -> p.teleport(Location(p.world, 123.0, -62.0, 266.0))
-                           8 -> p.teleport(Location(p.world, 121.5, -62.0, 264.0))
-                           9 -> p.teleport(Location(p.world, 120.0, -62.0, 262.0))
-                           10 -> p.teleport(Location(p.world, 119.0, -62.0, 260.0))
+                        when ((1..10).random()) {
+                            1 -> p.teleport(Location(p.world, 137.0, -62.0, 279.0))
+                            2 -> p.teleport(Location(p.world, 135.0, -62.0, 277.0))
+                            3 -> p.teleport(Location(p.world, 133.0, -62.0, 275.0))
+                            4 -> p.teleport(Location(p.world, 130.0, -62.0, 273.0))
+                            5 -> p.teleport(Location(p.world, 127.0, -62.0, 270.0))
+                            6 -> p.teleport(Location(p.world, 125.0, -62.0, 268.0))
+                            7 -> p.teleport(Location(p.world, 123.0, -62.0, 266.0))
+                            8 -> p.teleport(Location(p.world, 121.5, -62.0, 264.0))
+                            9 -> p.teleport(Location(p.world, 120.0, -62.0, 262.0))
+                            10 -> p.teleport(Location(p.world, 119.0, -62.0, 260.0))
 
-                       }
+                        }
                     }
                 }
-                if (minigame() == 10){//check if the minigame is 10
-                    if(environment() == 1) {//check if the player is in the right server
+                if (minigame() == 10) {//check if the minigame is 10
+                    if (environment() == 1) {//check if the player is in the right server
                         if (p.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {//check if the player is the one that is supposed to be playing
                             if ((1..10).random() == 1) {//check if the player is lucky
                                 p.health = 0.0//if not kill the player
-                            }
-                            else {
-                                if(Variable.playerArray!!.size >= Variable.playerArrayNumber){//check if the player array number is smaller than the array
-                                Variable.playerArrayNumber++//if it is add one to the array number
-                                }
-                                else{
+                            } else {
+                                if (Variable.playerArray!!.size >= Variable.playerArrayNumber) {//check if the player array number is smaller than the array
+                                    Variable.playerArrayNumber++//if it is add one to the array number
+                                } else {
                                     Variable.playerArrayNumber = 0//if not set the array number to 0
                                 }
                                 for (player in Bukkit.getServer().onlinePlayers) {//loop through all the players
@@ -105,8 +103,7 @@ class Loot(plugin: Trashpixl?) : Listener { // creating the class
                                 }
                             }
 
-                        }
-                        else{
+                        } else {
                             p.sendMessage("its not your turn yet, its ${Variable.playerArray?.get(Variable.playerArrayNumber)} turn")//tell the player that it is not their turn
                         }
                     }

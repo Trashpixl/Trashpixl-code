@@ -9,15 +9,16 @@ import org.bukkit.event.block.BlockBreakEvent//import the block break event
 import org.bukkit.plugin.java.JavaPlugin//import the java plugin
 import trashpixl.trashpixl.Trashpixl//import the main class
 
-class Remove (plugin: Trashpixl?, main: JavaPlugin) : Listener { // the implements for the listener
+class Remove(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the implements for the listener
     private val mainPlugin = main//the main plugin
+
     init { // the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the plugin
     }
 
     @EventHandler
     fun breakABlock(ev: BlockBreakEvent) { // describes what the event is
-        if(ev.block.type == Material.DIAMOND_BLOCK){//check if we intend to prevent player from breaking block
+        if (ev.block.type == Material.DIAMOND_BLOCK) {//check if we intend to prevent player from breaking block
             val name: String = ev.player.name // name variable to store the player name
             ev.player.sendMessage("you won")//send the win message
             val connect = ByteStreams.newDataOutput()//create the byte stream

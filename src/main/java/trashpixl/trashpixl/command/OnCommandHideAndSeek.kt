@@ -17,15 +17,15 @@ class OnCommandHideAndSeek : CommandExecutor { //creating the class death and im
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val x = 355.0//the x coord of the game
-        val y = -58.0 //the y coord of the game
-        val z = 339.0 //the z coord of the game
-        for (p in Bukkit.getServer().onlinePlayers) { //get all the online player
+        val y = -58.0//the y coord of the game
+        val z = 339.0//the z coord of the game
+        for (p in Bukkit.getServer().onlinePlayers) {//get all the online player
 
-            p.health = 20.0 //set the health to 20
-            val w: World = p.world //create the world var
-            val to = Location(w, x, y, z) //create game location
-            p.teleport(to) //tp the player
-            p.inventory.clear() //clear their inventory
+            p.health = 20.0//set the health to 20
+            val w: World = p.world//create the world var
+            val to = Location(w, x, y, z)//create game location
+            p.teleport(to)//tp the player
+            p.inventory.clear()//clear their inventory
 
         }
         Variable.finder = getRandomPlayer()//get a random player
@@ -35,6 +35,7 @@ class OnCommandHideAndSeek : CommandExecutor { //creating the class death and im
         Variable.isBlindFinder = true//set the player to be blind
         return false//return false so it doesn't create an error
     }
+
     private fun getRandomPlayer(): Player? {//a function that return a random player in the server
         val players = mutableListOf<Player>()//create a list of player
         for (player in Bukkit.getOnlinePlayers()) {//get all the player in the server

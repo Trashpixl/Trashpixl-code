@@ -11,19 +11,19 @@ import org.bukkit.plugin.java.JavaPlugin//import the java plugin
 import trashpixl.trashpixl.Trashpixl//import the main class
 import trashpixl.trashpixl.runnable.environment//import the environment
 
-class PlateHandler(plugin: Trashpixl?, main: JavaPlugin) : Listener { // the implements for the listener
+class PlateHandler(plugin: Trashpixl?, main: JavaPlugin) : Listener {//the implements for the listener
     private val mainPlugin = main//the main plugin
 
     init { // the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the plugin
+        Bukkit.getPluginManager().registerEvents(this, plugin!!)//init the plugin
     }
 
     @EventHandler
-    fun pressurePlateHandler(ev: PlayerInteractEvent) { // describes what the event is
-        if (ev.action == Action.PHYSICAL) { // check if the action is physical
-            if (ev.clickedBlock!!.type == Material.STONE_PRESSURE_PLATE) { // compare what the player sept on to a stone pressure plate and is required a
+    fun pressurePlateHandler(ev: PlayerInteractEvent) {//describes what the event is
+        if (ev.action == Action.PHYSICAL) {//check if the action is physical
+            if (ev.clickedBlock!!.type == Material.STONE_PRESSURE_PLATE) {//compare what the player sept on to a stone pressure plate and is required a
                 // non-nullable
-                val p = ev.player // create the local player id
+                val p = ev.player//create the local player id
 
                 if (environment() == 0) {//check if we are in server 0
 

@@ -11,9 +11,9 @@ import trashpixl.trashpixl.runnable.environment//import the environment
 import trashpixl.trashpixl.runnable.minigame//import the minigame
 
 class Punch(plugin: Trashpixl?) : Listener {//the implements for the listener
-    init {//the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!)//init the handler
-    }
+init {//the constructor of this handler
+    Bukkit.getPluginManager().registerEvents(this, plugin!!)//init the handler
+}
 
     @EventHandler//say that it is an event handler
     fun pressurePlateHandler(ev: EntityDamageByEntityEvent) {//describes what the event is
@@ -35,8 +35,8 @@ class Punch(plugin: Trashpixl?) : Listener {//the implements for the listener
                     ev.entity.velocity = ev.entity.location.direction.multiply(2)//give a velocity to the player
                 }
             }
-            if(minigame() == 12){//check if minigame 12 is going
-                if (ev.entity is Player &&ev.cause == EntityDamageEvent.DamageCause.ENTITY_ATTACK || ev.cause == EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK) { // check if the damage is caused by an entity attack or sweep attack
+            if (minigame() == 12) {//check if minigame 12 is going
+                if (ev.entity is Player && ev.cause == EntityDamageEvent.DamageCause.ENTITY_ATTACK || ev.cause == EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK) { // check if the damage is caused by an entity attack or sweep attack
                     (ev.entity as Player).health = 0.0//kill the player
                 }
 

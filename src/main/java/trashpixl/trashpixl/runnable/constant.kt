@@ -50,13 +50,14 @@ fun minigame(): Int {//check which type of minigame we are in
     }
     return minigameData//return the minigame data
 }
+
 fun os(): File {//check which type of os we are in
     if (System.getProperty("os.name") == "Windows 11") {//check if we are in windows
         return minigameFileWindows//return the windows file
     }
     return if (System.getProperty("os.name") == "Linux") {//check if we are in linux
         minigameFileLinux//return the linux file
-    } else{
+    } else {
         minigameFileNull//return the null file
     }
 }

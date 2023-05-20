@@ -9,10 +9,9 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
 
-//the package for this project
 
 
-class OnCommandPvpKnockBack : CommandExecutor { //creating the class death and implementing the listener
+class OnCommandPvpKnockBack : CommandExecutor {//creating the class death and implementing the listener
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val x = 239.0//the x coord of the game
@@ -24,10 +23,10 @@ class OnCommandPvpKnockBack : CommandExecutor { //creating the class death and i
             val to = Location(w, x, y, z)//put together all the info
             p.teleport(to)//tp him
             p.inventory.clear()//clear his inventory
-            val elytra = ItemStack(Material.ELYTRA, 1) //creating an item stack with an iron sword inside
-            val stick = ItemStack(Material.STICK, 1) //creating an item stack with a random amount of golden apple in it
-            p.inventory.setItem(1, elytra) //putting it in a random inventory slot
-            p.inventory.setItem(2, stick) //same as below
+            val elytra = ItemStack(Material.ELYTRA, 1)//creating an item stack with an iron sword inside
+            val stick = ItemStack(Material.STICK, 1)//creating an item stack with a random amount of golden apple in it
+            p.inventory.setItem(1, elytra)//putting it in a random inventory slot
+            p.inventory.setItem(2, stick)//same as below
         }
         return false
     }
