@@ -11,7 +11,7 @@ import trashpixl.trashpixl.runnable.put
 
 class Quit(plugin: Trashpixl?) : Listener {//the implements for the listener
 init {//the constructor of this handler
-    Bukkit.getPluginManager().registerEvents(this, plugin!!)//linking it to the main code
+    Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
 }
 
     @EventHandler//says that this is an event handler
@@ -20,7 +20,7 @@ init {//the constructor of this handler
 
         if (Bukkit.getOnlinePlayers().isEmpty() && Variable.activeMinigame) {//check if the player count is 0
             Variable.activeMinigame = false//set the active minigame to false
-            put(os(), 0)
+            put(os(), 0)//set the minigame to 0
         }
 
     }

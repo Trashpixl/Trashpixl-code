@@ -1,4 +1,4 @@
-package trashpixl.trashpixl.handler // the package for this project
+package trashpixl.trashpixl.handler
 
 import com.google.common.io.ByteStreams//import byte stream
 import org.bukkit.Bukkit//import bukkit
@@ -13,21 +13,21 @@ import trashpixl.trashpixl.runnable.environment//import some runnable
 import trashpixl.trashpixl.runnable.os
 import trashpixl.trashpixl.runnable.put
 
-class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the class and extending it with the main class and implement the listener
+class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the class and extending it with the main class and implement the listener
 
     private var mainPlugin = main//copy main to main plugin
 
     init { // the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!) // init the handler
+        Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
     }
 
-    @EventHandler // define that it is an event handler
-    fun buttonHandler(ev: PlayerInteractEvent) { // describes what the event is
-        if (ev.action == Action.RIGHT_CLICK_BLOCK) { // check if the action is physical
+    @EventHandler//define that it is an event handler
+    fun buttonHandler(ev: PlayerInteractEvent) {//describes what the event is
+        if (ev.action == Action.RIGHT_CLICK_BLOCK) {//check if the action is physical
             if (environment() == 2) {//check if environment equals 2
-                if (ev.clickedBlock!!.type == Material.WHITE_TERRACOTTA) { // compare what the player sept on to white terracotta and is required a
+                if (ev.clickedBlock!!.type == Material.WHITE_TERRACOTTA) {//compare what the player sept on to white terracotta and is required a
                     // non-nullable
-                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
 
                         val connect = ByteStreams.newDataOutput()//create the new data stream
                         connect.writeUTF("Connect")//send the connects packet
@@ -39,8 +39,8 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                     // Bukkit.dispatchCommand(p, "onCommandPvp") //dispatchCommand for parkour
                 }
 
-                if (ev.clickedBlock!!.type == Material.ORANGE_TERRACOTTA) { // if the block is orange terracotta
-                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                if (ev.clickedBlock!!.type == Material.ORANGE_TERRACOTTA) {//if the block is orange terracotta
+                    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
 
                         val connect = ByteStreams.newDataOutput()//create the new data stream
                         connect.writeUTF("Connect")//send the connects packet
@@ -52,8 +52,8 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                     // Bukkit.dispatchCommand(p, "onCommandPvpSumo") //dispatchCommand for parkour
                 }
 
-                if (ev.clickedBlock!!.type == Material.MAGENTA_TERRACOTTA) { // check if the block is magenta terracotta
-                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                if (ev.clickedBlock!!.type == Material.MAGENTA_TERRACOTTA) {//check if the block is magenta terracotta
+                    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
                         val connect = ByteStreams.newDataOutput()//create the new data stream
                         connect.writeUTF("Connect")//send the connects packet
                         connect.writeUTF("mini")//send the mini packet
@@ -65,8 +65,8 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
 
                 }
 
-                if (ev.clickedBlock!!.type == Material.LIGHT_BLUE_TERRACOTTA) { // check if the block is light blue terracotta
-                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                if (ev.clickedBlock!!.type == Material.LIGHT_BLUE_TERRACOTTA) {//check if the block is light blue terracotta
+                    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
                         val connect = ByteStreams.newDataOutput()//create the new data stream
                         connect.writeUTF("Connect")//send the connects packet
                         connect.writeUTF("mini")//send the mini packet
@@ -77,8 +77,8 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                     // Bukkit.dispatchCommand(p, "onCommandPvpLoot") //dispatchCommand for parkour
                 }
 
-                if (ev.clickedBlock!!.type == Material.YELLOW_TERRACOTTA) { // check if the block is yellow terracotta
-                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                if (ev.clickedBlock!!.type == Material.YELLOW_TERRACOTTA) {//check if the block is yellow terracotta
+                    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
                         val connect = ByteStreams.newDataOutput()//create the new data stream
                         connect.writeUTF("Connect")//send the connects packet
                         connect.writeUTF("mini")//send the mini packet
@@ -88,8 +88,8 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                     // Bukkit.dispatchCommand(p, "onCommandBridge") //dispatchCommand for bridge
                 }
 
-                if (ev.clickedBlock!!.type == Material.LIME_TERRACOTTA) { // check if the block is lime terracotta
-                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                if (ev.clickedBlock!!.type == Material.LIME_TERRACOTTA) {//check if the block is lime terracotta
+                    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
                         val connect = ByteStreams.newDataOutput()//create the new data stream
                         connect.writeUTF("Connect")//send the connects packet
                         connect.writeUTF("mini")//send the mini packet
@@ -99,8 +99,8 @@ class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating th
                     // Bukkit.dispatchCommand(p, "onCommandParkour") //dispatchCommand for parkour
 
                 }
-                if (ev.clickedBlock!!.type == Material.LIGHT_GRAY_TERRACOTTA) { // check if the block is light gray terracotta
-                    for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player
+                if (ev.clickedBlock!!.type == Material.LIGHT_GRAY_TERRACOTTA) {//check if the block is light gray terracotta
+                    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
                         val connect = ByteStreams.newDataOutput()//create the new data stream
                         connect.writeUTF("Connect")//send the connects packet
                         connect.writeUTF("mini")//send the mini packet

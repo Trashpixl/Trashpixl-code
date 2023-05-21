@@ -8,7 +8,6 @@ class Variable {
     companion object {
         //create the companion object
         var preventPlacedBlock = false//var to define if we can place block
-
         @Suppress("SpellCheckingInspection")
         var preventBreakedBlock = false//var that define if we can break block
         var activeMinigame = false//store if there is an active minigame

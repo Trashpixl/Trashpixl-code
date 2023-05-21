@@ -10,8 +10,8 @@ import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.environment
 
 class Join(plugin: Trashpixl?) : Listener {//create the class and implement the listener
-init { // the constructor of this handler
-    Bukkit.getPluginManager().registerEvents(this, plugin!!)//linking it to the main code
+init {//the constructor of this handler
+    Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
 }
 
     @EventHandler//says that this is an event handler

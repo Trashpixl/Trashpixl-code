@@ -13,7 +13,7 @@ import trashpixl.trashpixl.runnable.Variable
 import kotlin.random.Random
 
 
-class OnCommandHideAndSeek : CommandExecutor { //creating the class death and implementing the listener
+class OnCommandHideAndSeek : CommandExecutor {//creating the class death and implementing the listener
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val x = 355.0//the x coord of the game

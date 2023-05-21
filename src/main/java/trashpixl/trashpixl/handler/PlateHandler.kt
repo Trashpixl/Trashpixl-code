@@ -15,7 +15,7 @@ class PlateHandler(plugin: Trashpixl?, main: JavaPlugin) : Listener {//the imple
     private val mainPlugin = main//the main plugin
 
     init { // the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!)//init the plugin
+        Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
     }
 
     @EventHandler

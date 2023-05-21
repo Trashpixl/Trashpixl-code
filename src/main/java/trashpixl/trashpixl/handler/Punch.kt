@@ -11,9 +11,9 @@ import trashpixl.trashpixl.runnable.environment//import the environment
 import trashpixl.trashpixl.runnable.minigame//import the minigame
 
 class Punch(plugin: Trashpixl?) : Listener {//the implements for the listener
-init {//the constructor of this handler
-    Bukkit.getPluginManager().registerEvents(this, plugin!!)//init the handler
-}
+    init {//the constructor of this handler
+        Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
+    }
 
     @EventHandler//say that it is an event handler
     fun pressurePlateHandler(ev: EntityDamageByEntityEvent) {//describes what the event is
