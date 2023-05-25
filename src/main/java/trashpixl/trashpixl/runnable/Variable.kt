@@ -3,8 +3,10 @@ package trashpixl.trashpixl.runnable//package of the file
 import org.bukkit.entity.Player//import the player
 import java.time.LocalTime//import the time
 
-class Variable {//create the variable class
-    companion object {//create the companion object
+class Variable {
+    //create the variable class
+    companion object {
+        //create the companion object
         var preventPlacedBlock = false//var to define if we can place block
         @Suppress("SpellCheckingInspection")
         var preventBreakedBlock = false//var that define if we can break block

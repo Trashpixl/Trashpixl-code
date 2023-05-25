@@ -1,4 +1,4 @@
-package trashpixl.trashpixl.handler // the package for this project
+package trashpixl.trashpixl.handler//define the package
 
 import com.google.common.io.ByteStreams
 import org.bukkit.Bukkit
@@ -8,25 +8,27 @@ import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerRespawnEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
-import trashpixl.trashpixl.runnable.*
+import trashpixl.trashpixl.runnable.Variable
+import trashpixl.trashpixl.runnable.environment
+import trashpixl.trashpixl.runnable.minigame
 import java.time.LocalTime
 
-class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the class death and implementing the listener
+class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the class death and implementing the listener
     private val mainPlugin = main
-    // the implements for the listener
-    init { // the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!) // linking it to the main code
+
+
+    init {//the constructor of this handler
+        Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
     }
 
     @EventHandler // says that this is an event handler
     fun onPlayerDead(ev: PlayerRespawnEvent) {
-        // creating the on player death event function and importing the death class
         val connect = ByteStreams.newDataOutput()//create the byte stream
         connect.writeUTF("Connect")//action connect
         connect.writeUTF("lobby")//connect to the lobby
         var playerCount: Int//create the player count var
-        if (minigame() in 1..7 || minigame()  in 9..12 || minigame() == 14) { // check if the data that we found correspond to the one require to start the handler
-            val name: String = ev.player.name // name variable to store the player name
+        if (minigame() in 1..7 || minigame() in 9..12 || minigame() == 14) {//check if the data that we found correspond to the one require to start the handler
+            val name: String = ev.player.name//name variable to store the player name
             if (environment() == 1) {//check if we are in the server 1
                 ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
                 playerCount = 0//reset the player count
@@ -46,7 +48,7 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener { // creating the c
                 }
             }
         }
-        if(minigame() == 11){//check if the minigame 11 is going
+        if (minigame() == 11) {//check if the minigame 11 is going
             if (environment() == 1) {//check if we are in server one
                 ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
                 Variable.playerArray = mutableListOf()

@@ -14,7 +14,7 @@ import trashpixl.trashpixl.runnable.environment//import the environment
 class WoodPlateHandler(plugin: Trashpixl?) : Listener {//create the class and implement the listener
 
     init {//the constructor for the handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!)//says that this need the plugin base model
+        Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
     }
 
     @EventHandler//define that the methode is an event handler

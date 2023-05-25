@@ -9,19 +9,19 @@ import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.os
 import trashpixl.trashpixl.runnable.put
 
-class Quit (plugin: Trashpixl?) : Listener {//the implements for the listener
-    init {//the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!)//linking it to the main code
-    }
+class Quit(plugin: Trashpixl?) : Listener {//the implements for the listener
+init {//the constructor of this handler
+    Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
+}
 
     @EventHandler//says that this is an event handler
     fun onPlayerQuit(ev: PlayerQuitEvent) {//execute when a player quit the server
 
 
-        if(Bukkit.getOnlinePlayers().isEmpty() && Variable.activeMinigame){//check if the player count is 0
-          Variable.activeMinigame = false//set the active minigame to false
-             put(os(),0)
-           }
+        if (Bukkit.getOnlinePlayers().isEmpty() && Variable.activeMinigame) {//check if the player count is 0
+            Variable.activeMinigame = false//set the active minigame to false
+            put(os(), 0)//set the minigame to 0
+        }
 
     }
 }

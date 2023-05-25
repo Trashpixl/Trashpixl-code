@@ -8,9 +8,9 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
-//the package for this project
 
-class OnCommandPvpBow : CommandExecutor { //creating the class death and implementing the listener
+
+class OnCommandPvpBow : CommandExecutor {//creating the class death and implementing the listener
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val x = 239.0//the x coord of the game
