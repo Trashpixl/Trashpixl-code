@@ -40,6 +40,8 @@ class OnCommandDodgeBall : CommandExecutor { //creating the class death and impl
             val snowball = ItemStack(Material.SNOWBALL, 64)//create 64 snowball
             p.setItemOnCursor(snowball)//give him the snowball
         }
+        Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
+        Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
         return false
     }
 }

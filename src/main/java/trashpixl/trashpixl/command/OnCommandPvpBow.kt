@@ -8,6 +8,7 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
+import trashpixl.trashpixl.runnable.Variable
 
 
 class OnCommandPvpBow : CommandExecutor {//creating the class death and implementing the listener
@@ -27,6 +28,8 @@ class OnCommandPvpBow : CommandExecutor {//creating the class death and implemen
             p.inventory.setItemInMainHand(bow)//give him the item
             p.inventory.setItem(2, arrow)//give him the bow
         }
+        Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
+        Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
         return false
     }
 }

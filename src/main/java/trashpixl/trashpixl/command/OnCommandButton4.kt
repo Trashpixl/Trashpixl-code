@@ -39,6 +39,8 @@ class OnCommandButton4 : CommandExecutor { //creating the class death and implem
                 p.sendMessage("you start the round click the button one time")//send the message
             }
         }
+        Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
+        Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
         return false
     }
 }

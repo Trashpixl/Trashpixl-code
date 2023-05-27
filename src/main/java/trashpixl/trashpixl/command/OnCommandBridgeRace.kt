@@ -8,6 +8,7 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
+import trashpixl.trashpixl.runnable.Variable
 
 class OnCommandBridgeRace : CommandExecutor {//creating the class death and implementing the listener
 
@@ -24,6 +25,8 @@ class OnCommandBridgeRace : CommandExecutor {//creating the class death and impl
             p.inventory.clear()//clear their inventory
             p.inventory.setItem(1, item1)//give them the wool
         }
+        Variable.preventBreakedBlock = false//set the preventBreakedBlocks to true
+        Variable.preventPlacedBlock = false//set the preventPlacedBlock to true
         return false//return false so it doesn't create an error
     }
 }
