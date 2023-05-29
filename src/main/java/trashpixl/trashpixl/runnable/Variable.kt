@@ -6,10 +6,11 @@ import java.time.LocalTime//import the time
 class Variable {
     //create the variable class
     companion object {
+
+
         //create the companion object
         var preventPlacedBlock = false//var to define if we can place block
-        @Suppress("SpellCheckingInspection")
-        var preventBreakedBlock = false//var that define if we can break block
+        var preventBreakedBlock:Boolean = false//var that define if we can break block
         var activeMinigame = false//store if there is an active minigame
         var time: LocalTime? = null//store the time for the timer
         var playerArrayNumber: Int = 0//store which player we are at for the array

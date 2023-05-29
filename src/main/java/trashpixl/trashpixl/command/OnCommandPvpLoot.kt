@@ -6,6 +6,7 @@ import org.bukkit.World
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
+import trashpixl.trashpixl.runnable.Variable
 
 
 class OnCommandPvpLoot : CommandExecutor {//creating the class death and implementing the listener
@@ -21,6 +22,8 @@ class OnCommandPvpLoot : CommandExecutor {//creating the class death and impleme
             p.teleport(to)//tp him
             p.inventory.clear()//clear his inventory
         }
+        Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
+        Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
         return false
     }
 }

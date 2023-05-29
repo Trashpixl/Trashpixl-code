@@ -8,6 +8,7 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
+import trashpixl.trashpixl.runnable.Variable
 
 
 class OnCommandPvp : CommandExecutor { //creating the class death and implementing the listener
@@ -25,6 +26,8 @@ class OnCommandPvp : CommandExecutor { //creating the class death and implementi
             p.inventory.clear()//clear his inventory
             p.inventory.setItemInMainHand(sword)//give him the sword
         }
+        Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
+        Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
         return false
     }
 }

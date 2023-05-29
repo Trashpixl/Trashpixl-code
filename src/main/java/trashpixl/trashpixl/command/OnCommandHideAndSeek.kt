@@ -33,6 +33,8 @@ class OnCommandHideAndSeek : CommandExecutor {//creating the class death and imp
         val blackoutEffect = PotionEffect(PotionEffectType.BLINDNESS, 8 * 20, 1)//create the potion effect
         Variable.finder?.addPotionEffect(blackoutEffect)//add the potion effect to the player
         Variable.isBlindFinder = true//set the player to be blind
+        Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
+        Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
         return false//return false so it doesn't create an error
     }
 

@@ -25,6 +25,8 @@ class OnCommandTag : CommandExecutor {//creating the class death and implementin
         }
         Variable.tag = getRandomPlayer()//get a random player
         Variable.tag?.sendMessage("your are the tag")//send to message to indicate that the player is the tag
+        Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
+        Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
         return false
     }
 

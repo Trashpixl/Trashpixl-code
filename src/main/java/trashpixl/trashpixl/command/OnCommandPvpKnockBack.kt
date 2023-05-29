@@ -8,7 +8,7 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
-
+import trashpixl.trashpixl.runnable.Variable
 
 
 class OnCommandPvpKnockBack : CommandExecutor {//creating the class death and implementing the listener
@@ -28,6 +28,8 @@ class OnCommandPvpKnockBack : CommandExecutor {//creating the class death and im
             p.inventory.setItem(1, elytra)//putting it in a random inventory slot
             p.inventory.setItem(2, stick)//same as below
         }
+        Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
+        Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
         return false
     }
 }
