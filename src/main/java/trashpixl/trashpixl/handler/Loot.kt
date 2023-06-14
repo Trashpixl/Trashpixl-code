@@ -96,14 +96,14 @@ class Loot(plugin: Trashpixl?) : Listener {//creating the class
                                 }
                                 for (player in Bukkit.getServer().onlinePlayers) {//loop through all the players
                                     if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {//check if the player is the one that is supposed to be playing
-                                        player.sendMessage("its your turn")//then tell the player that it is their turn
+                                        player.chat("its your turn")//then tell the player that it is their turn
 
                                     }
                                 }
                             }
 
                         } else {
-                            p.sendMessage("its not your turn yet, its ${Variable.playerArray?.get(Variable.playerArrayNumber)} turn")//tell the player that it is not their turn
+                            p.chat("its not your turn yet, its ${Variable.playerArray?.get(Variable.playerArrayNumber)} turn")//tell the player that it is not their turn
                         }
                     }
                 }

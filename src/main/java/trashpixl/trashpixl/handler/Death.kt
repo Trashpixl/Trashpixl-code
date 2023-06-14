@@ -34,14 +34,14 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the cla
                 playerCount = 0//reset the player count
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
                     playerCount++//add one to the player count
-                    p.sendMessage("$name  died an is now out of the game") // send the message of who won the match
+                    p.chat("$name  died an is now out of the game") // send the message of who won the match
                 }
                 if (playerCount == 1) {//check if the player count equals zero
                     for (p in getServer().onlinePlayers) {//get all player in the server
                         if (p.name != ev.player.name) {//check if the player name equal the actual event creator name
-                            p.sendMessage("congratulation you won the match")//send the win message
+                            p.chat("congratulation you won the match")//send the win message
                         } else {
-                            p.sendMessage("how did you kill yourself")//send the death message
+                            p.chat("how did you kill yourself")//send the death message
                         }
                         p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player to the server
                     }

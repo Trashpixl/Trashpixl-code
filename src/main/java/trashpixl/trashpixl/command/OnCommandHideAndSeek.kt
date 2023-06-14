@@ -29,7 +29,7 @@ class OnCommandHideAndSeek : CommandExecutor {//creating the class death and imp
 
         }
         Variable.finder = getRandomPlayer()//get a random player
-        Variable.finder?.sendMessage("you are the finder")//send to message to indicate that the player is the tag
+        Variable.finder?.chat("you are the finder")//send to message to indicate that the player is the tag
         val blackoutEffect = PotionEffect(PotionEffectType.BLINDNESS, 8 * 20, 1)//create the potion effect
         Variable.finder?.addPotionEffect(blackoutEffect)//add the potion effect to the player
         Variable.isBlindFinder = true//set the player to be blind

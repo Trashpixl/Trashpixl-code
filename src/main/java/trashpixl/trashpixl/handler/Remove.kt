@@ -21,13 +21,16 @@ class Remove(plugin: Trashpixl?, main: JavaPlugin) : Listener {//the implements 
         val blockLocation = ev.block.location//get the block location
         if (ev.block.type == Material.DIAMOND_BLOCK) {//check if we intend to prevent player from breaking block
             val name: String = ev.player.name//name variable to store the player name
-            ev.player.sendMessage("you won")//send the win message
+
+            ev.player.chat("you won")//send a message to the player
+
+
             val connect = ByteStreams.newDataOutput()//create the byte stream
             connect.writeUTF("Connect")//action connect
             connect.writeUTF("lobby")//to the lobby
             ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//send the player to the location
             for (p in Bukkit.getServer().onlinePlayers) {//get all player in the server
-                p.sendMessage("you lose and $name won")//send the lose message to all of them
+                p.chat("you lose and $name won")//send the lose message to all of them
                 p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect each player
 
             }

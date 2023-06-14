@@ -27,7 +27,7 @@ class FirstToFinish(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                 val p = ev.player//create the local player id
                 if (minigame() == 8 || minigame() == 5 || minigame() == 6) {//checking if the number in the file correspond to the number require to start the minigame
                     if (environment() == 1) {//checking if the environment is the lobby
-                        p.sendMessage(p.name + " won the race")//sending the won message
+                        p.chat(p.name + " won the race")//sending the won message
                         for (p2 in Bukkit.getServer().onlinePlayers) {//getting all online player
                             val connect = ByteStreams.newDataOutput()//creating the connection
                             connect.writeUTF("Connect")//writing the command

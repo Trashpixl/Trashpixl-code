@@ -13,7 +13,6 @@ class Trashpixl : JavaPlugin() {
     //creating the main class
     override fun onEnable() {//plugin startup logic
 
-
         server.messenger.registerOutgoingPluginChannel(this, "BungeeCord")//register the chanel
         object : BukkitRunnable() {
             //create a new runnable
@@ -38,7 +37,6 @@ class Trashpixl : JavaPlugin() {
         Punch(this)//init the punch handler
         LauncherJoin(this)//init the launcher join handler
         GetShot(this)//init the get shot handler
-        //if (environment() == 0) {//check if server equals 0 }
         if (environment() == 1) {//check if server equal 1
 
             this.getCommand("onCommandPvp")?.setExecutor(OnCommandPvp())//init the command for the pvp game
@@ -55,6 +53,17 @@ class Trashpixl : JavaPlugin() {
             this.getCommand("onCommandTag")?.setExecutor(OnCommandTag())//init the command for the tag
             this.getCommand("onCommandSearchAndFind")?.setExecutor(OnCommandSearchAndFind())//init the command for the search and find
             this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())//init the command for the dodge ball
+            Variable.preventPlacedBlock = true//set the prevent placed block to true
+            Variable.preventBreakedBlock = true//set the prevent breaked block to true
+
+        }
+        if(environment() == 2){
+            Variable.preventPlacedBlock = true//set the prevent placed block to true
+            Variable.preventBreakedBlock = true//set the prevent breaked block to true
+        }
+        if(environment() == 0){
+           Variable.preventPlacedBlock = false//set the prevent placed block to false
+            Variable.preventBreakedBlock = false//set the prevent breaked block to false
         }
         put(os(), 0)//put the minigame file to zero
 

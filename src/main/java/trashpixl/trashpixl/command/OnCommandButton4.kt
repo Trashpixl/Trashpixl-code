@@ -36,7 +36,7 @@ class OnCommandButton4 : CommandExecutor { //creating the class death and implem
         for (p in getServer().onlinePlayers) {//get all the player in the server
 
             if (p.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {//if the player name is the same of the array
-                p.sendMessage("you start the round click the button one time")//send the message
+                p.chat("you start the round click the button one time")//send the message
             }
         }
         Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
