@@ -48,7 +48,7 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the cla
                 }
             }
         }
-        if (minigame() == 11) {//check if the minigame 11 is going
+        if (minigame() == 11 || minigame() == 10) {//check if the minigame 11 is going
             if (environment() == 1) {//check if we are in server one
                 ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
                 Variable.playerArray = mutableListOf()
@@ -60,8 +60,16 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the cla
                 Variable.playerArray!!.sort()//sort the array
                 Variable.time = LocalTime.now()//reset the time
                 Variable.playerArrayNumber = 0//reset the array cursor
-
+                if(minigame() == 10){
+                for(player in getServer().onlinePlayers){
+                    if(player.name == Variable.playerArray?.get(Variable.playerArrayNumber)){
+                        player.chat("its your turn")
+                    }
+                }
             }
         }
     }
+        
 }
+}
+

@@ -22,9 +22,8 @@ class Loot(plugin: Trashpixl?) : Listener {//creating the class
     fun buttonHandler(ev: PlayerInteractEvent) {//describes what the event is
         val p = ev.player//creating the player variable
         if (ev.action == Action.RIGHT_CLICK_BLOCK) {//check if the action is physical
-            if (ev.clickedBlock!!.type == Material.STONE_BUTTON) {//compare what the player pushed to the stone button
+            if (ev.clickedBlock!!.type == Material.STONE_BUTTON && environment() == 1) {//compare what the player pushed to the stone button
                 if (minigame() == 4) {//check if the data equals 3
-                    if (environment() == 1) {//check if we are in server 1
                         val kit = (1..6).random()//creating the random val between 1 and 6
                         if (kit == 1) {//checking if kit equals 1
                             val item1 = ItemStack(Material.IRON_SWORD, 1)//creating the item
@@ -82,14 +81,13 @@ class Loot(plugin: Trashpixl?) : Listener {//creating the class
 
                         }
                     }
-                }
+                
                 if (minigame() == 10) {//check if the minigame is 10
-                    if (environment() == 1) {//check if the player is in the right server
                         if (p.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {//check if the player is the one that is supposed to be playing
                             if ((1..10).random() == 1) {//check if the player is lucky
                                 p.health = 0.0//if not kill the player
-                            } else {
-                                if (Variable.playerArray!!.size >= Variable.playerArrayNumber) {//check if the player array number is smaller than the array
+                            }  
+                               else{ if (Variable.playerArray!!.size >= Variable.playerArrayNumber) {//check if the player array number is smaller than the array
                                     Variable.playerArrayNumber++//if it is add one to the array number
                                 } else {
                                     Variable.playerArrayNumber = 0//if not set the array number to 0
@@ -100,7 +98,8 @@ class Loot(plugin: Trashpixl?) : Listener {//creating the class
 
                                     }
                                 }
-                            }
+                               }
+                            
 
                         } else {
                             p.chat("its not your turn yet, its ${Variable.playerArray?.get(Variable.playerArrayNumber)} turn")//tell the player that it is not their turn
@@ -110,4 +109,3 @@ class Loot(plugin: Trashpixl?) : Listener {//creating the class
             }
         }
     }
-}

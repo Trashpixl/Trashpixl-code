@@ -9,20 +9,9 @@ import trashpixl.trashpixl.runnable.*//importing all the runnable
 
 
 class Trashpixl : JavaPlugin() {
-    //the main class of the plugin
-    //creating the main class
     override fun onEnable() {//plugin startup logic
-
         server.messenger.registerOutgoingPluginChannel(this, "BungeeCord")//register the chanel
-        object : BukkitRunnable() {
-            //create a new runnable
-            override fun run() {//run the runnable
-                // Do something on each server tick
-                timer()//run timer
-                lineOfSight()//run line of sight
-                isBlinded()//run is blinded
-            }
-        }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
+        put(os(), 0)//put the minigame file to zero
         Remove(this, this)//start the remove handler
         Break(this)//start the break handler
         Place(this)//start the place handler
@@ -38,7 +27,7 @@ class Trashpixl : JavaPlugin() {
         LauncherJoin(this)//init the launcher join handler
         GetShot(this)//init the get shot handler
         if (environment() == 1) {//check if server equal 1
-
+            alwaysRun()
             this.getCommand("onCommandPvp")?.setExecutor(OnCommandPvp())//init the command for the pvp game
             this.getCommand("onCommandTnt")?.setExecutor(OnCommandTnt())//init the command for capture the flag
             this.getCommand("onCommandPvpBow")?.setExecutor(OnCommandPvpBow())//init the command for pvp bow
@@ -65,8 +54,6 @@ class Trashpixl : JavaPlugin() {
            Variable.preventPlacedBlock = false//set the prevent placed block to false
             Variable.preventBreakedBlock = false//set the prevent breaked block to false
         }
-        put(os(), 0)//put the minigame file to zero
-
 
     }
 
@@ -74,5 +61,16 @@ class Trashpixl : JavaPlugin() {
         // Plugin shutdown logic
         this.server.messenger.unregisterOutgoingPluginChannel(this)//unregister the chanel
         this.server.messenger.unregisterIncomingPluginChannel(this)//unregister the chanel
+    }
+    fun alwaysRun(){
+        object : BukkitRunnable() {
+            //create a new runnable
+            override fun run() {//run the runnable
+                // Do something on each server tick
+                timer()//run timer
+                lineOfSight()//run line of sight
+                isBlinded()//run is blinded
+            }
+        }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
     }
 }
