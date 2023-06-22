@@ -10,6 +10,7 @@ import trashpixl.trashpixl.runnable.*//importing all the runnable
 
 class Trashpixl : JavaPlugin() {
     override fun onEnable() {//plugin startup logic
+        //server.dispatchCommand(server.consoleSender, "Command")
         server.messenger.registerOutgoingPluginChannel(this, "BungeeCord")//register the chanel
         put(os(), 0)//put the minigame file to zero
         Remove(this, this)//start the remove handler
@@ -62,7 +63,7 @@ class Trashpixl : JavaPlugin() {
         this.server.messenger.unregisterOutgoingPluginChannel(this)//unregister the chanel
         this.server.messenger.unregisterIncomingPluginChannel(this)//unregister the chanel
     }
-    fun alwaysRun(){
+    private fun alwaysRun(){
         object : BukkitRunnable() {
             //create a new runnable
             override fun run() {//run the runnable
