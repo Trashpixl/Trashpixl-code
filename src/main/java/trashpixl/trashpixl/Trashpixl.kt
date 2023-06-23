@@ -13,36 +13,10 @@ class Trashpixl : JavaPlugin() {
         //server.dispatchCommand(server.consoleSender, "Command")
         server.messenger.registerOutgoingPluginChannel(this, "BungeeCord")//register the chanel
         put(os(), 0)//put the minigame file to zero
-        Remove(this, this)//start the remove handler
-        Break(this)//start the break handler
-        Place(this)//start the place handler
-        Join(this)//start the join handler
-        Quit(this)//start the quit handler
-        Death(this, this)//init the death handler
-        Loot(this)//init the loot handler
-        PlateHandler(this, this)//init the plate handler
-        WoodPlateHandler(this)//init the wood plate handler
-        Launcher(this, this)//init the launcher handler
-        FirstToFinish(this, this)//init the first to finish handler
-        Punch(this)//init the punch handler
-        LauncherJoin(this)//init the launcher join handler
-        GetShot(this)//init the get shot handler
+        registerHandler()//register the handler
         if (environment() == 1) {//check if server equal 1
-            alwaysRun()
-            this.getCommand("onCommandPvp")?.setExecutor(OnCommandPvp())//init the command for the pvp game
-            this.getCommand("onCommandTnt")?.setExecutor(OnCommandTnt())//init the command for capture the flag
-            this.getCommand("onCommandPvpBow")?.setExecutor(OnCommandPvpBow())//init the command for pvp bow
-            this.getCommand("onCommandPvpSumo")?.setExecutor(OnCommandPvpSumo())//init the command for pvp sumo
-            this.getCommand("onCommandPvpKnockBack")?.setExecutor(OnCommandPvpKnockBack())//init the command for pvp knock back
-            this.getCommand("onCommandPvpLoot")?.setExecutor(OnCommandPvpLoot())//init the command for pvp loot
-            this.getCommand("onCommandParkour")?.setExecutor(OnCommandParkour())//init the command for the parkour
-            this.getCommand("onCommandBridgeRace")?.setExecutor(OnCommandBridgeRace())//init the command for the tag
-            this.getCommand("onCommandLabi")?.setExecutor(OnCommandLabi())//init the command for the tag
-            this.getCommand("onCommandButton4")?.setExecutor(OnCommandButton4())//init the command for the button 4
-            this.getCommand("onCommandHideAndSeek")?.setExecutor(OnCommandHideAndSeek())//init the command for the hide and seek
-            this.getCommand("onCommandTag")?.setExecutor(OnCommandTag())//init the command for the tag
-            this.getCommand("onCommandSearchAndFind")?.setExecutor(OnCommandSearchAndFind())//init the command for the search and find
-            this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())//init the command for the dodge ball
+            alwaysRun()//run the always run function
+            registerCommand()//register the command
             Variable.preventPlacedBlock = true//set the prevent placed block to true
             Variable.preventBreakedBlock = true//set the prevent breaked block to true
 
@@ -73,5 +47,37 @@ class Trashpixl : JavaPlugin() {
                 isBlinded()//run is blinded
             }
         }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
+    }
+    private fun registerCommand(){
+        this.getCommand("onCommandPvp")?.setExecutor(OnCommandPvp())//init the command for the pvp game
+        this.getCommand("onCommandTnt")?.setExecutor(OnCommandTnt())//init the command for capture the flag
+        this.getCommand("onCommandPvpBow")?.setExecutor(OnCommandPvpBow())//init the command for pvp bow
+        this.getCommand("onCommandPvpSumo")?.setExecutor(OnCommandPvpSumo())//init the command for pvp sumo
+        this.getCommand("onCommandPvpKnockBack")?.setExecutor(OnCommandPvpKnockBack())//init the command for pvp knock back
+        this.getCommand("onCommandPvpLoot")?.setExecutor(OnCommandPvpLoot())//init the command for pvp loot
+        this.getCommand("onCommandParkour")?.setExecutor(OnCommandParkour())//init the command for the parkour
+        this.getCommand("onCommandBridgeRace")?.setExecutor(OnCommandBridgeRace())//init the command for the tag
+        this.getCommand("onCommandLabi")?.setExecutor(OnCommandLabi())//init the command for the tag
+        this.getCommand("onCommandButton4")?.setExecutor(OnCommandButton4())//init the command for the button 4
+        this.getCommand("onCommandHideAndSeek")?.setExecutor(OnCommandHideAndSeek())//init the command for the hide and seek
+        this.getCommand("onCommandTag")?.setExecutor(OnCommandTag())//init the command for the tag
+        this.getCommand("onCommandSearchAndFind")?.setExecutor(OnCommandSearchAndFind())//init the command for the search and find
+        this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())//init the command for the dodge ball
+    }
+    private fun registerHandler(){
+        Remove(this, this)//start the remove handler
+        Break(this)//start the break handler
+        Place(this)//start the place handler
+        Join(this)//start the join handler
+        Quit(this)//start the quit handler
+        Death(this, this)//init the death handler
+        Loot(this)//init the loot handler
+        PlateHandler(this, this)//init the plate handler
+        WoodPlateHandler(this)//init the wood plate handler
+        Launcher(this, this)//init the launcher handler
+        FirstToFinish(this, this)//init the first to finish handler
+        Punch(this)//init the punch handler
+        LauncherJoin(this)//init the launcher join handler
+        GetShot(this)//init the get shot handler
     }
 }
