@@ -21,11 +21,11 @@ class Trashpixl : JavaPlugin() {
             Variable.preventBreakedBlock = true//set the prevent breaked block to true
 
         }
-        if(environment() == 0){
+        if(environment() == 2){
             Variable.preventPlacedBlock = true//set the prevent placed block to true
             Variable.preventBreakedBlock = true//set the prevent breaked block to true
         }
-        if(environment() == 2){
+        if(environment() == 0){
            Variable.preventPlacedBlock = false//set the prevent placed block to false
             Variable.preventBreakedBlock = false//set the prevent breaked block to false
         }

@@ -21,6 +21,6 @@ init {//the constructor of this handler
             put(os(), 0)//set the minigame to 0
         }
         Variable.playerArrayNumber = 0
-        Variable.playerArray!!.clear()
+        Variable.playerArray?.clear()
     }
 }
