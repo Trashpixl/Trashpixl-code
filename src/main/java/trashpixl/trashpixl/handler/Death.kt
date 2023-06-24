@@ -34,21 +34,21 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the cla
                 playerCount = 0//reset the player count
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
                     playerCount++//add one to the player count
-                    p.sendMessage("$name  died an is now out of the game") // send the message of who won the match
+                    p.chat("$name  died an is now out of the game") // send the message of who won the match
                 }
                 if (playerCount == 1) {//check if the player count equals zero
                     for (p in getServer().onlinePlayers) {//get all player in the server
                         if (p.name != ev.player.name) {//check if the player name equal the actual event creator name
-                            p.sendMessage("congratulation you won the match")//send the win message
+                            p.chat("congratulation you won the match")//send the win message
                         } else {
-                            p.sendMessage("how did you kill yourself")//send the death message
+                            p.chat("how did you kill yourself")//send the death message
                         }
                         p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player to the server
                     }
                 }
             }
         }
-        if (minigame() == 11) {//check if the minigame 11 is going
+        if (minigame() == 11 || minigame() == 10) {//check if the minigame 11 is going
             if (environment() == 1) {//check if we are in server one
                 ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
                 Variable.playerArray = mutableListOf()
@@ -60,8 +60,16 @@ class Death(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the cla
                 Variable.playerArray!!.sort()//sort the array
                 Variable.time = LocalTime.now()//reset the time
                 Variable.playerArrayNumber = 0//reset the array cursor
-
+                if(minigame() == 10){
+                for(player in getServer().onlinePlayers){
+                    if(player.name == Variable.playerArray?.get(Variable.playerArrayNumber)){
+                        player.chat("its your turn")
+                    }
+                }
             }
         }
     }
+        
 }
+}
+

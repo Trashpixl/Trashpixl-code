@@ -6,8 +6,6 @@ import java.time.LocalTime//import the time
 class Variable {
     //create the variable class
     companion object {
-
-
         //create the companion object
         var preventPlacedBlock = false//var to define if we can place block
         var preventBreakedBlock:Boolean = false//var that define if we can break block
