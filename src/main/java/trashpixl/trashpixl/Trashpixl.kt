@@ -1,11 +1,11 @@
 package trashpixl.trashpixl//package of the file
 
 
-import org.bukkit.plugin.java.JavaPlugin//import the java plugin
-import org.bukkit.scheduler.BukkitRunnable//import the bukkit runnable
-import trashpixl.trashpixl.command.* //importing all the command
-import trashpixl.trashpixl.handler.* //importing all the handler
-import trashpixl.trashpixl.runnable.*//importing all the runnable
+import org.bukkit.plugin.java.JavaPlugin
+import org.bukkit.scheduler.BukkitRunnable
+import trashpixl.trashpixl.command.*
+import trashpixl.trashpixl.handler.*
+import trashpixl.trashpixl.runnable.*
 
 
 class Trashpixl : JavaPlugin() {
@@ -47,6 +47,12 @@ class Trashpixl : JavaPlugin() {
                 isBlinded()//run is blinded
             }
         }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
+        object : BukkitRunnable() {
+            //create a new runnable
+            override fun run() {//run the runnable
+             RemoveTntStartBlock()//run the remove tnt start block
+            }
+        }.runTaskTimer(this, 0L, 40L)//run the timer immediately and at every 40 tick
     }
     private fun registerCommand(){
         this.getCommand("onCommandPvp")?.setExecutor(OnCommandPvp())//init the command for the pvp game
@@ -80,4 +86,5 @@ class Trashpixl : JavaPlugin() {
         LauncherJoin(this)//init the launcher join handler
         GetShot(this)//init the get shot handler
     }
+
 }

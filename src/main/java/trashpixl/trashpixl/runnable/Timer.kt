@@ -1,8 +1,7 @@
 package trashpixl.trashpixl.runnable//  package of the file
 
-import org.bukkit.Bukkit.getLogger//import the logger
-import org.bukkit.Bukkit.getServer//import the server
-import java.time.LocalTime//import the time
+import org.bukkit.Bukkit.getServer
+import java.time.LocalTime
 
 fun timer() {//function that run every tick
         if (Variable.time != null &&

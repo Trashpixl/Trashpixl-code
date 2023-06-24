@@ -18,5 +18,8 @@ class Variable {
         var tag: Player? = null//store the tag for tag player
         var blueTeam: MutableList<String>? = null//store the name of all player in blue team
         var redTeam: MutableList<String>? = null//store the name of all player in red team
+        var tntIsPlaced = false//store if the tnt is placed
     }
 }
+
+
