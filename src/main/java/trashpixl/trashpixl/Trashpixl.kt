@@ -50,7 +50,7 @@ class Trashpixl : JavaPlugin() {
         object : BukkitRunnable() {
             //create a new runnable
             override fun run() {//run the runnable
-             RemoveTntStartBlock()//run the remove tnt start block
+             removeTntStartBlock()//run the remove tnt start block
             }
         }.runTaskTimer(this, 0L, 40L)//run the timer immediately and at every 40 tick
     }
@@ -71,20 +71,19 @@ class Trashpixl : JavaPlugin() {
         this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())//init the command for the dodge ball
     }
     private fun registerHandler(){
-        Remove(this, this)//start the remove handler
-        Break(this)//start the break handler
-        Place(this)//start the place handler
-        Join(this)//start the join handler
-        Quit(this)//start the quit handler
-        Death(this, this)//init the death handler
-        Loot(this)//init the loot handler
-        PlateHandler(this, this)//init the plate handler
-        WoodPlateHandler(this)//init the wood plate handler
-        Launcher(this, this)//init the launcher handler
-        FirstToFinish(this, this)//init the first to finish handler
-        Punch(this)//init the punch handler
-        LauncherJoin(this)//init the launcher join handler
-        GetShot(this)//init the get shot handler
+        BlockBreak(this, this)//start the break handler
+        BlockPlace(this)//start the place handler
+        PlayerLogin(this)//start the join handler
+        PlayerLogout(this)//start the quit handler
+        PlayerDeath(this, this)//init the death handler
+        StoneButton(this)//init the loot handler
+        SendPlayerBetweenServer(this, this)//init the plate handler
+        WoodPressurePlate(this)//init the wood plate handler
+        MinigameSelect(this, this)//init the launcher handler
+        FirstToArrive(this, this)//init the first to finish handler
+        PlayerGetPunch(this)//init the punch handler
+        MinigameLauncher(this)//init the launcher join handler
+        PlayerGetShot(this)//init the get shot handler
     }
 
 }

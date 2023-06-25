@@ -9,7 +9,7 @@ import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.os
 import trashpixl.trashpixl.runnable.put
 
-class Quit(plugin: Trashpixl?) : Listener {//the implements for the listener
+class PlayerLogout(plugin: Trashpixl?) : Listener {//the implements for the listener
 init {//the constructor of this handler
     Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
 }

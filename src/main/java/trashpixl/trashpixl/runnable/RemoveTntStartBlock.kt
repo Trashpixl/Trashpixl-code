@@ -5,8 +5,7 @@ import org.bukkit.Location
 import org.bukkit.Material
 import org.bukkit.World
 
-fun RemoveTntStartBlock() {
-
+fun removeTntStartBlock() {
     val xBlock = 0.0
     val yBlock = 0.0
     val zBlock = 0.0

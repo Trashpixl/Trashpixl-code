@@ -23,7 +23,5 @@ fun put(file: File, data: Int) {
     } catch (e: IOException) {//catching it...
         throw java.lang.RuntimeException(e)//throwing it the hardest we can, be gone exception no one like you anyways
     }
-
-
 }
 

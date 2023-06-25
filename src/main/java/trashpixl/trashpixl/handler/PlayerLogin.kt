@@ -9,7 +9,7 @@ import org.bukkit.event.player.PlayerJoinEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.environment
 
-class Join(plugin: Trashpixl?) : Listener {//create the class and implement the listener
+class PlayerLogin(plugin: Trashpixl?) : Listener {//create the class and implement the listener
 init {//the constructor of this handler
     Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
 }

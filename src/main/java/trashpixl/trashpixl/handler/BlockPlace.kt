@@ -7,7 +7,7 @@ import org.bukkit.event.block.BlockPlaceEvent//importing the block place event
 import trashpixl.trashpixl.Trashpixl//importing the main class
 import trashpixl.trashpixl.runnable.Variable//importing the variable class
 
-class Place(plugin: Trashpixl?) : Listener {//the implements for the listener
+class BlockPlace(plugin: Trashpixl?) : Listener {//the implements for the listener
     init {//the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
     }

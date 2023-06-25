@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin//import the java plugin
 import trashpixl.trashpixl.Trashpixl//import the main class
 import trashpixl.trashpixl.runnable.environment//import the environment
 
-class PlateHandler(plugin: Trashpixl?, main: JavaPlugin) : Listener {//the implements for the listener
+class SendPlayerBetweenServer(plugin: Trashpixl?, main: JavaPlugin) : Listener {//the implements for the listener
     private val mainPlugin = main//the main plugin
 
     init { // the constructor of this handler

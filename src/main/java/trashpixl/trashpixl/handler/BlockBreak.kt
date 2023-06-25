@@ -1,4 +1,4 @@
-package trashpixl.trashpixl.handler//the package for this project
+package trashpixl.trashpixl.handler
 
 import com.google.common.io.ByteStreams
 import org.bukkit.Bukkit
@@ -8,16 +8,18 @@ import org.bukkit.event.Listener
 import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
+import trashpixl.trashpixl.runnable.Variable
 
-class Remove(plugin: Trashpixl?, main: JavaPlugin) : Listener {//the implements for the listener
-    private val mainPlugin = main//the main plugin
-
+class BlockBreak(plugin: Trashpixl?, private val mainPlugin: JavaPlugin) : Listener {
     init {//the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
     }
 
     @EventHandler
     fun breakABlock(ev: BlockBreakEvent) {//describes what the event is
+        if (Variable.preventBreakedBlock) {//check if we intend to prevent player from breaking block
+            ev.isCancelled = true//cancelled the event if true
+        }
         val blockLocation = ev.block.location//get the block location
         if (ev.block.type == Material.DIAMOND_BLOCK) {//check if we intend to prevent player from breaking block
             val name: String = ev.player.name//name variable to store the player name

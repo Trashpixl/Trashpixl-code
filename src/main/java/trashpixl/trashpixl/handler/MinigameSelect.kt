@@ -13,7 +13,7 @@ import trashpixl.trashpixl.runnable.environment//import some runnable
 import trashpixl.trashpixl.runnable.os
 import trashpixl.trashpixl.runnable.put
 
-class Launcher(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the class and extending it with the main class and implement the listener
+class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the class and extending it with the main class and implement the listener
 
     private var mainPlugin = main//copy main to main plugin
 

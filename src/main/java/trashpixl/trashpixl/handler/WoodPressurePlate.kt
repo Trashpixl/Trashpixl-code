@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerInteractEvent // import the player event
 import trashpixl.trashpixl.Trashpixl // import the main class
 import trashpixl.trashpixl.runnable.environment//import the environment
 
-class WoodPlateHandler(plugin: Trashpixl?) : Listener {//create the class and implement the listener
+class WoodPressurePlate(plugin: Trashpixl?) : Listener {//create the class and implement the listener
 
     init {//the constructor for the handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event

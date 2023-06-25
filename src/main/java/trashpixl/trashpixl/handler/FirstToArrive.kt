@@ -10,9 +10,9 @@ import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.environment
-import trashpixl.trashpixl.runnable.minigame
+import trashpixl.trashpixl.runnable.getMinigame
 
-class FirstToFinish(plugin: Trashpixl?, main: JavaPlugin) : Listener {
+class FirstToArrive(plugin: Trashpixl?, main: JavaPlugin) : Listener {
     private var mainPlugin = main
 
     init {//the constructor of this handler
@@ -25,7 +25,7 @@ class FirstToFinish(plugin: Trashpixl?, main: JavaPlugin) : Listener {
             if (ev.clickedBlock!!.type == Material.WARPED_PRESSURE_PLATE) {//compare what the player step on to a warped pressure plate
 
                 val p = ev.player//create the local player id
-                if (minigame() == 8 || minigame() == 5 || minigame() == 6) {//checking if the number in the file correspond to the number require to start the minigame
+                if (getMinigame() == 8 || getMinigame() == 5 || getMinigame() == 6) {//checking if the number in the file correspond to the number require to start the minigame
                     if (environment() == 1) {//checking if the environment is the lobby
                         p.chat(p.name + " won the race")//sending the won message
                         for (p2 in Bukkit.getServer().onlinePlayers) {//getting all online player

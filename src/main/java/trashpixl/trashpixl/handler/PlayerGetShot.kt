@@ -7,7 +7,7 @@ import org.bukkit.event.entity.ProjectileHitEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.environment
 
-class GetShot(plugin: Trashpixl?) : Listener {//create the class and implement the listener
+class PlayerGetShot(plugin: Trashpixl?) : Listener {//create the class and implement the listener
 init { // the constructor of this handler
     Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
 }
