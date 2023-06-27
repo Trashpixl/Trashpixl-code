@@ -71,12 +71,13 @@ class Trashpixl : JavaPlugin() {
         this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())//init the command for the dodge ball
     }
     private fun registerHandler(){
+        ChanceToDie(this)//start the chance to die handler
         BlockBreak(this, this)//start the break handler
         BlockPlace(this)//start the place handler
         PlayerLogin(this)//start the join handler
         PlayerLogout(this)//start the quit handler
         PlayerDeath(this, this)//init the death handler
-        StoneButton(this)//init the loot handler
+        LootGiver(this)//init the loot handler
         SendPlayerBetweenServer(this, this)//init the plate handler
         WoodPressurePlate(this)//init the wood plate handler
         MinigameSelect(this, this)//init the launcher handler
