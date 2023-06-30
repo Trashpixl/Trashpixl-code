@@ -29,7 +29,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating t
         var playerCount: Int//create the player count var
         if (getMinigame() in 1..7 || getMinigame() in 9..12 || getMinigame() == 14) {//check if the data that we found correspond to the one require to start the handler
             val name: String = ev.player.name//name variable to store the player name
-            if (environment() == 1) {//check if we are in the server 1
+            if (Variable.serverType == 1) {//check if we are in the server 1
                 ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
                 playerCount = 0//reset the player count
                 for (p in getServer().onlinePlayers) { // getting all the player in the server

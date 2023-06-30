@@ -18,6 +18,7 @@ class Variable {
         var blueTeam: MutableList<String>? = null//store the name of all player in blue team
         var redTeam: MutableList<String>? = null//store the name of all player in red team
         var tntIsPlaced = false//store if the tnt is placed
+        var serverType = 9//store the type of server
     }
 }
 

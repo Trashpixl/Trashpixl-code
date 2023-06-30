@@ -1,15 +1,15 @@
 package trashpixl.trashpixl.handler
 
-import com.google.common.io.ByteStreams//import byte stream
-import org.bukkit.Bukkit//import bukkit
-import org.bukkit.Material//import material
-import org.bukkit.event.EventHandler//import the handler
-import org.bukkit.event.Listener//import the listener
-import org.bukkit.event.block.Action//import the block action
-import org.bukkit.event.player.PlayerInteractEvent//import the player interact event
-import org.bukkit.plugin.java.JavaPlugin//import java plugin
-import trashpixl.trashpixl.Trashpixl//import the main class
-import trashpixl.trashpixl.runnable.environment//import some runnable
+import com.google.common.io.ByteStreams
+import org.bukkit.Bukkit
+import org.bukkit.Material
+import org.bukkit.event.EventHandler
+import org.bukkit.event.Listener
+import org.bukkit.event.block.Action
+import org.bukkit.event.player.PlayerInteractEvent
+import org.bukkit.plugin.java.JavaPlugin
+import trashpixl.trashpixl.Trashpixl
+import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.os
 import trashpixl.trashpixl.runnable.put
 
@@ -24,7 +24,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creatin
     @EventHandler//define that it is an event handler
     fun buttonHandler(ev: PlayerInteractEvent) {//describes what the event is
         if (ev.action == Action.RIGHT_CLICK_BLOCK) {//check if the action is physical
-            if (environment() == 2) {//check if environment equals 2
+            if (Variable.serverType == 2) {//check if environment equals 2
                 if (ev.clickedBlock!!.type == Material.WHITE_TERRACOTTA) {//compare what the player sept on to white terracotta and is required a
                     // non-nullable
                     for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player

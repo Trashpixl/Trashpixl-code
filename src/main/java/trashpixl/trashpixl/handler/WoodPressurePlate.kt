@@ -1,15 +1,15 @@
 package trashpixl.trashpixl.handler//the package for this project
 
 //the import for this project
-import org.bukkit.Bukkit // import bukkit for reference
-import org.bukkit.Location // import the location class
-import org.bukkit.Material // import all the bukkit material
-import org.bukkit.event.EventHandler // import the event handler
-import org.bukkit.event.Listener // import the listener class
-import org.bukkit.event.block.Action // import all the action for block
-import org.bukkit.event.player.PlayerInteractEvent // import the player event
-import trashpixl.trashpixl.Trashpixl // import the main class
-import trashpixl.trashpixl.runnable.environment//import the environment
+import org.bukkit.Bukkit
+import org.bukkit.Location
+import org.bukkit.Material
+import org.bukkit.event.EventHandler
+import org.bukkit.event.Listener
+import org.bukkit.event.block.Action
+import org.bukkit.event.player.PlayerInteractEvent
+import trashpixl.trashpixl.Trashpixl
+import trashpixl.trashpixl.runnable.Variable
 
 class WoodPressurePlate(plugin: Trashpixl?) : Listener {//create the class and implement the listener
 
@@ -22,7 +22,7 @@ class WoodPressurePlate(plugin: Trashpixl?) : Listener {//create the class and i
         if (ev.action == Action.PHYSICAL) {//check if the action is physical like step on or software like open the inventory
             if (ev.clickedBlock!!.type == Material.OAK_PRESSURE_PLATE) {//compare the event to an oak pressure plate
                 val p = ev.player//create the local variable player
-                if (environment() == 0) {//check if we are in server 0
+                if (Variable.serverType == 0) {//check if we are in server 0
                     val to: Location = p.bedSpawnLocation!!//get his bed location
                     p.teleport(to)//tp him to his bed
                 }
