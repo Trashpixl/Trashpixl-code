@@ -4,9 +4,8 @@ import org.bukkit.entity.Player//import the player
 import java.time.LocalTime//import the time
 
 class Variable {
-    //create the variable class
+
     companion object {
-        //create the companion object
         var preventPlacedBlock = false//var to define if we can place block
         var preventBreakedBlock:Boolean = false//var that define if we can break block
         var activeMinigame = false//store if there is an active minigame
@@ -18,5 +17,8 @@ class Variable {
         var tag: Player? = null//store the tag for tag player
         var blueTeam: MutableList<String>? = null//store the name of all player in blue team
         var redTeam: MutableList<String>? = null//store the name of all player in red team
+        var tntIsPlaced = false//store if the tnt is placed
     }
 }
+
+

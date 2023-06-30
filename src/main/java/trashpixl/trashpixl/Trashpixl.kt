@@ -1,11 +1,11 @@
 package trashpixl.trashpixl//package of the file
 
 
-import org.bukkit.plugin.java.JavaPlugin//import the java plugin
-import org.bukkit.scheduler.BukkitRunnable//import the bukkit runnable
-import trashpixl.trashpixl.command.* //importing all the command
-import trashpixl.trashpixl.handler.* //importing all the handler
-import trashpixl.trashpixl.runnable.*//importing all the runnable
+import org.bukkit.plugin.java.JavaPlugin
+import org.bukkit.scheduler.BukkitRunnable
+import trashpixl.trashpixl.command.*
+import trashpixl.trashpixl.handler.*
+import trashpixl.trashpixl.runnable.*
 
 
 class Trashpixl : JavaPlugin() {
@@ -47,6 +47,12 @@ class Trashpixl : JavaPlugin() {
                 isBlinded()//run is blinded
             }
         }.runTaskTimer(this, 0L, 10L)//run the timer immediately and at every 10 tick
+        object : BukkitRunnable() {
+            //create a new runnable
+            override fun run() {//run the runnable
+             removeTntStartBlock()//run the remove tnt start block
+            }
+        }.runTaskTimer(this, 0L, 40L)//run the timer immediately and at every 40 tick
     }
     private fun registerCommand(){
         this.getCommand("onCommandPvp")?.setExecutor(OnCommandPvp())//init the command for the pvp game
@@ -65,19 +71,20 @@ class Trashpixl : JavaPlugin() {
         this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())//init the command for the dodge ball
     }
     private fun registerHandler(){
-        Remove(this, this)//start the remove handler
-        Break(this)//start the break handler
-        Place(this)//start the place handler
-        Join(this)//start the join handler
-        Quit(this)//start the quit handler
-        Death(this, this)//init the death handler
-        Loot(this)//init the loot handler
-        PlateHandler(this, this)//init the plate handler
-        WoodPlateHandler(this)//init the wood plate handler
-        Launcher(this, this)//init the launcher handler
-        FirstToFinish(this, this)//init the first to finish handler
-        Punch(this)//init the punch handler
-        LauncherJoin(this)//init the launcher join handler
-        GetShot(this)//init the get shot handler
+        ChanceToDie(this)//start the chance to die handler
+        BlockBreak(this, this)//start the break handler
+        BlockPlace(this)//start the place handler
+        PlayerLogin(this)//start the join handler
+        PlayerLogout(this)//start the quit handler
+        PlayerDeath(this, this)//init the death handler
+        LootGiver(this)//init the loot handler
+        SendPlayerBetweenServer(this, this)//init the plate handler
+        WoodPressurePlate(this)//init the wood plate handler
+        MinigameSelect(this, this)//init the launcher handler
+        FirstToArrive(this, this)//init the first to finish handler
+        PlayerGetPunch(this)//init the punch handler
+        MinigameLauncher(this)//init the launcher join handler
+        PlayerGetShot(this)//init the get shot handler
     }
+
 }
