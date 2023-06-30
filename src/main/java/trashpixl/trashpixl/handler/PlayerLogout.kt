@@ -16,7 +16,7 @@ init {//the constructor of this handler
 
     @EventHandler//says that this is an event handler
     fun onPlayerQuit(ev: PlayerQuitEvent) {//execute when a player quit the server
-        if (Bukkit.getOnlinePlayers().isEmpty() && Variable.activeMinigame) {//check if the player count is 0
+        if (Variable.serverType == 1 && Bukkit.getOnlinePlayers().isEmpty() && Variable.activeMinigame) {//check if the player count is 0
             Variable.activeMinigame = false//set the active minigame to false
             put(os(), 0)//set the minigame to 0
         }

@@ -19,15 +19,18 @@ class Trashpixl : JavaPlugin() {
             registerCommand()//register the command
             Variable.preventPlacedBlock = true//set the prevent placed block to true
             Variable.preventBreakedBlock = true//set the prevent breaked block to true
+            Variable.serverType = 1//set the server type to 1
 
         }
         if(environment() == 2){
             Variable.preventPlacedBlock = true//set the prevent placed block to true
             Variable.preventBreakedBlock = true//set the prevent breaked block to true
+            Variable.serverType = 2//set the server type to 2
         }
         if(environment() == 0){
-           Variable.preventPlacedBlock = false//set the prevent placed block to false
+            Variable.preventPlacedBlock = false//set the prevent placed block to false
             Variable.preventBreakedBlock = false//set the prevent breaked block to false
+            Variable.serverType = 0//set the server type to 0
         }
 
     }

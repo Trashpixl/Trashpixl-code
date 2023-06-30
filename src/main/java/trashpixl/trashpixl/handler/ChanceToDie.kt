@@ -8,7 +8,6 @@ import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerInteractEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
-import trashpixl.trashpixl.runnable.environment
 import trashpixl.trashpixl.runnable.getMinigame
 
 class ChanceToDie (plugin: Trashpixl?) : Listener {//creating the class
@@ -20,7 +19,7 @@ init {//the constructor of this handler
     fun buttonHandler(ev: PlayerInteractEvent) {//describes what the event is
         val p = ev.player//creating the player variable
         if (ev.action == Action.RIGHT_CLICK_BLOCK) {//check if the action is physical
-            if (ev.clickedBlock!!.type == Material.STONE_BUTTON && environment() == 1) {//compare what the player pushed to the stone button
+            if (ev.clickedBlock!!.type == Material.STONE_BUTTON && Variable.serverType == 1) {//compare what the player pushed to the stone button
                 if (getMinigame() == 10) {//check if the minigame is 10
                     if (p.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {//check if the player is the one that is supposed to be playing
                         if ((1..10).random() == 1) {//check if the player is lucky

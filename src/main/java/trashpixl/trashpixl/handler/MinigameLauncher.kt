@@ -6,7 +6,6 @@ import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
-import trashpixl.trashpixl.runnable.environment
 import trashpixl.trashpixl.runnable.getMinigame
 
 class MinigameLauncher(plugin: Trashpixl?) : Listener {
@@ -19,7 +18,7 @@ class MinigameLauncher(plugin: Trashpixl?) : Listener {
     fun onJoin(ev: PlayerJoinEvent) {//describes what the event is
         val p = ev.player//create the local player id
 
-        if (environment() == 1) {
+        if (Variable.serverType == 1) {
 
             if (!Variable.activeMinigame) {
                 Variable.activeMinigame = true

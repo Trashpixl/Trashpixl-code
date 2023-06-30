@@ -9,7 +9,7 @@ import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.inventory.ItemStack
 import trashpixl.trashpixl.Trashpixl
-import trashpixl.trashpixl.runnable.environment
+import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.getMinigame
 
 class LootGiver(plugin: Trashpixl?) : Listener {//creating the class
@@ -21,7 +21,7 @@ init {//the constructor of this handler
     fun buttonHandler(ev: PlayerInteractEvent) {//describes what the event is
         val p = ev.player//creating the player variable
         if (ev.action == Action.RIGHT_CLICK_BLOCK) {//check if the action is physical
-            if (ev.clickedBlock!!.type == Material.STONE_BUTTON && environment() == 1) {//compare what the player pushed to the stone button
+            if (ev.clickedBlock!!.type == Material.STONE_BUTTON && Variable.serverType == 1) {//compare what the player pushed to the stone button
                 if (getMinigame() == 4) {//check if the data equals 3
                     val kit = (1..6).random()//creating the random val between 1 and 6
                     if (kit == 1) {//checking if kit equals 1
