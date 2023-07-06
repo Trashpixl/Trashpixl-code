@@ -9,6 +9,7 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
 import trashpixl.trashpixl.runnable.Variable
+import trashpixl.trashpixl.runnable.copyGame
 
 class OnCommandBridgeRace : CommandExecutor {//creating the class death and implementing the listener
 
@@ -16,6 +17,7 @@ class OnCommandBridgeRace : CommandExecutor {//creating the class death and impl
         val xGame = 177.7//the x coord of the game
         val yGame= -60.0//the y coord of the game
         val zGame = 265.3//the z coord of the game
+        copyGame("bridgeRace")//copy the game
         for (p in getServer().onlinePlayers) {//get all the online player
             val item1 = ItemStack(Material.BLACK_WOOL, 64)//create the item stack with 64 black wool inside
             p.health = 20.0//set the health to 20

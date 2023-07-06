@@ -8,11 +8,7 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import trashpixl.trashpixl.runnable.Variable
-
-
-
-
-
+import trashpixl.trashpixl.runnable.copyGame
 
 
 class OnCommandTnt : CommandExecutor {//creating the class death and implementing the listener
@@ -28,6 +24,8 @@ class OnCommandTnt : CommandExecutor {//creating the class death and implementin
 
         Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
         Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
+
+        copyGame("tnt")//copy the game
         for(x in 0..12){
             for (y in 0..12) {
                for(z in 0..12){

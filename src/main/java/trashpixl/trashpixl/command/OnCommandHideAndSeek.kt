@@ -10,6 +10,7 @@ import org.bukkit.entity.Player
 import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
 import trashpixl.trashpixl.runnable.Variable
+import trashpixl.trashpixl.runnable.copyGame
 import kotlin.random.Random
 
 
@@ -19,6 +20,7 @@ class OnCommandHideAndSeek : CommandExecutor {//creating the class death and imp
         val x = 355.0//the x coord of the game
         val y = -58.0//the y coord of the game
         val z = 339.0//the z coord of the game
+        copyGame("hideAndSeek")
         for (p in Bukkit.getServer().onlinePlayers) {//get all the online player
 
             p.health = 20.0//set the health to 20
