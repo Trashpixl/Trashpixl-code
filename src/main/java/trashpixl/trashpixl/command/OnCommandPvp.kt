@@ -9,6 +9,7 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
 import trashpixl.trashpixl.runnable.Variable
+import trashpixl.trashpixl.runnable.copyGame
 
 
 class OnCommandPvp : CommandExecutor { //creating the class death and implementing the listener
@@ -17,6 +18,7 @@ class OnCommandPvp : CommandExecutor { //creating the class death and implementi
         val x = 239.0//the x coord of the game
         val y = -58.0//the y coord of the game
         val z = 279.0//the z coord of the game
+        copyGame("pvp")//copy the game
         for (p in getServer().onlinePlayers) {//get all the player in the server
             p.health = 20.0//set the health to 20
             val w: World = p.world//get the player world

@@ -9,6 +9,7 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.inventory.ItemStack
 import trashpixl.trashpixl.runnable.Variable
+import trashpixl.trashpixl.runnable.copyGame
 
 class OnCommandDodgeBall : CommandExecutor { //creating the class death and implementing the listener
 
@@ -21,6 +22,9 @@ class OnCommandDodgeBall : CommandExecutor { //creating the class death and impl
         val yB = 0.0
         val zB = 0.0
         var playerCount = 0//count the number of player
+        Variable.blueTeam?.clear()//clear the blue team
+        Variable.redTeam?.clear()//clear the red team
+        copyGame("dodgeball")//copy the game
         for (p in Bukkit.getServer().onlinePlayers) {//get all the player in the server
             playerCount++//add 1 to the player count
             p.health = 20.0//set the health to 20

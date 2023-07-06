@@ -12,7 +12,7 @@ import com.sk89q.worldedit.regions.CuboidRegion
 import org.bukkit.Bukkit
 
 
-fun copyGame(game: String){
+fun copyGame(game: String){//TODO: add the coords
     val xFrom = 0.0
     val yFrom = 0.0
     val zFrom = 0.0
@@ -206,7 +206,7 @@ fun copyGame(game: String){
 
     }
 }
-fun copyRegion(min: BlockVector3?, max: BlockVector3?, from: BlockVector3?, to: BlockVector3?) {
+private fun copyRegion(min: BlockVector3?, max: BlockVector3?, from: BlockVector3?, to: BlockVector3?) {
     val world = BukkitAdapter.adapt(Bukkit.getWorld("world"))
     val region = CuboidRegion(min, max)
     val editSession = WorldEdit.getInstance().newEditSessionBuilder().world(world).maxBlocks(-1).build()
