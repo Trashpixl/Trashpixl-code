@@ -64,6 +64,9 @@ class MinigameLauncher(plugin: Trashpixl?) : Listener {
                 if (getMinigame() == 14 && Bukkit.getOnlinePlayers().size == 1) {
                     Bukkit.dispatchCommand(p, "onCommandDodgeBall")//dispatch command for dodge ball
                 }
+                if(getMinigame() == 15 && Bukkit.getOnlinePlayers().size == 1){
+                    Bukkit.dispatchCommand(p, "onCommandCamelFight")//dispatch command for tnt tag
+                }
 
             }
 

@@ -72,6 +72,7 @@ class Trashpixl : JavaPlugin() {
         this.getCommand("onCommandTag")?.setExecutor(OnCommandTag())//init the command for the tag
         this.getCommand("onCommandSearchAndFind")?.setExecutor(OnCommandSearchAndFind())//init the command for the search and find
         this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())//init the command for the dodge ball
+        this.getCommand("onCommandCamelFight")?.setExecutor(OnCommandCamelFight())//init the command for the tnt start
     }
     private fun registerHandler(){
         ChanceToDie(this)//start the chance to die handler

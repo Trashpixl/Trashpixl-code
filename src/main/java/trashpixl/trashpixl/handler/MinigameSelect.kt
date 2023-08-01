@@ -176,7 +176,15 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creatin
                     }
                     put(os(), 14)//put 14 in the minigame file
                 }
-
+                if (ev.clickedBlock!!.type == Material.OBSIDIAN) {//todo check for the block
+                    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
+                        val connect = ByteStreams.newDataOutput()//create the new data stream
+                        connect.writeUTF("Connect")//send the connects packet
+                        connect.writeUTF("mini")//send the mini packet
+                        p2.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                    }
+                    put(os(), 15)//put 14 in the minigame file
+                }
             }
         }
     }

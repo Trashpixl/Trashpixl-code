@@ -205,6 +205,20 @@ fun copyGame(game: String){//TODO: add the coords
         copyRegion(vector1, vector2, vectorFrom, vectorTo)
 
     }
+    if(game == "camelFight"){
+        val x1 = 0.0
+        val y1 = 0.0
+        val z1 = 0.0
+
+        val x2 = 0.0
+        val y2 = 0.0
+        val z2 = 0.0
+        val vector1 = BlockVector3.at(x1, y1, z1)
+        val vector2 = BlockVector3.at(x2, y2, z2)
+
+        copyRegion(vector1, vector2, vectorFrom, vectorTo)
+
+    }
 }
 private fun copyRegion(min: BlockVector3?, max: BlockVector3?, from: BlockVector3?, to: BlockVector3?) {
     val world = BukkitAdapter.adapt(Bukkit.getWorld("world"))
