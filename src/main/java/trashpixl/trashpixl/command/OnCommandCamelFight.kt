@@ -6,6 +6,7 @@ import org.bukkit.World
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
+import org.bukkit.entity.EntityType
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.copyGame
 
@@ -25,11 +26,16 @@ class OnCommandCamelFight: CommandExecutor { //creating the class death and impl
         }
         Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
         Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
-        //todo add the code to give the player the bow
-        //todo add the code to give the player the arrow
-        //todo add the code to put the player in team of two
-        //todo add the code to give each team a camel
-        //todo add the code to prevent the player from dismounting the camel
+
+        val spawnLocation = Location(Bukkit.getServer().getWorld("world"), 100.0, 64.0, 100.0)
+        spawnCamel(spawnLocation)
+
         return false
     }
+    private fun spawnCamel(location: Location) {
+        val world = location.world
+        val camel = world.spawnEntity(location, EntityType.CAMEL)
+    }
 }
+//todo add the event that tp the player back to spawn when he dies or when is camel die
+//todo add the event that will end the game when there is only one team left
