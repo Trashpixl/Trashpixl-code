@@ -9,11 +9,11 @@ import org.bukkit.event.player.PlayerRespawnEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
-import trashpixl.trashpixl.runnable.environment
 import trashpixl.trashpixl.runnable.getMinigame
 import java.time.LocalTime
 
-class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating the class death and implementing the listener
+class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
+    //creating the class death and implementing the listener
     private val mainPlugin = main
 
 
@@ -27,6 +27,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating t
         connect.writeUTF("Connect")//action connect
         connect.writeUTF("lobby")//connect to the lobby
         var playerCount: Int//create the player count var
+
         if (getMinigame() in 1..7 || getMinigame() in 9..12 || getMinigame() == 14) {//check if the data that we found correspond to the one require to start the handler
             val name: String = ev.player.name//name variable to store the player name
             if (Variable.serverType == 1) {//check if we are in the server 1
@@ -49,7 +50,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating t
             }
         }
         if (getMinigame() == 11 || getMinigame() == 10) {//check if the minigame 11 is going
-            if (environment() == 1) {//check if we are in server one
+            if (Variable.serverType == 1) {//check if we are in server one
                 ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
                 Variable.playerArray = mutableListOf()
 
@@ -60,16 +61,31 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creating t
                 Variable.playerArray!!.sort()//sort the array
                 Variable.time = LocalTime.now()//reset the time
                 Variable.playerArrayNumber = 0//reset the array cursor
-                if(getMinigame() == 10){
-                for(player in getServer().onlinePlayers){
-                    if(player.name == Variable.playerArray?.get(Variable.playerArrayNumber)){
-                        player.chat("its your turn")
+                if (getMinigame() == 10) {
+                    for (player in getServer().onlinePlayers) {
+                        if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {
+                            player.chat("its your turn")
+                        }
                     }
                 }
             }
         }
+        if (getMinigame() == 15) {
+            if (Variable.serverType == 1) {//check if we are in the server 1
+                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+            }
+            playerCount = 0//reset the player count
+            for (p in getServer().onlinePlayers) { // getting all the player in the server
+                playerCount++//add one to the player count
+            }
+            if (playerCount <= 2) {
+                for (p in getServer().onlinePlayers) { // getting all the player in the server
+                    p.chat("congratulation you won the match")//send the win message
+                    p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                }
+            }
+
+        }
     }
-        
-}
 }
 

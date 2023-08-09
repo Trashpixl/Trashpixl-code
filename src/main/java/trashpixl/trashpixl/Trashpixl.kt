@@ -89,6 +89,9 @@ class Trashpixl : JavaPlugin() {
         PlayerGetPunch(this)//init the punch handler
         MinigameLauncher(this)//init the launcher join handler
         PlayerGetShot(this)//init the get shot handler
+        CamelDismount(this)//init the camel dismount handler
+        OnCamelDeath(this, this)//init the camel death handler
+        OnCamelSpawn(this)//init the camel spawn handler
     }
 
 }

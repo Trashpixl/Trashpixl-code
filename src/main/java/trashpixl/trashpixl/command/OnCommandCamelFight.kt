@@ -27,7 +27,7 @@ class OnCommandCamelFight: CommandExecutor { //creating the class death and impl
         Variable.preventBreakedBlock = true//set the preventBreakedBlocks to true
         Variable.preventPlacedBlock = true//set the preventPlacedBlock to true
 
-        val spawnLocation = Location(Bukkit.getServer().getWorld("world"), 100.0, 64.0, 100.0)
+        val spawnLocation = Location(Bukkit.getServer().getWorld("world"), 0.0, 0.0, 0.0)//todo change this to the actual spawn location
         spawnCamel(spawnLocation)
 
         return false
@@ -37,5 +37,3 @@ class OnCommandCamelFight: CommandExecutor { //creating the class death and impl
         val camel = world.spawnEntity(location, EntityType.CAMEL)
     }
 }
-//todo add the event that tp the player back to spawn when he dies or when is camel die
-//todo add the event that will end the game when there is only one team left

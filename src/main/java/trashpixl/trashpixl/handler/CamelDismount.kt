@@ -1,14 +1,19 @@
 package trashpixl.trashpixl.handler
 
+import org.bukkit.Bukkit
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.vehicle.VehicleExitEvent
+import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.getMinigame
 
-class CamelDismount: Listener {
+class CamelDismount(plugin: Trashpixl?): Listener {
 
+    init {//the constructor of this handler
+        Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
+    }
     @EventHandler
     fun onVehicleExit(event: VehicleExitEvent) {
         val exited = event.exited
