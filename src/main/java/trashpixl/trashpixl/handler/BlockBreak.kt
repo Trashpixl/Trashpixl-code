@@ -9,8 +9,10 @@ import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
+import SendPlayerBetweenServer
 
-class BlockBreak(plugin: Trashpixl?, private val mainPlugin: JavaPlugin) : Listener {
+class BlockBreak(plugin: Trashpixl?, mainPlugin: JavaPlugin) : Listener {
+    val mainPlugin = mainPlugin//the main plugin
     init {//the constructor of this handler
         Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
     }
@@ -27,13 +29,10 @@ class BlockBreak(plugin: Trashpixl?, private val mainPlugin: JavaPlugin) : Liste
             ev.player.chat("you won")//send a message to the player
 
 
-            val connect = ByteStreams.newDataOutput()//create the byte stream
-            connect.writeUTF("Connect")//action connect
-            connect.writeUTF("lobby")//to the lobby
-            ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//send the player to the location
+           SendPlayerBetweenServer("lobby", ev.player, mainPlugin)//send the player to the main server
             for (p in Bukkit.getServer().onlinePlayers) {//get all player in the server
                 p.chat("you lose and $name won")//send the lose message to all of them
-                p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect each player
+                SendPlayerBetweenServer("lobby", p, mainPlugin)//send the player to the main server
 
             }
             blockLocation.block.type = Material.GRASS_BLOCK//set the block to grass

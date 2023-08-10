@@ -6,6 +6,7 @@ import org.bukkit.scheduler.BukkitRunnable
 import trashpixl.trashpixl.command.*
 import trashpixl.trashpixl.handler.*
 import trashpixl.trashpixl.runnable.*
+import SnowBallGiver
 
 
 class Trashpixl : JavaPlugin() {
@@ -72,6 +73,7 @@ class Trashpixl : JavaPlugin() {
         this.getCommand("onCommandTag")?.setExecutor(OnCommandTag())//init the command for the tag
         this.getCommand("onCommandSearchAndFind")?.setExecutor(OnCommandSearchAndFind())//init the command for the search and find
         this.getCommand("onCommandDodgeBall")?.setExecutor(OnCommandDodgeBall())//init the command for the dodge ball
+        this.getCommand("onCommandCamelFight")?.setExecutor(OnCommandCamelFight())//init the command for the tnt start
     }
     private fun registerHandler(){
         ChanceToDie(this)//start the chance to die handler
@@ -81,13 +83,17 @@ class Trashpixl : JavaPlugin() {
         PlayerLogout(this)//start the quit handler
         PlayerDeath(this, this)//init the death handler
         LootGiver(this)//init the loot handler
-        SendPlayerBetweenServer(this, this)//init the plate handler
+        Portal(this, this)//init the plate handler
         WoodPressurePlate(this)//init the wood plate handler
         MinigameSelect(this, this)//init the launcher handler
         FirstToArrive(this, this)//init the first to finish handler
         PlayerGetPunch(this)//init the punch handler
         MinigameLauncher(this)//init the launcher join handler
         PlayerGetShot(this)//init the get shot handler
+        CamelDismount(this)//init the camel dismount handler
+        OnCamelDeath(this, this)//init the camel death handler
+        OnCamelSpawn(this)//init the camel spawn handler
+        SnowBallGiver(this)//init the snow ball giver handler
     }
 
 }
