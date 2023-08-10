@@ -42,3 +42,6 @@ commands:
   onCommandDodgeBall:
     description: command for dodge ball
     usage: /<command>
+  onCommandCamelFight:
+    description: command for camel fight
+    usage: /<command>

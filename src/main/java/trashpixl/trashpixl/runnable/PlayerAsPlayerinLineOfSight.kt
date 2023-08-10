@@ -10,6 +10,5 @@ fun lineOfSight() {
                 player.health = 0.0//set player health to zero
             }
         }
-
     }
 }
