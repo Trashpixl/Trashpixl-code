@@ -11,6 +11,7 @@ import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.getMinigame
 import java.time.LocalTime
+import SendPlayerBetweenServer
 
 class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
     //creating the class death and implementing the listener
@@ -23,15 +24,13 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
 
     @EventHandler // says that this is an event handler
     fun onPlayerDead(ev: PlayerRespawnEvent) {
-        val connect = ByteStreams.newDataOutput()//create the byte stream
-        connect.writeUTF("Connect")//action connect
-        connect.writeUTF("lobby")//connect to the lobby
+      
         var playerCount: Int//create the player count var
 
         if (getMinigame() in 1..7 || getMinigame() in 9..12 || getMinigame() == 14) {//check if the data that we found correspond to the one require to start the handler
             val name: String = ev.player.name//name variable to store the player name
             if (Variable.serverType == 1) {//check if we are in the server 1
-                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                SendPlayerBetweenServer("lobby", ev.player, mainPlugin)//send the player to the location
                 playerCount = 0//reset the player count
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
                     playerCount++//add one to the player count
@@ -44,14 +43,14 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                         } else {
                             p.chat("how did you kill yourself")//send the death message
                         }
-                        p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player to the server
+                        SendPlayerBetweenServer("lobby", p, mainPlugin)//send the player to the location
                     }
                 }
             }
         }
         if (getMinigame() == 11 || getMinigame() == 10) {//check if the minigame 11 is going
             if (Variable.serverType == 1) {//check if we are in server one
-                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                SendPlayerBetweenServer("lobby", ev.player, mainPlugin)//send the player to the location
                 Variable.playerArray = mutableListOf()
 
                 for (player in getServer().onlinePlayers) {//get all the player in the server
@@ -72,7 +71,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
         }
         if (getMinigame() == 15) {
             if (Variable.serverType == 1) {//check if we are in the server 1
-                ev.player.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                SendPlayerBetweenServer("lobby", ev.player, mainPlugin)//send the player to the location
             }
             playerCount = 0//reset the player count
             for (p in getServer().onlinePlayers) { // getting all the player in the server
@@ -81,7 +80,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
             if (playerCount <= 2) {
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
                     p.chat("congratulation you won the match")//send the win message
-                    p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//connect the player
+                    SendPlayerBetweenServer("lobby", ev.player, mainPlugin)//send the player to the location
                 }
             }
 

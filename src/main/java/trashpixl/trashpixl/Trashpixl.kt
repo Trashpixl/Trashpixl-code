@@ -6,6 +6,7 @@ import org.bukkit.scheduler.BukkitRunnable
 import trashpixl.trashpixl.command.*
 import trashpixl.trashpixl.handler.*
 import trashpixl.trashpixl.runnable.*
+import SnowBallGiver
 
 
 class Trashpixl : JavaPlugin() {
@@ -82,7 +83,7 @@ class Trashpixl : JavaPlugin() {
         PlayerLogout(this)//start the quit handler
         PlayerDeath(this, this)//init the death handler
         LootGiver(this)//init the loot handler
-        SendPlayerBetweenServer(this, this)//init the plate handler
+        Portal(this, this)//init the plate handler
         WoodPressurePlate(this)//init the wood plate handler
         MinigameSelect(this, this)//init the launcher handler
         FirstToArrive(this, this)//init the first to finish handler
@@ -92,6 +93,7 @@ class Trashpixl : JavaPlugin() {
         CamelDismount(this)//init the camel dismount handler
         OnCamelDeath(this, this)//init the camel death handler
         OnCamelSpawn(this)//init the camel spawn handler
+        SnowBallGiver(this)//init the snow ball giver handler
     }
 
 }

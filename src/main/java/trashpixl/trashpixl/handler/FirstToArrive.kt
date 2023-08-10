@@ -11,6 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.getMinigame
+import SendPlayerBetweenServer
 
 class FirstToArrive(plugin: Trashpixl?, main: JavaPlugin) : Listener {
     private var mainPlugin = main
@@ -28,10 +29,7 @@ class FirstToArrive(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                     if (Variable.serverType == 1) {//checking if the environment is the lobby
                         p.chat(p.name + " won the race")//sending the won message
                         for (p2 in Bukkit.getServer().onlinePlayers) {//getting all online player
-                            val connect = ByteStreams.newDataOutput()//creating the connection
-                            connect.writeUTF("Connect")//writing the command
-                            connect.writeUTF("lobby")//writing the server name
-                            p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//sending the message
+                            SendPlayerBetweenServer("lobby", p, mainPlugin)//send the player to the main server
                         }
 
                     }

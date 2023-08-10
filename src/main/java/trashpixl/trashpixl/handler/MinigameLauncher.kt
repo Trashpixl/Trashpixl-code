@@ -17,60 +17,27 @@ class MinigameLauncher(plugin: Trashpixl?) : Listener {
     @EventHandler
     fun onJoin(ev: PlayerJoinEvent) {//describes what the event is
         val p = ev.player//create the local player id
-
         if (Variable.serverType == 1) {
-
             if (!Variable.activeMinigame) {
                 Variable.activeMinigame = true
-                if (getMinigame() == 1 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandPvp") //dispatchCommand for parkour
-                }
-                if (getMinigame() == 2 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandPvpSumo")//dispatchCommand for parkour
-                }
-                if (getMinigame() == 3 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandPvpBow")//dispatchCommand for parkour
-                }
-                if (getMinigame() == 4 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandPvpLoot")//dispatchCommand for parkour
-                }
-                if (getMinigame() == 5 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandBridgeRace")//dispatchCommand for bridge
-                }
-                if (getMinigame() == 6 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandParkour")//dispatchCommand for parkour
-                }
-                if (getMinigame() == 7 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandPvpKnockBack")//dispatchCommand for pvp knock back
-                }
-                if (getMinigame() == 8 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandLabi")//dispatchCommand for parkour
-                }
-                if (getMinigame() == 9 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandTnt")//dispatchCommand for tnt race
-                }
-                if (getMinigame() == 10 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandButton4")//dispatchCommand for tnt race
-                }
-                if (getMinigame() == 11 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandHideAndSeek")//dispatch command for hide and seek
-                }
-                if (getMinigame() == 12 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandTag")//dispatch command for tag
-                }
-                if (getMinigame() == 13 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandSearchAndFind")//dispatch command for search and find
-                }
-                if (getMinigame() == 14 && Bukkit.getOnlinePlayers().size == 1) {
-                    Bukkit.dispatchCommand(p, "onCommandDodgeBall")//dispatch command for dodge ball
-                }
-                if(getMinigame() == 15 && Bukkit.getOnlinePlayers().size == 1){
-                    Bukkit.dispatchCommand(p, "onCommandCamelFight")//dispatch command for tnt tag
-                }
-
+                when (getMinigame()) {
+                    1 -> Bukkit.dispatchCommand(p, "onCommandPvp") //dispatchCommand for parkour
+                    2 -> Bukkit.dispatchCommand(p, "onCommandPvpSumo")//dispatchCommand for parkour    
+                    3 -> Bukkit.dispatchCommand(p, "onCommandPvpBow")//dispatchCommand for parkour
+                    4 -> Bukkit.dispatchCommand(p, "onCommandPvpLoot")//dispatchCommand for parkour
+                    5 -> Bukkit.dispatchCommand(p, "onCommandBridgeRace")//dispatchCommand for bridge
+                    6 -> Bukkit.dispatchCommand(p, "onCommandParkour")//dispatchCommand for parkour
+                    7 -> Bukkit.dispatchCommand(p, "onCommandPvpKnockBack")//dispatchCommand for pvp knock back
+                    8 -> Bukkit.dispatchCommand(p, "onCommandLabi")//dispatchCommand for parkour
+                    9 -> Bukkit.dispatchCommand(p, "onCommandTnt")//dispatchCommand for tnt race
+                    10 -> Bukkit.dispatchCommand(p, "onCommandButton4")//dispatchCommand for tnt race
+                    11 -> Bukkit.dispatchCommand(p, "onCommandHideAndSeek")//dispatch command for hide and seek
+                    12 -> Bukkit.dispatchCommand(p, "onCommandTag")//dispatch command for tag
+                    13 -> Bukkit.dispatchCommand(p, "onCommandSearchAndFind")//dispatch command for search and find
+                    14 -> Bukkit.dispatchCommand(p, "onCommandDodgeBall")//dispatch command for dodge ball
+                    15 -> Bukkit.dispatchCommand(p, "onCommandCamelFight")//dispatch command for tnt tag
+                }  
             }
-
         }
-
     }
 }

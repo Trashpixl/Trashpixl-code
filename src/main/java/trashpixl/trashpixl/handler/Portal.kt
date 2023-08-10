@@ -10,8 +10,9 @@ import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
+import SendPlayerBetweenServer
 
-class SendPlayerBetweenServer(plugin: Trashpixl?, main: JavaPlugin) : Listener {//the implements for the listener
+class Portal(plugin: Trashpixl?, main: JavaPlugin) : Listener {//the implements for the listener
     private val mainPlugin = main//the main plugin
 
     init { // the constructor of this handler
@@ -27,17 +28,11 @@ class SendPlayerBetweenServer(plugin: Trashpixl?, main: JavaPlugin) : Listener {
 
                 if (Variable.serverType == 0) {//check if we are in server 0
 
-                    val connect = ByteStreams.newDataOutput()//create the byte stream
-                    connect.writeUTF("Connect")//action connect
-                    connect.writeUTF("lobby")//to the lobby
-                    p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//send the player to the location
+                    SendPlayerBetweenServer("lobby", p, mainPlugin)//send the player to the location
                 }
                 if (Variable.serverType == 2) {//check if we are in server 2
 
-                    val connect = ByteStreams.newDataOutput()//create the byte stream
-                    connect.writeUTF("Connect")//action connect
-                    connect.writeUTF("main")//to the main
-                    p.sendPluginMessage(mainPlugin, "BungeeCord", connect.toByteArray())//send the player to the location
+                     SendPlayerBetweenServer("main", p, mainPlugin)//send the player to the location
                 }
             }
         }
