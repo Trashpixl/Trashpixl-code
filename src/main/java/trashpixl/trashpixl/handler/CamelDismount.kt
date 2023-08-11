@@ -21,7 +21,6 @@ class CamelDismount(plugin: Trashpixl?): Listener {
 
         if (vehicle.type == EntityType.CAMEL && exited is Player && getMinigame() == 15) {
             // Prevent player from exiting the camel
-           // exited.inventory.clear() //todo check if this line is needed
             event.isCancelled = true
         }
     }

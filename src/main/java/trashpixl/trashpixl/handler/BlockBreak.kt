@@ -36,7 +36,6 @@ class BlockBreak(plugin: Trashpixl?, mainPlugin: JavaPlugin) : Listener {
 
             }
             blockLocation.block.type = Material.GRASS_BLOCK//set the block to grass
-            //TODO add the rest of the action
         }
     }
 }

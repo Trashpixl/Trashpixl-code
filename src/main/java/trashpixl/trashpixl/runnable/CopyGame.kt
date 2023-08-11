@@ -12,11 +12,11 @@ import com.sk89q.worldedit.regions.CuboidRegion
 import org.bukkit.Bukkit
 
 
-fun copyGame(game: String){//TODO: add the coords
-    //todo add something to clear the previous map
-    val xTo = 0.0
-    val yTo = 0.0
-    val zTo = 0.0
+fun copyGame(game: String){
+    fillWithAir()
+    val xTo = -50.0
+    val yTo = -64.0
+    val zTo = -50.0
     val vectorTo = BlockVector3.at(xTo, yTo, zTo)
 
     if(game == "tnt"){
@@ -29,6 +29,7 @@ fun copyGame(game: String){//TODO: add the coords
         val z2 = 245.0
         val vector1 = BlockVector3.at(x1, y1, z1)
         val vector2 = BlockVector3.at(x2, y2, z2)
+        
 
         copyRegion(vector1, vector2, vector1, vectorTo)
 
@@ -242,5 +243,19 @@ private fun copyRegion(min: BlockVector3?, max: BlockVector3?, from: BlockVector
     } catch (e: WorldEditException) {
         throw RuntimeException(e)
     }
+}
+private fun fillWithAir(){
+    val x1 = 1000.0
+    val y1 = 256.0
+    val z1 = 1000.0
+
+    val x2 = 1100.0
+    val y2 = 100.0
+    val z2 = 1100.0
+    val vector1 = BlockVector3.at(x1, y1, z1)
+    val vector2 = BlockVector3.at(x2, y2, z2)
+
+    copyRegion(vector1, vector2, vector1, vector2)
+
 }
 

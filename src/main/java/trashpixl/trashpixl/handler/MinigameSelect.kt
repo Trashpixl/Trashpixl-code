@@ -105,7 +105,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) : Listener {//creatin
                 }
                 if (ev.clickedBlock!!.type == Material.OBSIDIAN) {//todo check for the block
                     numberOfPlayersRequired = 2
-                    put(os(), 15)//put 14 in the minigame file
+                    put(os(), 15)//put 15 in the minigame file
                 }
                 for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
                     if(playerSent == numberOfPlayersRequired){break}
