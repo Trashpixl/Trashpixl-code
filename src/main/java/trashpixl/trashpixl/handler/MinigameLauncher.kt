@@ -19,14 +19,11 @@ class MinigameLauncher(plugin: Trashpixl?) : Listener {
     ev.player.sendMessage("test1")
         val p = ev.player//create the local player id
         if (Variable.serverType == 1) {
-           ev.player.sendMessage("test2")
+        
             if (!Variable.activeMinigame) {
-                p.sendMessage("test3")
+                
                 p.sendMessage(getMinigame().toString())
                 Variable.activeMinigame = true
-                if(getMinigame().toInt() == 1){
-                    p.sendMessage("test4")
-                }
                 when (getMinigame()) {
                     1 -> p.sendMessage("fuck it")//Bukkit.dispatchCommand(p, "onCommandPvp") //dispatchCommand for parkour
                     2 -> Bukkit.dispatchCommand(p, "onCommandPvpSumo")//dispatchCommand for parkour    
