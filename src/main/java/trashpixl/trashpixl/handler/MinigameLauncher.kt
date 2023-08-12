@@ -25,7 +25,7 @@ class MinigameLauncher(plugin: Trashpixl?) : Listener {
                 p.sendMessage(getMinigame().toString())
                 Variable.activeMinigame = true
                 when (getMinigame()) {
-                    1 -> p.sendMessage("fuck it")//Bukkit.dispatchCommand(p, "onCommandPvp") //dispatchCommand for parkour
+                    1 -> Bukkit.dispatchCommand(p, "onCommandPvp") //dispatchCommand for parkour
                     2 -> Bukkit.dispatchCommand(p, "onCommandPvpSumo")//dispatchCommand for parkour    
                     3 -> Bukkit.dispatchCommand(p, "onCommandPvpBow")//dispatchCommand for parkour
                     4 -> Bukkit.dispatchCommand(p, "onCommandPvpLoot")//dispatchCommand for parkour
