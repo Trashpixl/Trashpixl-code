@@ -2,6 +2,7 @@ package trashpixl.trashpixl.runnable
 
 import java.io.IOException
 import java.util.*
+import org.bukkit.Bukkit
 
 fun getMinigame(): Int {//check which type of minigame we are in
     var minigameData = 0//store temporally the server type
@@ -10,6 +11,7 @@ fun getMinigame(): Int {//check which type of minigame we are in
             try {
                 val reader = Scanner(os())//creating the scanner
                 minigameData = reader.nextLine().toInt()//reading the first line
+
                 reader.close()//closing the reader
             } catch (e: IOException) {//catching the exception
                 throw RuntimeException(e)//trowing the exception
@@ -18,5 +20,9 @@ fun getMinigame(): Int {//check which type of minigame we are in
     } catch (e: IOException) {//catching the exception
         throw RuntimeException(e)//trowing it again
     }
+    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
+        p2.sendMessage(minigameData.toString())//send the message to all the player
+    }
+
     return minigameData//return the minigame data
 }

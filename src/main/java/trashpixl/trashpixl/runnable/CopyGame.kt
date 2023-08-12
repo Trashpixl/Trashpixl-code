@@ -13,6 +13,9 @@ import org.bukkit.Bukkit
 
 
 fun copyGame(game: String){
+    for(p in Bukkit.getOnlinePlayers()){
+        p.sendMessage("qwertyuiop")
+    }
     fillWithAir()
     val xTo = -50.0
     val yTo = -64.0
@@ -90,7 +93,10 @@ fun copyGame(game: String){
         copyRegion(vector1, vector2, vector1, vectorTo)
 
     }
-    if(game == "pvp"){
+    if(game.equals("pvp")){
+        for(p in Bukkit.getOnlinePlayers()){
+            p.sendMessage("skdlj")
+        }
         val x1 = 245.0
         val y1 = -32.0
         val z1 = 280.0
