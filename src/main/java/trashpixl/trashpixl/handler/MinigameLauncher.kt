@@ -16,9 +16,12 @@ class MinigameLauncher(plugin: Trashpixl?) : Listener {
 
     @EventHandler
     fun onJoin(ev: PlayerJoinEvent) {//describes what the event is
+    ev.player.sendMessage("test1")
         val p = ev.player//create the local player id
         if (Variable.serverType == 1) {
+           ev.player.sendMessage("test2")
             if (!Variable.activeMinigame) {
+                p.sendMessage("test3")
                 Variable.activeMinigame = true
                 when (getMinigame()) {
                     1 -> p.sendMessage("fuck it")//Bukkit.dispatchCommand(p, "onCommandPvp") //dispatchCommand for parkour

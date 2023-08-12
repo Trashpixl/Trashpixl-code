@@ -20,9 +20,7 @@ fun getMinigame(): Int {//check which type of minigame we are in
     } catch (e: IOException) {//catching the exception
         throw RuntimeException(e)//trowing it again
     }
-    for (p2 in Bukkit.getServer().onlinePlayers) {//taking all the player
-        p2.sendMessage(minigameData.toString())//send the message to all the player
-    }
+    
 
     return minigameData//return the minigame data
 }
