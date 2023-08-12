@@ -22,8 +22,9 @@ class MinigameLauncher(plugin: Trashpixl?) : Listener {
            ev.player.sendMessage("test2")
             if (!Variable.activeMinigame) {
                 p.sendMessage("test3")
+                p.sendMessage(getMinigame().toString())
                 Variable.activeMinigame = true
-                if(getMinigame() == 1){
+                if(getMinigame().toInt() == 1){
                     p.sendMessage("test4")
                 }
                 when (getMinigame()) {
