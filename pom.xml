@@ -104,11 +104,5 @@
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.sk89q.worldedit</groupId>
-            <artifactId>worldedit-bukkit</artifactId>
-            <version>7.2.9</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 </project>
