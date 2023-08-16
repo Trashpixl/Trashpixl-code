@@ -15,9 +15,9 @@ import trashpixl.trashpixl.runnable.copyGame
 class OnCommandPvp : CommandExecutor { //creating the class death and implementing the listener
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
-        val x = 0.0//the x coord of the game
-        val y = 0.0//the y coord of the game
-        val z = 0.0//the z coord of the game
+        val x = 28.0//the x coord of the game
+        val y = -44.0//the y coord of the game
+        val z = -20.0//the z coord of the game
         copyGame("pvp")//copy the game
         for (p in getServer().onlinePlayers) {//get all the player in the server
             p.sendMessage("asdfghjkl")//send a message to all the player

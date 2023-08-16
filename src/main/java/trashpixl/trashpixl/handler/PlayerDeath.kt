@@ -25,27 +25,30 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
     @EventHandler // says that this is an event handler
     fun onPlayerDead(ev: PlayerRespawnEvent) {
       
-        var playerCount: Int//create the player count var
+        var playerCount: Int = 0//create the player count var
 
         if (getMinigame() in 1..7 || getMinigame() in 9..12 || getMinigame() == 14) {//check if the data that we found correspond to the one require to start the handler
             val name: String = ev.player.name//name variable to store the player name
             if (Variable.serverType == 1) {//check if we are in the server 1
-                SendPlayerBetweenServer("lobby", ev.player, mainPlugin)//send the player to the location
-                playerCount = 0//reset the player count
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
                     playerCount++//add one to the player count
-                    p.chat("$name  died an is now out of the game") // send the message of who won the match
+                    p.sendMessage("$name  died an is now out of the game") // send the message of who won the match
                 }
-                if (playerCount == 1) {//check if the player count equals zero
+                
+                if (Bukkit.getOnlinePlayers().size == 1) {//check if the player count equals zero
                     for (p in getServer().onlinePlayers) {//get all player in the server
                         if (p.name != ev.player.name) {//check if the player name equal the actual event creator name
-                            p.chat("congratulation you won the match")//send the win message
+                            p.sendMessage("congratulation you won the match")//send the win message
+                            SendPlayerBetweenServer("lobby", ev.player, mainPlugin)//send the player to the location
+                           
                         } else {
-                            p.chat("how did you kill yourself")//send the death message
+                            p.sendMessage("how did you kill yourself")//send the death message
                         }
-                        SendPlayerBetweenServer("lobby", p, mainPlugin)//send the player to the location
+                        
                     }
                 }
+                SendPlayerBetweenServer("lobby", ev.player, mainPlugin)//send the player to the location
+                Variable.activeMinigame = false//set the active minigame to false
             }
         }
         if (getMinigame() == 11 || getMinigame() == 10) {//check if the minigame 11 is going
