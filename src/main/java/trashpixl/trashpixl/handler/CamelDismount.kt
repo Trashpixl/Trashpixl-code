@@ -9,10 +9,10 @@ import org.bukkit.event.vehicle.VehicleExitEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.getMinigame
 
-class CamelDismount(plugin: Trashpixl?): Listener {
+class CamelDismount(plugin: Trashpixl?) : Listener {
 
-    init {//the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
+    init { // the constructor of this handler
+        Bukkit.getPluginManager().registerEvents(this, plugin!!) // register the event
     }
     @EventHandler
     fun onVehicleExit(event: VehicleExitEvent) {

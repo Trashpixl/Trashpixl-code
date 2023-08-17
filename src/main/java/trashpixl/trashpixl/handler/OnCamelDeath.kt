@@ -1,6 +1,6 @@
 package trashpixl.trashpixl.handler
 
-import com.google.common.io.ByteStreams
+import SendPlayerBetweenServer
 import org.bukkit.Bukkit
 import org.bukkit.entity.EntityType
 import org.bukkit.event.EventHandler
@@ -9,12 +9,11 @@ import org.bukkit.event.entity.EntityDeathEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.getMinigame
-import SendPlayerBetweenServer
 
-class OnCamelDeath(plugin: Trashpixl?, main: JavaPlugin): Listener {
+class OnCamelDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
     private val mainPlugin = main
-    init {//the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
+    init { // the constructor of this handler
+        Bukkit.getPluginManager().registerEvents(this, plugin!!) // register the event
     }
     @EventHandler
     fun onEntityDeath(event: EntityDeathEvent) {
@@ -24,7 +23,7 @@ class OnCamelDeath(plugin: Trashpixl?, main: JavaPlugin): Listener {
             for (player in players) {
                 val vehicle = player.vehicle
                 if (vehicle?.type != EntityType.CAMEL) {
-                    SendPlayerBetweenServer("lobby", player , mainPlugin)
+                    SendPlayerBetweenServer("lobby", player, mainPlugin)
                 }
             }
         }

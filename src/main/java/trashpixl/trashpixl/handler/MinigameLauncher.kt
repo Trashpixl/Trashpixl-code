@@ -16,17 +16,12 @@ class MinigameLauncher(plugin: Trashpixl?) : Listener {
 
     @EventHandler
     fun onJoin(ev: PlayerJoinEvent) {//describes what the event is
-    ev.player.sendMessage("test1")
         val p = ev.player//create the local player id
         if (Variable.serverType == 1) {
-        
             if (!Variable.activeMinigame) {
-                
-                p.sendMessage(getMinigame().toString())
-                Variable.activeMinigame = true
                 when (getMinigame()) {
                     1 -> Bukkit.dispatchCommand(p, "onCommandPvp") //dispatchCommand for parkour
-                    2 -> Bukkit.dispatchCommand(p, "onCommandPvpSumo")//dispatchCommand for parkour    
+                    2 -> Bukkit.dispatchCommand(p, "onCommandPvpSumo")//dispatchCommand for parkour   
                     3 -> Bukkit.dispatchCommand(p, "onCommandPvpBow")//dispatchCommand for parkour
                     4 -> Bukkit.dispatchCommand(p, "onCommandPvpLoot")//dispatchCommand for parkour
                     5 -> Bukkit.dispatchCommand(p, "onCommandBridgeRace")//dispatchCommand for bridge
