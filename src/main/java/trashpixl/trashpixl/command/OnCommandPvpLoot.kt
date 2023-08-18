@@ -20,14 +20,14 @@ class OnCommandPvpLoot : CommandExecutor { // creating the class death and imple
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerBridgeRace) {
             Variable.activeMinigame = true // set the activeMinigame to true
-            val x = 121.3 // the x coord of the game
-            val y = -59.0 // the y coord of the game
-            val z = 258.3 // the z coord of the game
+            val xGame = 0.0 // the x coord of the game
+            val yGame = 0.0 // the y coord of the game
+            val zGame = 0.0 // the z coord of the game
             copyGame("pvpLoot") // copy the game
             for (p in getServer().onlinePlayers) { // get all the player in the server
                 p.health = 20.0 // set the health to 20
                 val w: World = p.world // get the player world
-                val to = Location(w, x, y, z) // put together all the info
+                val to = Location(w, xGame, yGame, zGame) // put together all the info
                 p.teleport(to) // tp him
                 p.inventory.clear() // clear his inventory
             }

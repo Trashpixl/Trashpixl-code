@@ -23,9 +23,9 @@ class OnCommandBridgeRace :
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerBridgeRace) {
             Variable.activeMinigame = true // set the activeMinigame to true
-            val xGame = 177.7 // the x coord of the game
-            val yGame = -60.0 // the y coord of the game
-            val zGame = 265.3 // the z coord of the game
+            val xGame = 0.0 // the x coord of the game
+            val yGame = 0.0 // the y coord of the game
+            val zGame = 0.0 // the z coord of the game
             copyGame("bridgeRace") // copy the game
             for (p in getServer().onlinePlayers) { // get all the online player
                 val item1 =

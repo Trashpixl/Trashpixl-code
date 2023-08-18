@@ -4,10 +4,11 @@ import ChoEasyCopy
 import org.bukkit.Bukkit
 
 fun copyGame(game: String) {
+
     for (p in Bukkit.getOnlinePlayers()) {
         p.sendMessage("qwertyuiop")
     }
-    // fillWithAir()
+     fillWithAir()
 
     if (game == "tnt") {
         val x1 = 282
