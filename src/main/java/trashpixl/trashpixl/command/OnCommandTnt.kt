@@ -19,7 +19,7 @@ class OnCommandTnt : CommandExecutor { // creating the class death and implement
             label: String,
             args: Array<out String>?
     ): Boolean {
-        if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerBridgeRace) {//todo add tp coord and block coord
+        if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerBridgeRace) {
             Variable.activeMinigame = true // set the activeMinigame to true
             val xGame = -32.0 // the x coord of the game
             val yGame = -36.0 // the y coord of the game

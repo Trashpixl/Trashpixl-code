@@ -122,7 +122,7 @@ class LootGiver(plugin: Trashpixl?) : Listener { // creating the class
                     }
                     // add the code here
                     when ((1..10).random()) { // creating the random number between 1 and 10
-                        1 -> p.teleport(Location(p.world, 137.0, -62.0, 279.0))
+                        1 -> p.teleport(Location(p.world, 137.0, -62.0, 279.0))//todo change the coord
                         2 -> p.teleport(Location(p.world, 135.0, -62.0, 277.0))
                         3 -> p.teleport(Location(p.world, 133.0, -62.0, 275.0))
                         4 -> p.teleport(Location(p.world, 130.0, -62.0, 273.0))

@@ -21,9 +21,9 @@ class OnCommandSearchAndFind :
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerBridgeRace) {
             Variable.activeMinigame = true // set the activeMinigame to true
-            val xGame = 0.0 // the x coord of the game
-            val yGame = 0.0 // the y coord of the game
-            val zGame = 0.0 // the z coord of the game
+            val xGame = 16.0 // the x coord of the game
+            val yGame = -59.0 // the y coord of the game
+            val zGame = -17.0 // the z coord of the game
             copyGame("searchAndFind") // copy the game
             for (p in Bukkit.getServer().onlinePlayers) { // get all the player in the server
                 p.health = 20.0 // set the health to 20
@@ -33,7 +33,7 @@ class OnCommandSearchAndFind :
                 p.inventory.clear() // clear his inventory
                 placeBlock()
             }
-            Variable.preventBreakedBlock = false // set the preventBreakedBlocks to true
+            Variable.preventBreakedBlock = true // set the preventBreakedBlocks to true
             Variable.preventPlacedBlock = true // set the preventPlacedBlock to true
         }
         return false
@@ -44,7 +44,7 @@ class OnCommandSearchAndFind :
         var y = 0.0
         var z = 0.0
         val world = Bukkit.getWorld("world")
-        when ((1..10).random()) { // TODO add the real coord to hide the block
+        when ((1..10).random()) { 
             1 -> {
                 x = -1.0
                 y = -60.0

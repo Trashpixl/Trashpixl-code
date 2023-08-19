@@ -37,7 +37,7 @@ class OnCommandPvp : CommandExecutor { // creating the class death and implement
             }
             Variable.preventBreakedBlock = true // set the preventBreakedBlocks to true
             Variable.preventPlacedBlock = true // set the preventPlacedBlock to true
-            // todo change the permission
+   
         }
         return true
     }
