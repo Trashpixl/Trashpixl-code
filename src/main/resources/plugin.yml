@@ -45,3 +45,6 @@ commands:
   onCommandCamelFight:
     description: command for camel fight
     usage: /<command>
+  onCommandSearchAndFind:
+    description: command for search and find
+    usage: /<command>  

@@ -54,7 +54,7 @@ class Trashpixl : JavaPlugin() {
                         removeTntStartBlock() // run the remove tnt start block
                     }
                 }
-                .runTaskTimer(this, 0L, 40L) // run the timer immediately and at every 40 tick
+                .runTaskTimer(this, 0L, 100L) // run the timer immediately and at every 40 tick
     }
     private fun registerCommand() {
         this.getCommand("onCommandPvp")

@@ -20,20 +20,20 @@ class Variable {
         var tntIsPlaced = false // store if the tnt is placed
         var serverType = 9 // store the type of server
 
-        val numberOfPlayerBridgeRace = 1 // store the number of player for pvp
-        val numberOfPlayerButton4 = 1 // store the number of player for pvp
-        val numberOfPlayerCamelFight = 1 // store the number of player for pvp
-        val numberOfPlayerDodgeBall = 1 // store the number of player for pvp
-        val numberOfPlayerHideAndSeek = 1 // store the number of player for pvp
-        val numberOfPlayerLabi = 1 // store the number of player for pvp
-        val numberOfPlayerParkour = 1 // store the number of player for pvp
+        val numberOfPlayerBridgeRace = 2 // store the number of player for pvp
+        val numberOfPlayerButton4 = 2 // store the number of player for pvp
+        val numberOfPlayerCamelFight = 2 // store the number of player for pvp
+        val numberOfPlayerDodgeBall = 2 // store the number of player for pvp
+        val numberOfPlayerHideAndSeek = 2 // store the number of player for pvp
+        val numberOfPlayerLabi = 2 // store the number of player for pvp
+        val numberOfPlayerParkour = 2 // store the number of player for pvp
         val numberOfPlayerPvp = 2 // store the number of player for pvp
-        val numberOfPlayerPvpBow = 1 // store the number of player for pvp
-        val numberOfPlayerPvpKnockBack = 1 // store the number of player for pvp
-        val numberOfPlayerPvpLoot = 1 // store the number of player for pvp
-        val numberOfPlayerPvpSumo = 1 // store the number of player for pvp
-        val numberOfPlayerSearchAndFind = 1 // store the number of player for pvp
-        val numberOfPlayerTag = 1 // store the number of player for pvp
-        val numberOfPlayerTnt = 1 // store the number of player for pvp
+        val numberOfPlayerPvpBow = 2 // store the number of player for pvp
+        val numberOfPlayerPvpKnockBack = 2 // store the number of player for pvp
+        val numberOfPlayerPvpLoot = 2 // store the number of player for pvp
+        val numberOfPlayerPvpSumo = 2 // store the number of player for pvp
+        val numberOfPlayerSearchAndFind = 2 // store the number of player for pvp
+        val numberOfPlayerTag = 2 // store the number of player for pvp
+        val numberOfPlayerTnt = 2 // store the number of player for pvp
     }
 }

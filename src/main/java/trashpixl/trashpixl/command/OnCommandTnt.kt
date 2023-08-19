@@ -21,21 +21,21 @@ class OnCommandTnt : CommandExecutor { // creating the class death and implement
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerBridgeRace) {//todo add tp coord and block coord
             Variable.activeMinigame = true // set the activeMinigame to true
-            val xGame = 0.0 // the x coord of the game
-            val yGame = 0.0 // the y coord of the game
-            val zGame = 0.0 // the z coord of the game
-            val xBlock = 0.0
-            val yBlock = 0.0
-            val zBlock = 0.0
+            val xGame = -32.0 // the x coord of the game
+            val yGame = -36.0 // the y coord of the game
+            val zGame = -34.0 // the z coord of the game
+            val xBlock = -38.0
+            val yBlock = -38.0
+            val zBlock = -40.0
             var w: World
 
             Variable.preventBreakedBlock = true // set the preventBreakedBlocks to true
             Variable.preventPlacedBlock = true // set the preventPlacedBlock to true
 
             copyGame("tnt") // copy the game
-            for (x in 0..12) {
-                for (y in 0..12) {
-                    for (z in 0..12) {
+            for (x in 0..10) {
+                for (y in 0..10) {
+                    for (z in 0..10) {
                         // place a bedrock block
                         w = getServer().getWorld("world")!!
                         val placeToPutTheBlock = Location(w, xBlock + x, yBlock + y, zBlock + z)
@@ -43,9 +43,9 @@ class OnCommandTnt : CommandExecutor { // creating the class death and implement
                     }
                 }
             }
-            for (x in 0..10) {
-                for (y in 0..10) {
-                    for (z in 0..10) {
+            for (x in 0..6) {
+                for (y in 0..6) {
+                    for (z in 0..6) {
                         // place a bedrock block
                         w = getServer().getWorld("world")!!
                         val placeToPutTheBlock =

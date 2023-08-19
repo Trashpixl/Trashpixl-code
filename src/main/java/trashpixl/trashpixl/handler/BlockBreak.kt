@@ -43,6 +43,7 @@ class BlockBreak(plugin: Trashpixl?, mainPlugin: JavaPlugin) : Listener {
                 ) // send the player to the main server
             }
             blockLocation.block.type = Material.GRASS_BLOCK // set the block to grass
+            Variable.activeMinigame = false // set the activeMinigame to false
         }
     }
 }

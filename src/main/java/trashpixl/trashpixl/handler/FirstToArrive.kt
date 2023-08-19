@@ -37,6 +37,7 @@ class FirstToArrive(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                                     mainPlugin
                             ) // send the player to the main server
                         }
+                        Variable.activeMinigame = false // set the activeMinigame to false
                     }
                 }
             }

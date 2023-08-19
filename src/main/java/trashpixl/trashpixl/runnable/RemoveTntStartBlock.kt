@@ -6,14 +6,14 @@ import org.bukkit.Material
 import org.bukkit.World
 
 fun removeTntStartBlock() {
-    val xBlock = 0.0
-    val yBlock = 0.0
-    val zBlock = 0.0
+    val xBlock = -38.0
+    val yBlock = -38.0
+    val zBlock = -40.0
     var w: World
     if (Variable.tntIsPlaced) {
-        for (x in 0..12) {
-            for (y in 0..12) {
-                for (z in 0..12) {
+        for (x in 0..10) {
+            for (y in 0..10) {
+                for (z in 0..10) {
                     // place a bedrock block
                     w = Bukkit.getServer().getWorld("world")!!
                     val placeToPutTheBlock = Location(w, xBlock + x, yBlock + y, zBlock + z)

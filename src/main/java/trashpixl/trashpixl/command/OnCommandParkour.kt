@@ -20,9 +20,9 @@ class OnCommandParkour : CommandExecutor { // creating the class death and imple
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerParkour) {
             Variable.activeMinigame = true // set the activeMinigame to true
-            val xGame = 0.0 // the x coord of the game
-            val yGame = 0.0 // the y coord of the game
-            val zGame = 0.0 // the z coord of the game
+            val xGame = 34.0 // the x coord of the game
+            val yGame = -59.0 // the y coord of the game
+            val zGame = -22.0 // the z coord of the game
             copyGame("parkour") // copy the game
             for (p in getServer().onlinePlayers) { // get all the player in the server
                 p.health = 20.0 // set the health to 20

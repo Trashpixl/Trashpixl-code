@@ -23,12 +23,12 @@ class OnCommandDodgeBall :
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerDodgeBall) {
             Variable.activeMinigame = true // set the activeMinigame to true
             // coord for the game
-            val xR = 0.0 // todo add real coord
-            val yR = 0.0
-            val zR = 0.0
-            val xB = 0.0 // todo add real coord
-            val yB = 0.0
-            val zB = 0.0
+            val xR = -23.0 // todo add real coord
+            val yR = -60.0
+            val zR = -10.0
+            val xB = -23.0 // todo add real coord
+            val yB = -60.0
+            val zB = -34.0
             var playerCount = 0 // count the number of player
             Variable.blueTeam?.clear() // clear the blue team
             Variable.redTeam?.clear() // clear the red team

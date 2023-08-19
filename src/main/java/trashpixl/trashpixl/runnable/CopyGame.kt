@@ -122,7 +122,7 @@ fun copyGame(game: String) {
         val z2 = 259
         ChoEasyCopy(x1, y1, z1, x2, y2, z2)
     }
-    if (game == "DodgeBall") {
+    if (game == "dodgeball") {
         val x1 = 343
         val y1 = -32
         val z1 = 282
