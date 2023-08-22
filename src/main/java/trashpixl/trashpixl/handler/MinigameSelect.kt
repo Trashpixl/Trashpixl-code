@@ -185,7 +185,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                         }
                     }
                 }
-                if (ev.clickedBlock!!.type == Material.OBSIDIAN) { // todo check for the block
+                if (ev.clickedBlock!!.type == Material.BLACK_TERRACOTTA) {
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerCamelFight
                     ) {
                         sendPlayerTogGame(Variable.numberOfPlayerCamelFight)

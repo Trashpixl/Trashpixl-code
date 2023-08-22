@@ -122,16 +122,16 @@ class LootGiver(plugin: Trashpixl?) : Listener { // creating the class
                     }
                     // add the code here
                     when ((1..10).random()) { // creating the random number between 1 and 10
-                        1 -> p.teleport(Location(p.world, 137.0, -62.0, 279.0))//todo change the coord
-                        2 -> p.teleport(Location(p.world, 135.0, -62.0, 277.0))
-                        3 -> p.teleport(Location(p.world, 133.0, -62.0, 275.0))
-                        4 -> p.teleport(Location(p.world, 130.0, -62.0, 273.0))
-                        5 -> p.teleport(Location(p.world, 127.0, -62.0, 270.0))
-                        6 -> p.teleport(Location(p.world, 125.0, -62.0, 268.0))
-                        7 -> p.teleport(Location(p.world, 123.0, -62.0, 266.0))
-                        8 -> p.teleport(Location(p.world, 121.5, -62.0, 264.0))
-                        9 -> p.teleport(Location(p.world, 120.0, -62.0, 262.0))
-                        10 -> p.teleport(Location(p.world, 119.0, -62.0, 260.0))
+                        1 -> p.teleport(Location(p.world, -33.0, -61.0, -31.0))//todo change the coord
+                        2 -> p.teleport(Location(p.world, -46.0, -61.0, -46.0))
+                        3 -> p.teleport(Location(p.world, -47.0, -61.0, -30.0))
+                        4 -> p.teleport(Location(p.world, -31.0, -61.0, -47.0))
+                        5 -> p.teleport(Location(p.world, -38.0, -61.0, -43.0))
+                        6 -> p.teleport(Location(p.world, -33.0, -42.0, -31.0))
+                        7 -> p.teleport(Location(p.world, -46.0, -42.0, -46.0))
+                        8 -> p.teleport(Location(p.world, -47.0, -42.0, -30.0))
+                        9 -> p.teleport(Location(p.world, -31.0, -42.0, -47.0))
+                        10 -> p.teleport(Location(p.world, -38.0, -42.0, -43.0))
                     }
                 }
             }
