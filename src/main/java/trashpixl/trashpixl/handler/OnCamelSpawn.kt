@@ -9,9 +9,9 @@ import org.bukkit.inventory.ItemStack
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.getMinigame
 
-class OnCamelSpawn(plugin: Trashpixl?): Listener {
-    init {//the constructor of this handler
-        Bukkit.getPluginManager().registerEvents(this, plugin!!)//register the event
+class OnCamelSpawn(plugin: Trashpixl?) : Listener {
+    init { // the constructor of this handler
+        Bukkit.getPluginManager().registerEvents(this, plugin!!) // register the event
     }
     @EventHandler
     fun onEntitySpawn(event: EntitySpawnEvent) {
@@ -21,19 +21,18 @@ class OnCamelSpawn(plugin: Trashpixl?): Listener {
             val saddle = ItemStack(org.bukkit.Material.SADDLE)
             camel as org.bukkit.entity.Camel
             camel.inventory.addItem(saddle)
-            for (p in Bukkit.getServer().onlinePlayers) {//get all the player in the server
-                if (passengerCount < 2 && p.vehicle == null) {//if the player is not in a vehicle
+            for (p in Bukkit.getServer().onlinePlayers) { // get all the player in the server
+                if (passengerCount < 2 && p.vehicle == null) { // if the player is not in a vehicle
                     camel.addPassenger(p)
                     passengerCount++
-                    if(passengerCount == 2){
+                    if (passengerCount == 2) {
                         val bow = ItemStack(org.bukkit.Material.BOW)
                         val arrow = ItemStack(org.bukkit.Material.ARROW, 64)
-                        p.inventory.clear()//clear his inventory
-                        p.inventory.setItemInMainHand(bow)//give him the item
-                        p.inventory.setItem(2, arrow)//give him the bow
+                        p.inventory.clear() // clear his inventory
+                        p.inventory.setItemInMainHand(bow) // give him the item
+                        p.inventory.setItem(2, arrow) // give him the bow
                     }
-                }
-               else{
+                } else {
                     break
                 }
             }
