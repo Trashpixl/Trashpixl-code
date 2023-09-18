@@ -2,6 +2,8 @@ package trashpixl.trashpixl.runnable
 
 import ChoEasyCopy
 import org.bukkit.Bukkit
+import trashpixl.trashpixl.runnable.WorldEditCopy
+import trashpixl.trashpixl.runnable.WorldEditPaste
 
 fun copyGame(game: String) {
 
@@ -19,7 +21,9 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 245
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
+        
     }
     if (game == "tag") {
         val x1 = 288
@@ -30,7 +34,8 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 400
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "searchAndFind") {
         val x1 = 288
@@ -41,7 +46,8 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 400
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "hideAndSeek") {
         val x1 = 288
@@ -52,7 +58,8 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 400
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "pvpSumo") {
         val x1 = 245
@@ -63,7 +70,8 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 220
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game.equals("pvp")) {
         for (p in Bukkit.getOnlinePlayers()) {
@@ -77,7 +85,8 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 220
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "parkour") {
         val x1 = 227
@@ -88,7 +97,8 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 320
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "pvpBow") {
         val x1 = 245
@@ -99,7 +109,8 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 220
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "pvpKnockBack") {
         val x1 = 245
@@ -110,7 +121,8 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 220
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "pvpLoot") {
         val x1 = 118
@@ -120,7 +132,8 @@ fun copyGame(game: String) {
         val x2 = 138
         val y2 = -64
         val z2 = 259
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "dodgeball") {
         val x1 = 343
@@ -130,7 +143,8 @@ fun copyGame(game: String) {
         val x2 = 292
         val y2 = -64
         val z2 = 333
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "button4") {
         val x1 = 181
@@ -140,7 +154,8 @@ fun copyGame(game: String) {
         val x2 = 19
         val y2 = -64
         val z2 = 280
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "bridgeRace") {
         val x1 = 180
@@ -151,7 +166,8 @@ fun copyGame(game: String) {
         val y2 = -32
         val z2 = 280
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "camelFight") {
         val x1 = 128
@@ -162,7 +178,8 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 152
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
     if (game == "Labi") {
         val x1 = 227
@@ -173,8 +190,11 @@ fun copyGame(game: String) {
         val y2 = -64
         val z2 = 333
 
-        ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+        val copy = WorldEditCopy()
+        copy.bob(x1, y1, z1, x2, y2, z2)
     }
+    val paste = WorldEditPaste()
+        paste.bob()
 }
 
 private fun fillWithAir() {
@@ -186,5 +206,6 @@ private fun fillWithAir() {
     val y2 = 100
     val z2 = 1100
 
-    ChoEasyCopy(x1, y1, z1, x2, y2, z2)
+    val copy = WorldEditCopy()
+    copy.bob(x1, y1, z1, x2, y2, z2)
 }
