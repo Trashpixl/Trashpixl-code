@@ -18,7 +18,7 @@ import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.session.ClipboardHolder;
 
 public class WorldEditPaste {
-    public void bob() {
+    public void paste() {
     BukkitWorld weWorld = new BukkitWorld(Bukkit.getWorld("world"));
        Clipboard clipboard;
        File file = new File("pencil.schem");

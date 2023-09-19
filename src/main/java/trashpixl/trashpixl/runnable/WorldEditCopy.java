@@ -20,7 +20,7 @@ import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.regions.CuboidRegion;
 
 public class WorldEditCopy{
-    public void bob(int x, int y, int z, int x2, int y2, int z2) {
+    public void copy(int x, int y, int z, int x2, int y2, int z2) {
        BukkitWorld weWorld = new BukkitWorld(Bukkit.getWorld("world"));
        try{
            BlockVector3 loc1 = BlockVector3.at(x, y, z);
