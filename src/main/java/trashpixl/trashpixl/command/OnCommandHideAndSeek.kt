@@ -24,9 +24,9 @@ class OnCommandHideAndSeek :
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerHideAndSeek) {
             Variable.activeMinigame = true // set the activeMinigame to true
-            val xGame = 0.0 // the x coord of the game
-            val yGame = 0.0 // the y coord of the game
-            val zGame = 0.0 // the z coord of the game
+            val xGame = 16.0 // the x coord of the game
+            val yGame = -59.0 // the y coord of the game
+            val zGame = -17.0 // the z coord of the game
             copyGame("hideAndSeek")
             for (p in Bukkit.getServer().onlinePlayers) { // get all the online player
 

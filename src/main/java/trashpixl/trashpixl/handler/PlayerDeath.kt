@@ -102,10 +102,17 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                     p.chat("congratulation you won the match") // send the win message
                     SendPlayerBetweenServer(
                             "lobby",
-                            ev.player,
+                            p,
                             mainPlugin
                     ) // send the player to the location
                 }
+            }
+            playerCount = 0 // reset the player count
+            for (p in getServer().onlinePlayers) { // getting all the player in the server
+                playerCount++ // add one to the player count
+            }
+            if (playerCount == 0) {
+                Variable.activeMinigame = false // set the active minigame to false
             }
         }
     }

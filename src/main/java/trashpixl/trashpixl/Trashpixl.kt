@@ -103,7 +103,6 @@ class Trashpixl : JavaPlugin() {
         MinigameLauncher(this) // init the launcher join handler
         PlayerGetShot(this) // init the get shot handler
         CamelDismount(this) // init the camel dismount handler
-        OnCamelDeath(this, this) // init the camel death handler
         OnCamelSpawn(this) // init the camel spawn handler
         SnowBallGiver(this) // init the snow ball giver handler
     }
