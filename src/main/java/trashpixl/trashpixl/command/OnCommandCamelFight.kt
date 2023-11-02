@@ -22,9 +22,9 @@ class OnCommandCamelFight :
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerCamelFight) {
             Variable.activeMinigame = true // set the activeMinigame to true
             val xGame = 0.0 // the x coord of the game
-            val yGame = 0.0 // the y coord of the game
+            val yGame = -30.0 // the y coord of the game
             val zGame = 0.0 // the z coord of the game
-            copyGame("parkour") // copy the game
+            copyGame("camelFight") // copy the game
             for (p in Bukkit.getServer().onlinePlayers) { // get all the player in the server
                 p.health = 20.0 // set the health to 20
                 val w: World = p.world // get the player world
@@ -39,7 +39,7 @@ class OnCommandCamelFight :
                     Location(
                             Bukkit.getServer().getWorld("world"),
                             0.0,
-                            0.0,
+                            -40.0,
                             0.0
                     ) // todo change this to the actual spawn location
             spawnCamel(spawnLocation)

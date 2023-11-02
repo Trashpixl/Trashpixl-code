@@ -43,8 +43,14 @@ class OnCommandPvpKnockBack :
                                 Material.STICK,
                                 1
                         ) // creating an item stack with a random amount of golden apple in it
+                val firework =
+                        ItemStack(
+                                Material.FIREWORK_ROCKET,
+                                8
+                        ) // creating an item stack with a random amount of golden apple in it
                 p.inventory.setItem(1, elytra) // putting it in a random inventory slot
                 p.inventory.setItem(2, stick) // same as below
+                p.inventory.setItem(3, firework) // same as below
             }
             Variable.preventBreakedBlock = true // set the preventBreakedBlocks to true
             Variable.preventPlacedBlock = true // set the preventPlacedBlock to true

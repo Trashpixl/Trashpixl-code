@@ -36,6 +36,7 @@ class PlayerGetPunch(plugin: Trashpixl?) : Listener { // the implements for the 
                     ) { // check if the damage is caused by the void
                         (ev.entity as Player).health = 0.0 // set the player health to 0
                     }
+                    
                 }
             }
             if (getMinigame() == 7) { // check if minigame 7 is going
