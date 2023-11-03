@@ -21,9 +21,9 @@ class OnCommandButton4 : CommandExecutor { // creating the class death and imple
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerButton4) {
             Variable.activeMinigame = true // set the activeMinigame to true
-            val xGame = 0.0 // the x coord of the game
-            val yGame = 0.0 // the y coord of the game
-            val zGame = 0.0 // the z coord of the game
+            val xGame = -45.0 // the x coord of the game
+            val yGame = -59.0 // the y coord of the game
+            val zGame = -45.0 // the z coord of the game
             copyGame("button4") // copy the game
             for (p in getServer().onlinePlayers) { // get all the player in the server
                 p.health = 20.0 // set the health to 20
@@ -33,7 +33,7 @@ class OnCommandButton4 : CommandExecutor { // creating the class death and imple
                 p.inventory.clear() // clear his inventory
             }
 
-            Variable.playerArray = mutableListOf() // clear the array
+            
 
             for (player in getServer().onlinePlayers) { // get all the player in the server
                 Variable.playerArray!!.add(player.name) // add the player name to the array

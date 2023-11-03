@@ -18,5 +18,13 @@ fun timer() { // function that run every tick
                 player.health = 0.0 // kill him
             }
         }
+        Variable.playerArray?.removeAt(Variable.playerArrayNumber)
+        Variable.playerArrayNumber = 0
+        Variable.time = LocalTime.now()
+        for (player in getServer().onlinePlayers) {
+            if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {
+                player.chat("its your turn")
+            }
+        }
     }
 }

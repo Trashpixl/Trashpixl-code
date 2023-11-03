@@ -1,6 +1,7 @@
 package trashpixl.trashpixl.handler
 
 import org.bukkit.Bukkit
+import org.bukkit.Bukkit.getServer
 import org.bukkit.Material
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -9,6 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.getMinigame
+import java.time.LocalTime
 
 class ChanceToDie(plugin: Trashpixl?) : Listener { // creating the class
     init { // the constructor of this handler
@@ -26,31 +28,28 @@ class ChanceToDie(plugin: Trashpixl?) : Listener { // creating the class
                     ) { // check if the player is the one that is supposed to be playing
                         if ((1..10).random() == 1) { // check if the player is lucky
                             p.health = 0.0 // if not kill the player
+                            Variable.playerArray?.removeAt(Variable.playerArrayNumber)
+                            Variable.playerArrayNumber = 0
+                            Variable.time = LocalTime.now()
+                            for (player in getServer().onlinePlayers) {
+                                if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {
+                                    player.chat("its your turn")
+                                }
+                            }
                         } else {
-                            if (Variable.playerArray!!.size >= Variable.playerArrayNumber
-                            ) { // check if the player array number is smaller than the array
+                            if (Variable.playerArray!!.size >= Variable.playerArrayNumber) { // check if the player array number is smaller than the array
                                 Variable.playerArrayNumber++ // if it is add one to the array number
                             } else {
                                 Variable.playerArrayNumber = 0 // if not set the array number to 0
                             }
-                            for (player in
-                                    Bukkit.getServer()
-                                            .onlinePlayers) { // loop through all the players
-                                if (player.name ==
-                                                Variable.playerArray?.get(
-                                                        Variable.playerArrayNumber
-                                                )
-                                ) { // check if the player is the one that is supposed to be playing
-                                    player.chat(
-                                            "its your turn"
-                                    ) // then tell the player that it is their turn
+                            for (player in getServer().onlinePlayers) { // loop through all the players
+                                if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) { // check if the player is the one that is supposed to be playing
+                                    player.chat("its your turn") // then tell the player that it is their turn
                                 }
                             }
                         }
                     } else {
-                        p.chat(
-                                "its not your turn yet, its ${Variable.playerArray?.get(Variable.playerArrayNumber)} turn"
-                        ) // tell the player that it is not their turn
+                        p.chat("its not your turn yet, its ${Variable.playerArray?.get(Variable.playerArrayNumber)} turn") // tell the player that it is not their turn
                     }
                 }
             }

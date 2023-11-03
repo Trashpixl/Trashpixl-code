@@ -23,11 +23,13 @@ class OnCommandBridgeRace :
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerBridgeRace) {
             Variable.activeMinigame = true // set the activeMinigame to true
-            val xGame = 0.0 // the x coord of the game
-            val yGame = 0.0 // the y coord of the game
-            val zGame = 0.0 // the z coord of the game
+            val xGame1 = -13.5 // the x coord of the game
+            val yGame1 = -59.0 // the y coord of the game
+            val zGame1 = -41.0 // the z coord of the game
+            var offsetSpawn: Int = 0
             copyGame("bridgeRace") // copy the game
             for (p in getServer().onlinePlayers) { // get all the online player
+                offsetSpawn +=2
                 val item1 =
                         ItemStack(
                                 Material.BLACK_WOOL,
@@ -35,7 +37,7 @@ class OnCommandBridgeRace :
                         ) // create the item stack with 64 black wool inside
                 p.health = 20.0 // set the health to 20
                 val w: World = p.world // create the world var
-                val to = Location(w, xGame, yGame, zGame) // create game location
+                val to = Location(w, xGame1, yGame1, zGame1-offsetSpawn) // create game location
                 p.teleport(to) // tp the player
                 p.inventory.clear() // clear their inventory
                 p.inventory.setItem(1, item1) // give them the wool

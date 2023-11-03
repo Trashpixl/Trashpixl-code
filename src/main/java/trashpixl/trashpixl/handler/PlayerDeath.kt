@@ -60,7 +60,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                 ) // send the player to the location
             }
         }
-        if (getMinigame() == 11 || getMinigame() == 10) { // check if the minigame 11 is going
+        if (getMinigame() == 11) { // check if the minigame 11 is going
             if (Variable.serverType == 1) { // check if we are in server one
                 SendPlayerBetweenServer(
                         "lobby",
@@ -76,13 +76,6 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                 Variable.playerArray!!.sort() // sort the array
                 Variable.time = LocalTime.now() // reset the time
                 Variable.playerArrayNumber = 0 // reset the array cursor
-                if (getMinigame() == 10) {
-                    for (player in getServer().onlinePlayers) {
-                        if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {
-                            player.chat("its your turn")
-                        }
-                    }
-                }
             }
         }
         if (getMinigame() == 15) {
@@ -105,14 +98,16 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                             p,
                             mainPlugin
                     ) // send the player to the location
+                    Variable.activeMinigame = false // set the active minigame to false
                 }
             }
-            playerCount = 0 // reset the player count
-            for (p in getServer().onlinePlayers) { // getting all the player in the server
-                playerCount++ // add one to the player count
-            }
-            if (playerCount == 0) {
-                Variable.activeMinigame = false // set the active minigame to false
+
+            if (getMinigame() == 8){//add this so if they fight they wont respawn
+                SendPlayerBetweenServer(
+                    "lobby",
+                   ev.player,
+                    mainPlugin
+                ) // send the player to the location
             }
         }
     }
