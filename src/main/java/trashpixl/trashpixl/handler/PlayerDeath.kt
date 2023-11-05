@@ -11,6 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.getMinigame
+import trashpixl.trashpixl.runnable.stopTheGame
 
 class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
     // creating the class death and implementing the listener
@@ -52,6 +53,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                             p.sendMessage("how did you kill yourself") // send the death message
                         }
                     }
+                    stopTheGame()
                 }
                 SendPlayerBetweenServer(
                         "lobby",

@@ -21,33 +21,37 @@ class ChanceToDie(plugin: Trashpixl?) : Listener { // creating the class
     fun buttonHandler(ev: PlayerInteractEvent) { // describes what the event is
         val p = ev.player // creating the player variable
         if (ev.action == Action.RIGHT_CLICK_BLOCK) { // check if the action is physical
-            if (ev.clickedBlock!!.type == Material.STONE_BUTTON && Variable.serverType == 1
-            ) { // compare what the player pushed to the stone button
+            if (ev.clickedBlock!!.type == Material.STONE_BUTTON && Variable.serverType == 1) { // compare what the player pushed to the stone button
                 if (getMinigame() == 10) { // check if the minigame is 10
-                    if (p.name == Variable.playerArray?.get(Variable.playerArrayNumber)
-                    ) { // check if the player is the one that is supposed to be playing
+                    if (p.name == Variable.playerArray?.get(Variable.playerArrayNumber)) { // check if the player is the one that is supposed to be playing
                         if ((1..10).random() == 1) { // check if the player is lucky
                             p.health = 0.0 // if not kill the player
                             Variable.playerArray?.removeAt(Variable.playerArrayNumber)
-                            Variable.playerArrayNumber = 0
-                            Variable.time = LocalTime.now()
-                            for (player in getServer().onlinePlayers) {
-                                if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {
-                                    player.chat("its your turn")
-                                }
-                            }
-                        } else {
-                            if (Variable.playerArray!!.size >= Variable.playerArrayNumber) { // check if the player array number is smaller than the array
+                            p.chat("im dead")
+                        }
+                        else {
+                            p.chat(Variable.playerArray!!.size.toString())
+                            p.chat(Variable.playerArrayNumber.toString())
+                            if (Variable.playerArrayNumber + 1 < Variable.playerArray!!.size) { // check if the player array number is smaller than the array
                                 Variable.playerArrayNumber++ // if it is add one to the array number
+                                p.chat("add one more to the array number")
+                                p.chat(Variable.playerArray!!.size.toString())
+                                p.chat(Variable.playerArrayNumber.toString())
+                                p.chat(Variable.playerArray!![0])
+                                p.chat(Variable.playerArray!![1])
+                                //p.chat(Variable.playerArray!![2])
+                                //p.chat(Variable.playerArray!![3])
                             } else {
                                 Variable.playerArrayNumber = 0 // if not set the array number to 0
-                            }
-                            for (player in getServer().onlinePlayers) { // loop through all the players
-                                if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) { // check if the player is the one that is supposed to be playing
-                                    player.chat("its your turn") // then tell the player that it is their turn
-                                }
+                                p.chat("reset the array number")
                             }
                         }
+                        for (player in getServer().onlinePlayers) { // loop through all the players
+                            if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) { // check if the player is the one that is supposed to be playing
+                                player.chat("its your turn") // then tell the player that it is their turn
+                            }
+                        }
+                        Variable.time = LocalTime.now()
                     } else {
                         p.chat("its not your turn yet, its ${Variable.playerArray?.get(Variable.playerArrayNumber)} turn") // tell the player that it is not their turn
                     }
@@ -56,3 +60,4 @@ class ChanceToDie(plugin: Trashpixl?) : Listener { // creating the class
         }
     }
 }
+

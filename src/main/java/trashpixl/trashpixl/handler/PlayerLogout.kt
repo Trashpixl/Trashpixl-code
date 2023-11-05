@@ -23,7 +23,8 @@ class PlayerLogout(plugin: Trashpixl?) : Listener { // the implements for the li
             Variable.activeMinigame = false // set the active minigame to false
             put(os(), 0) // set the minigame to 0
         }
-        Variable.playerArrayNumber = 0
-        Variable.playerArray?.clear()
+       // Variable.playerArrayNumber = 0
+       // Variable.playerArray?.clear()
+        //todo check what this do
     }
 }
