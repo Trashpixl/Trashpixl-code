@@ -11,6 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.getMinigame
+import trashpixl.trashpixl.runnable.stopTheGame
 
 class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
     // creating the class death and implementing the listener
@@ -25,7 +26,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
 
         var playerCount: Int = 0 // create the player count var
 
-        if (getMinigame() in 1..7 || getMinigame() in 9..12 || getMinigame() == 14
+        if (getMinigame() in 1..7 || getMinigame() in 9..10 || getMinigame() == 14
         ) { // check if the data that we found correspond to the one require to start the handler
             val name: String = ev.player.name // name variable to store the player name
             if (Variable.serverType == 1) { // check if we are in the server 1
@@ -52,6 +53,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                             p.sendMessage("how did you kill yourself") // send the death message
                         }
                     }
+                    stopTheGame()
                 }
                 SendPlayerBetweenServer(
                         "lobby",
@@ -59,8 +61,8 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                         mainPlugin
                 ) // send the player to the location
             }
-        }
-        if (getMinigame() == 11 || getMinigame() == 10) { // check if the minigame 11 is going
+        }//todo check wtf is going on with hide and seek
+        /*if (getMinigame() == 11) { // check if the minigame 11 is going
             if (Variable.serverType == 1) { // check if we are in server one
                 SendPlayerBetweenServer(
                         "lobby",
@@ -76,15 +78,8 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                 Variable.playerArray!!.sort() // sort the array
                 Variable.time = LocalTime.now() // reset the time
                 Variable.playerArrayNumber = 0 // reset the array cursor
-                if (getMinigame() == 10) {
-                    for (player in getServer().onlinePlayers) {
-                        if (player.name == Variable.playerArray?.get(Variable.playerArrayNumber)) {
-                            player.chat("its your turn")
-                        }
-                    }
-                }
             }
-        }
+        }*/
         if (getMinigame() == 15) {
             if (Variable.serverType == 1) { // check if we are in the server 1
                 SendPlayerBetweenServer(
@@ -102,10 +97,26 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                     p.chat("congratulation you won the match") // send the win message
                     SendPlayerBetweenServer(
                             "lobby",
-                            ev.player,
+                            p,
                             mainPlugin
                     ) // send the player to the location
+                    Variable.activeMinigame = false // set the active minigame to false
                 }
+            }
+
+            if (getMinigame() == 8){//add this so if they fight they wont respawn
+                SendPlayerBetweenServer(
+                    "lobby",
+                   ev.player,
+                    mainPlugin
+                ) // send the player to the location
+            }
+            if (getMinigame() in 11..12){
+                SendPlayerBetweenServer(
+                    "lobby",
+                    ev.player,
+                    mainPlugin
+                ) // send the player to the location
             }
         }
     }

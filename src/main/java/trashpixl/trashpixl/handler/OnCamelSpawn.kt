@@ -29,7 +29,7 @@ class OnCamelSpawn(plugin: Trashpixl?) : Listener {
                         val bow = ItemStack(org.bukkit.Material.BOW)
                         val arrow = ItemStack(org.bukkit.Material.ARROW, 64)
                         p.inventory.clear() // clear his inventory
-                        p.inventory.setItemInMainHand(bow) // give him the item
+                        p.inventory.setItem(1,bow) // give him the item
                         p.inventory.setItem(2, arrow) // give him the bow
                     }
                 } else {

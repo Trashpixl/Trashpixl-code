@@ -21,13 +21,15 @@ class OnCommandLabi : CommandExecutor { // creating the class death and implemen
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerLabi) {
             Variable.activeMinigame = true // set the activeMinigame to true
             val xGame = 0.0 // the x coord of the game
-            val yGame = 0.0 // the y coord of the game
-            val zGame = 0.0 // the z coord of the game
+            val yGame = -61.0 // the y coord of the game
+            val zGame = -26.0 // the z coord of the game
+            var offsetSpawn = -1
             copyGame("labi") // copy the game
             for (p in getServer().onlinePlayers) { // get all the player in the server
+                offsetSpawn++
                 p.health = 20.0 // set the health to 20
                 val w: World = p.world // get the player world
-                val to = Location(w, xGame, yGame, zGame) // move before for
+                val to = Location(w, xGame - offsetSpawn, yGame, zGame) // move before for
                 p.teleport(to) // tp him
                 p.inventory.clear() // clear his inventory
             }

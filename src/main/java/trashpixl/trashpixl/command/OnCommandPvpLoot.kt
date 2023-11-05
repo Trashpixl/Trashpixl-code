@@ -23,6 +23,8 @@ class OnCommandPvpLoot : CommandExecutor { // creating the class death and imple
             val xGame = -38.0 // the x coord of the game
             val yGame = -56.0 // the y coord of the game
             val zGame = -37.0 // the z coord of the game
+            
+            
             copyGame("pvpLoot") // copy the game
             for (p in getServer().onlinePlayers) { // get all the player in the server
                 p.health = 20.0 // set the health to 20

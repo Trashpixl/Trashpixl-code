@@ -74,9 +74,6 @@ fun copyGame(game: String) {
         copy.copy(x1, y1, z1, x2, y2, z2)
     }
     if (game.equals("pvp")) {
-        for (p in Bukkit.getOnlinePlayers()) {
-            p.sendMessage("skdlj")
-        }
         val x1 = 245
         val y1 = -32
         val z1 = 280
@@ -151,7 +148,7 @@ fun copyGame(game: String) {
         val y1 = -32
         val z1 = 263
 
-        val x2 = 19
+        val x2 = 195
         val y2 = -64
         val z2 = 280
         val copy = WorldEditCopy()
@@ -181,7 +178,7 @@ fun copyGame(game: String) {
         val copy = WorldEditCopy()
         copy.copy(x1, y1, z1, x2, y2, z2)
     }
-    if (game == "Labi") {
+    if (game == "labi") {
         val x1 = 227
         val y1 = -32
         val z1 = 280

@@ -12,6 +12,7 @@ import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.copyGame
+import java.time.LocalTime
 
 class OnCommandHideAndSeek :
         CommandExecutor { // creating the class death and implementing the listener
@@ -24,9 +25,9 @@ class OnCommandHideAndSeek :
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerHideAndSeek) {
             Variable.activeMinigame = true // set the activeMinigame to true
-            val xGame = 0.0 // the x coord of the game
-            val yGame = 0.0 // the y coord of the game
-            val zGame = 0.0 // the z coord of the game
+            val xGame = 16.0 // the x coord of the game
+            val yGame = -59.0 // the y coord of the game
+            val zGame = -17.0 // the z coord of the game
             copyGame("hideAndSeek")
             for (p in Bukkit.getServer().onlinePlayers) { // get all the online player
 
@@ -46,6 +47,7 @@ class OnCommandHideAndSeek :
             Variable.isBlindFinder = true // set the player to be blind
             Variable.preventBreakedBlock = true // set the preventBreakedBlocks to true
             Variable.preventPlacedBlock = true // set the preventPlacedBlock to true
+
         }
         return false // return false so it doesn't create an error
     }

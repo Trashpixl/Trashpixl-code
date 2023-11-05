@@ -51,7 +51,9 @@ class Trashpixl : JavaPlugin() {
         object : BukkitRunnable() {
                     // create a new runnable
                     override fun run() { // run the runnable
-                        removeTntStartBlock() // run the remove tnt start block
+                            placeTntPressurePlate()
+                            removeTntStartBlockAndPressurePlate() // run the remove tnt start block
+                       
                     }
                 }
                 .runTaskTimer(this, 0L, 100L) // run the timer immediately and at every 40 tick
@@ -103,7 +105,6 @@ class Trashpixl : JavaPlugin() {
         MinigameLauncher(this) // init the launcher join handler
         PlayerGetShot(this) // init the get shot handler
         CamelDismount(this) // init the camel dismount handler
-        OnCamelDeath(this, this) // init the camel death handler
         OnCamelSpawn(this) // init the camel spawn handler
         SnowBallGiver(this) // init the snow ball giver handler
     }
