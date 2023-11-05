@@ -33,11 +33,11 @@ class LootGiver(plugin: Trashpixl?) : Listener { // creating the class
                                         (1..64).random()
                                 ) // creating the item
                         p.inventory.setItem(
-                                (1..36).random(),
+                                (1..9).random(),
                                 item1
                         ) // set the item in the inventory
                         p.inventory.setItem(
-                                (1..36).random(),
+                                (1..9).random(),
                                 item2
                         ) // set the item in the inventory
                     } else {
@@ -47,11 +47,11 @@ class LootGiver(plugin: Trashpixl?) : Listener { // creating the class
                             val item2 =
                                     ItemStack(Material.BREAD, (1..64).random()) // creating the item
                             p.inventory.setItem(
-                                    (1..36).random(),
+                                    (1..9).random(),
                                     item1
                             ) // set the item in the inventory
                             p.inventory.setItem(
-                                    (1..36).random(),
+                                    (1..9).random(),
                                     item2
                             ) // set the item in the inventory
                         } else {
@@ -59,11 +59,11 @@ class LootGiver(plugin: Trashpixl?) : Listener { // creating the class
                                 val item1 = ItemStack(Material.WOODEN_AXE) // creating the item
                                 val item2 = ItemStack(Material.LEATHER_BOOTS) // creating the item
                                 p.inventory.setItem(
-                                        (1..36).random(),
+                                        (1..9).random(),
                                         item1
                                 ) // set the item in the inventory
                                 p.inventory.setItem(
-                                        (1..36).random(),
+                                        (1..9).random(),
                                         item2
                                 ) // set the item in the inventory
                             } else {
@@ -75,11 +75,11 @@ class LootGiver(plugin: Trashpixl?) : Listener { // creating the class
                                     val item2 =
                                             ItemStack(Material.WOODEN_SWORD) // creating the item
                                     p.inventory.setItem(
-                                            (1..36).random(),
+                                            (1..9).random(),
                                             item1
                                     ) // set the item in the inventory
                                     p.inventory.setItem(
-                                            (1..36).random(),
+                                            (1..9).random(),
                                             item2
                                     ) // set the item in the inventory
                                 } else {
@@ -91,11 +91,11 @@ class LootGiver(plugin: Trashpixl?) : Listener { // creating the class
                                                         Material.LEATHER_HELMET
                                                 ) // creating the item
                                         p.inventory.setItem(
-                                                (1..36).random(),
+                                                (1..9).random(),
                                                 item1
                                         ) // set the item in the inventory
                                         p.inventory.setItem(
-                                                (1..36).random(),
+                                                (1..9).random(),
                                                 item2
                                         ) // set the item in the inventory
                                     } else {
@@ -107,11 +107,11 @@ class LootGiver(plugin: Trashpixl?) : Listener { // creating the class
                                             val item2 =
                                                     ItemStack(Material.STICK) // creating the item
                                             p.inventory.setItem(
-                                                    (1..36).random(),
+                                                    (1..9).random(),
                                                     item1
                                             ) // set the item in the inventory
                                             p.inventory.setItem(
-                                                    (1..36).random(),
+                                                    (1..9).random(),
                                                     item2
                                             ) // set the item in the inventory
                                         }

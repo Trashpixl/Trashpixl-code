@@ -20,4 +20,29 @@ fun timer() { // function that run every tick
             }
         }
     }
+
+    if(Variable.time != null && LocalTime.now() >= Variable.time?.plusSeconds(25) && Variable.serverType == 1 && getMinigame() == 12){
+        for (player in getServer().onlinePlayers) {
+            if(player == Variable.tag){
+                player.chat("You were not fast enough!")
+            }
+            else{
+                player.chat("You won!")
+            }
+            player.health = 0.0
+            stopTheGame()
+        }
+    }
+    if(Variable.time != null && LocalTime.now() >= Variable.time?.plusSeconds(125) && Variable.serverType == 1 && getMinigame() == 11){
+        for (player in getServer().onlinePlayers) {
+            if(player == Variable.finder){
+                player.chat("You were not fast enough!")
+            }
+            else{
+                player.chat("You won!")
+            }
+            player.health = 0.0
+            stopTheGame()
+        }
+    }
 }

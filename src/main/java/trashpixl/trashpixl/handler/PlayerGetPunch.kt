@@ -9,6 +9,7 @@ import org.bukkit.event.entity.EntityDamageEvent
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.getMinigame
+import java.time.LocalTime
 
 class PlayerGetPunch(plugin: Trashpixl?) : Listener { // the implements for the listener
     init { // the constructor of this handler
@@ -56,7 +57,9 @@ class PlayerGetPunch(plugin: Trashpixl?) : Listener { // the implements for the 
                                 ev.cause == EntityDamageEvent.DamageCause.ENTITY_ATTACK ||
                                 ev.cause == EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK
                 ) { // check if the damage is caused by an entity attack or sweep attack
+                    (ev.entity as Player).chat("You got killed by the tag!")
                     (ev.entity as Player).health = 0.0 // kill the player
+                    Variable.time = LocalTime.now()
                 }
             }
         }

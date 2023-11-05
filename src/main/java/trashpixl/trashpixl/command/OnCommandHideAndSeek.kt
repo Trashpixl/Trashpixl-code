@@ -12,6 +12,7 @@ import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.copyGame
+import java.time.LocalTime
 
 class OnCommandHideAndSeek :
         CommandExecutor { // creating the class death and implementing the listener
@@ -46,6 +47,7 @@ class OnCommandHideAndSeek :
             Variable.isBlindFinder = true // set the player to be blind
             Variable.preventBreakedBlock = true // set the preventBreakedBlocks to true
             Variable.preventPlacedBlock = true // set the preventPlacedBlock to true
+
         }
         return false // return false so it doesn't create an error
     }

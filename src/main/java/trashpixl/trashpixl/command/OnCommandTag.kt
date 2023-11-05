@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.copyGame
+import java.time.LocalTime
 
 class OnCommandTag : CommandExecutor { // creating the class death and implementing the listener
 
@@ -39,6 +40,7 @@ class OnCommandTag : CommandExecutor { // creating the class death and implement
             ) // send to message to indicate that the player is the tag
             Variable.preventBreakedBlock = true // set the preventBreakedBlocks to true
             Variable.preventPlacedBlock = true // set the preventPlacedBlock to true
+            Variable.time = LocalTime.now()//todo set a diffrent spawn for the tag
         }
         return false
     }
