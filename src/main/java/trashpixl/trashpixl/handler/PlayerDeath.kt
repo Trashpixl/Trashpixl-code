@@ -1,7 +1,6 @@
 package trashpixl.trashpixl.handler // define the package
 
 import SendPlayerBetweenServer
-import java.time.LocalTime
 import org.bukkit.Bukkit
 import org.bukkit.Bukkit.getServer
 import org.bukkit.event.EventHandler
@@ -83,9 +82,9 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
         if (getMinigame() == 15) {
             if (Variable.serverType == 1) { // check if we are in the server 1
                 SendPlayerBetweenServer(
-                        "lobby",
-                        ev.player,
-                        mainPlugin
+                    "lobby",
+                    ev.player,
+                    mainPlugin
                 ) // send the player to the location
             }
             playerCount = 0 // reset the player count
@@ -96,13 +95,14 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
                     p.chat("congratulation you won the match") // send the win message
                     SendPlayerBetweenServer(
-                            "lobby",
-                            p,
-                            mainPlugin
+                        "lobby",
+                        p,
+                        mainPlugin
                     ) // send the player to the location
                     Variable.activeMinigame = false // set the active minigame to false
                 }
             }
+        }
 
             if (getMinigame() == 8){//add this so if they fight they wont respawn
                 SendPlayerBetweenServer(
@@ -117,7 +117,17 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                     ev.player,
                     mainPlugin
                 ) // send the player to the location
+                if (getServer().onlinePlayers.size == 1){
+                    for (p in getServer().onlinePlayers) { // getting all the player in the server
+                       p.health = 0.0
+                    }
+                }
+                if (getServer().onlinePlayers.isEmpty()) {
+                    Variable.tag = null
+                    Variable.finder = null
+                    stopTheGame()
+                }
             }
         }
     }
-}
+

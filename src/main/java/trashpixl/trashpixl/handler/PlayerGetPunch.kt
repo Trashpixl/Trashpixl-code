@@ -57,9 +57,14 @@ class PlayerGetPunch(plugin: Trashpixl?) : Listener { // the implements for the 
                                 ev.cause == EntityDamageEvent.DamageCause.ENTITY_ATTACK ||
                                 ev.cause == EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK
                 ) { // check if the damage is caused by an entity attack or sweep attack
-                    (ev.entity as Player).chat("You got killed by the tag!")
-                    (ev.entity as Player).health = 0.0 // kill the player
-                    Variable.time = LocalTime.now()
+                    if((ev.damager as Player) == Variable.tag){
+                        (ev.entity as Player).chat("You got killed by the tag!")
+                        (ev.entity as Player).health = 0.0 // kill the player
+                        Variable.time = LocalTime.now()
+                    }
+                    else{
+                        (ev.entity as Player).chat("You aren't the tag!")
+                    }
                 }
             }
         }
