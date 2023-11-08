@@ -196,10 +196,32 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                         }
                     }
                 }
-                if (ev.clickedBlock!!.type == Material.VOID_AIR) {//change the block
+                if (ev.clickedBlock!!.type == Material.VOID_AIR) {//todo change the block
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerFreeFalling
                         ) {
-                        sendPlayerToGame(Variable.numberOfPlayerCamelFight)
+                        sendPlayerToGame(Variable.numberOfPlayerFreeFalling)
+                            put(os(), 16) // put 15 in the minigame file
+                    } else {
+                        for (player in Bukkit.getServer().onlinePlayers) {
+                            player.sendMessage("there is not enough player to start the game")
+                        }
+                    }
+                }
+                if (ev.clickedBlock!!.type == Material.VOID_AIR) {//todo change the block
+                    if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerAnvilRain
+                        ) {
+                        sendPlayerToGame(Variable.numberOfPlayerAnvilRain)
+                            put(os(), 16) // put 15 in the minigame file
+                    } else {
+                        for (player in Bukkit.getServer().onlinePlayers) {
+                            player.sendMessage("there is not enough player to start the game")
+                        }
+                    }
+                }
+                if (ev.clickedBlock!!.type == Material.VOID_AIR) {//todo change the block
+                    if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerFireTrap
+                        ) {
+                        sendPlayerToGame(Variable.numberOfPlayerFireTrap)
                             put(os(), 16) // put 15 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {

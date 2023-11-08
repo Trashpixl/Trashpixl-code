@@ -9,6 +9,7 @@ import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
+import trashpixl.trashpixl.runnable.stopTheGame
 
 class BlockBreak(plugin: Trashpixl?, mainPlugin: JavaPlugin) : Listener {
     val mainPlugin = mainPlugin // the main plugin
@@ -43,7 +44,7 @@ class BlockBreak(plugin: Trashpixl?, mainPlugin: JavaPlugin) : Listener {
                 ) // send the player to the main server
             }
             blockLocation.block.type = Material.GRASS_BLOCK // set the block to grass
-            Variable.activeMinigame = false // set the activeMinigame to false
+            stopTheGame()
         }
     }
 }

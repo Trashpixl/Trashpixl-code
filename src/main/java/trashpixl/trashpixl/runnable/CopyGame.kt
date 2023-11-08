@@ -188,6 +188,42 @@ fun copyGame(game: String) {
         val copy = WorldEditCopy()
         copy.copy(x1, y1, z1, x2, y2, z2)
     }
+        if (game == "freeFalling") {//todo add the coords
+                val x1 = 0
+                val y1 = 0
+                val z1 = 0
+
+                val x2 = 0
+                val y2 = 0
+                val z2 = 0
+
+                val copy = WorldEditCopy()
+                copy.copy(x1, y1, z1, x2, y2, z2)
+        }
+        if (game == "anvilRain") {//todo add the coords
+                val x1 = 0
+                val y1 = 0
+                val z1 = 0
+
+                val x2 = 0
+                val y2 = 0
+                val z2 = 0
+
+                val copy = WorldEditCopy()
+                copy.copy(x1, y1, z1, x2, y2, z2)
+        }
+        if (game == "fireTrap") {//todo add the coords
+                val x1 = 0
+                val y1 = 0
+                val z1 = 0
+
+                val x2 = 0
+                val y2 = 0
+                val z2 = 0
+
+                val copy = WorldEditCopy()
+                copy.copy(x1, y1, z1, x2, y2, z2)
+        }
     val paste = WorldEditPaste()
         paste.paste()
 }
