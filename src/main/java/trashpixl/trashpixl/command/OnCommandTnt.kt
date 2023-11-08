@@ -28,7 +28,7 @@ class OnCommandTnt : CommandExecutor { // creating the class death and implement
             val yBlock = -38.0
             val zBlock = -40.0
             var w: World
-//todo remove pressure plate at start
+
             Variable.preventBreakedBlock = true // set the preventBreakedBlocks to true
             Variable.preventPlacedBlock = true // set the preventPlacedBlock to true
 

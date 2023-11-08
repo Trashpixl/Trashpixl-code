@@ -1,9 +1,7 @@
 package trashpixl.trashpixl.runnable
 
-import ChoEasyCopy
+
 import org.bukkit.Bukkit
-import trashpixl.trashpixl.runnable.WorldEditCopy
-import trashpixl.trashpixl.runnable.WorldEditPaste
 
 fun copyGame(game: String) {
 
@@ -196,13 +194,15 @@ fun copyGame(game: String) {
 
 private fun fillWithAir() {
     val x1 = 1000
-    val y1 = 256
+    val y1 = 0
     val z1 = 1000
 
     val x2 = 1100
-    val y2 = 100
+    val y2 = 256
     val z2 = 1100
 
     val copy = WorldEditCopy()
     copy.copy(x1, y1, z1, x2, y2, z2)
+        val paste = WorldEditPaste()
+        paste.paste()
 }

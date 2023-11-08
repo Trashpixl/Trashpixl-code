@@ -20,9 +20,9 @@ class OnCommandLabi : CommandExecutor { // creating the class death and implemen
     ): Boolean {
         if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerLabi) {
             Variable.activeMinigame = true // set the activeMinigame to true
-            val xGame = 0.0 // the x coord of the game
+            val xGame = 0.5 // the x coord of the game
             val yGame = -61.0 // the y coord of the game
-            val zGame = -26.0 // the z coord of the game
+            val zGame = -26.5 // the z coord of the game
             var offsetSpawn = -1
             copyGame("labi") // copy the game
             for (p in getServer().onlinePlayers) { // get all the player in the server

@@ -163,7 +163,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                     }
                 }
                 if (ev.clickedBlock!!.type == Material.PURPLE_TERRACOTTA
-                ) { // todo check for the block
+                ) {
                     if (Bukkit.getServer().onlinePlayers.size ==
                                     Variable.numberOfPlayerSearchAndFind
                     ) {
@@ -199,7 +199,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
             }
         }
     }
-    fun sendPlayerTogGame(numberOfPlayersRequired: Int) { // todo find why it send only one player
+    fun sendPlayerTogGame(numberOfPlayersRequired: Int) { 
 
         var playerSent = 0
         for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player

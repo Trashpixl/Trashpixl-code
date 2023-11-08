@@ -11,6 +11,8 @@ import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
 import trashpixl.trashpixl.runnable.Variable
 import trashpixl.trashpixl.runnable.getMinigame
+import trashpixl.trashpixl.runnable.stopTheGame
+
 
 class FirstToArrive(plugin: Trashpixl?, main: JavaPlugin) : Listener {
     private var mainPlugin = main
@@ -37,7 +39,7 @@ class FirstToArrive(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                                     mainPlugin
                             ) // send the player to the main server
                         }
-                        Variable.activeMinigame = false // set the activeMinigame to false
+                        stopTheGame()
                     }
                 }
             }
