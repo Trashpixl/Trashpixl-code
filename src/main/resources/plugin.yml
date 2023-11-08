@@ -2,49 +2,53 @@ name: Trashpixl
 version: '${project.version}'
 main: trashpixl.trashpixl.Trashpixl
 api-version: 1.19
-commands:
-  onCommandLabi:
+commands: 
+  onCommandLabi: 
     description: command for Labi
     usage: /<command>
-  onCommandBridgeRace:
+  onCommandBridgeRace: 
     description: command for bridge race
     usage: /<command>
-  onCommandPvpBow:
+  onCommandPvpBow: 
     description: command for pvpBow
     usage: /<command>
-  onCommandPvpSumo:
+  onCommandPvpSumo: 
     description: command for pvp Sumo
     usage: /<command>
-  onCommandPvp:
+  onCommandPvp: 
     description: command for pvp
     usage: /<command>
-  onCommandTnt:
+  onCommandTnt: 
     description: command for tnt
     usage: /<command>
-  onCommandPvpKnockBack:
+  onCommandPvpKnockBack: 
     description: command for pvp knock back
     usage: /<command>
-  onCommandPvpLoot:
+  onCommandPvpLoot: 
     description: command for pvp loot
     usage: /<command>
-  onCommandParkour:
+  onCommandParkour: 
     description: command for Parkour race
     usage: /<command>
-  onCommandButton4:
+  onCommandButton4: 
     description: command for button 4
     usage: /<command>
-  onCommandHideAndSeek:
+  onCommandHideAndSeek: 
     description: command for hide and seek
     usage: /<command>
-  onCommandTag:
+  onCommandTag: 
     description: command for tag
     usage: /<command>
-  onCommandDodgeBall:
+  onCommandDodgeBall: 
     description: command for dodge ball
     usage: /<command>
-  onCommandCamelFight:
+  onCommandCamelFight: 
     description: command for camel fight
     usage: /<command>
-  onCommandSearchAndFind:
+  onCommandSearchAndFind: 
     description: command for search and find
-    usage: /<command>  
+    usage: /<command>
+  onCommandFreeFalling:  
+    description: command for free falling
+    usage: /<command>
+ 

@@ -3,8 +3,10 @@ package trashpixl.trashpixl.handler // define the package
 import SendPlayerBetweenServer
 import org.bukkit.Bukkit
 import org.bukkit.Bukkit.getServer
+import org.bukkit.entity.Entity
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.entity.EntityDamageEvent
 import org.bukkit.event.player.PlayerRespawnEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
@@ -110,6 +112,22 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                     stopTheGame()
                 }
             }
+        if(getMinigame() == 16){
+            if((ev.player as Entity).lastDamageCause!!.cause == EntityDamageEvent.DamageCause.VOID){//todo check if that work
+                ev.player.chat("You won this game!")
+            }
+            if((ev.player as Entity).lastDamageCause!!.cause == EntityDamageEvent.DamageCause.FALL){//todo check if that work
+                ev.player.chat("You didn't make it!")
+            }
+            SendPlayerBetweenServer(
+                "lobby",
+                ev.player,
+                mainPlugin
+            ) // send the player to the location
+            if (getServer().onlinePlayers.isEmpty()) {
+                stopTheGame()
+            }
+        }
         }
     }
 

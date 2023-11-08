@@ -30,7 +30,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.WHITE_TERRACOTTA
                 ) { // compare what the player sept on to white terracotta and is required a
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerPvp) {
-                        sendPlayerTogGame(Variable.numberOfPlayerPvp)
+                        sendPlayerToGame(Variable.numberOfPlayerPvp)
                         put(os(), 1) // put 1 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -41,7 +41,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.ORANGE_TERRACOTTA
                 ) { // if the block is orange terracotta
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerPvpSumo) {
-                        sendPlayerTogGame(Variable.numberOfPlayerPvpSumo)
+                        sendPlayerToGame(Variable.numberOfPlayerPvpSumo)
                         put(os(), 2) // put 2 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -52,7 +52,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.MAGENTA_TERRACOTTA
                 ) { // check if the block is magenta terracotta
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerPvpBow) {
-                        sendPlayerTogGame(Variable.numberOfPlayerPvpBow)
+                        sendPlayerToGame(Variable.numberOfPlayerPvpBow)
                         put(os(), 3) // put 3 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -63,7 +63,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.LIGHT_BLUE_TERRACOTTA
                 ) { // check if the block is light blue terracotta
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerPvpLoot) {
-                        sendPlayerTogGame(Variable.numberOfPlayerPvpLoot)
+                        sendPlayerToGame(Variable.numberOfPlayerPvpLoot)
                         put(os(), 4) // put 4 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -75,7 +75,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 ) { // check if the block is yellow terracotta
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerBridgeRace
                     ) {
-                        sendPlayerTogGame(Variable.numberOfPlayerBridgeRace)
+                        sendPlayerToGame(Variable.numberOfPlayerBridgeRace)
                         put(os(), 5) // put 5 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -86,7 +86,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.LIME_TERRACOTTA
                 ) { // check if the block is lime terracotta
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerParkour) {
-                        sendPlayerTogGame(Variable.numberOfPlayerParkour)
+                        sendPlayerToGame(Variable.numberOfPlayerParkour)
                         put(os(), 6) // put 6 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -98,7 +98,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 ) { // check if the block is light gray terracotta
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerPvpKnockBack
                     ) {
-                        sendPlayerTogGame(Variable.numberOfPlayerPvpKnockBack)
+                        sendPlayerToGame(Variable.numberOfPlayerPvpKnockBack)
                         put(os(), 7) // put 7 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -109,7 +109,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.BLUE_TERRACOTTA
                 ) { // check if the block is blue terracotta
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerLabi) {
-                        sendPlayerTogGame(Variable.numberOfPlayerLabi)
+                        sendPlayerToGame(Variable.numberOfPlayerLabi)
                         put(os(), 8) // put 8 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -120,7 +120,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.BLACK_CONCRETE
                 ) { // check if the block is black concrete
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerTnt) {
-                        sendPlayerTogGame(Variable.numberOfPlayerTnt)
+                        sendPlayerToGame(Variable.numberOfPlayerTnt)
                         put(os(), 9) // put 9 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -131,7 +131,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.GRAY_TERRACOTTA
                 ) { // check if the block is black concrete
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerButton4) {
-                        sendPlayerTogGame(Variable.numberOfPlayerButton4)
+                        sendPlayerToGame(Variable.numberOfPlayerButton4)
                         put(os(), 10) // put 10 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -143,7 +143,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 ) { // check if the block is black concrete
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerHideAndSeek
                     ) {
-                        sendPlayerTogGame(Variable.numberOfPlayerHideAndSeek)
+                        sendPlayerToGame(Variable.numberOfPlayerHideAndSeek)
                         put(os(), 11) // put 11 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -154,7 +154,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.CYAN_TERRACOTTA
                 ) { // check if the block is black concrete
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerTag) {
-                        sendPlayerTogGame(Variable.numberOfPlayerTag)
+                        sendPlayerToGame(Variable.numberOfPlayerTag)
                         put(os(), 12) // put 12 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -167,7 +167,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                     if (Bukkit.getServer().onlinePlayers.size ==
                                     Variable.numberOfPlayerSearchAndFind
                     ) {
-                        sendPlayerTogGame(Variable.numberOfPlayerSearchAndFind)
+                        sendPlayerToGame(Variable.numberOfPlayerSearchAndFind)
                         put(os(), 13) // put 13 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -177,7 +177,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 }
                 if (ev.clickedBlock!!.type == Material.BROWN_TERRACOTTA) {
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerDodgeBall) {
-                        sendPlayerTogGame(Variable.numberOfPlayerDodgeBall)
+                        sendPlayerToGame(Variable.numberOfPlayerDodgeBall)
                         put(os(), 14) // put 14 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
@@ -188,8 +188,19 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
                 if (ev.clickedBlock!!.type == Material.BLACK_TERRACOTTA) {
                     if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerCamelFight
                     ) {
-                        sendPlayerTogGame(Variable.numberOfPlayerCamelFight)
+                        sendPlayerToGame(Variable.numberOfPlayerCamelFight)
                         put(os(), 15) // put 15 in the minigame file
+                    } else {
+                        for (player in Bukkit.getServer().onlinePlayers) {
+                            player.sendMessage("there is not enough player to start the game")
+                        }
+                    }
+                }
+                if (ev.clickedBlock!!.type == Material.VOID_AIR) {//change the block
+                    if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerFreeFalling
+                        ) {
+                        sendPlayerToGame(Variable.numberOfPlayerCamelFight)
+                            put(os(), 16) // put 15 in the minigame file
                     } else {
                         for (player in Bukkit.getServer().onlinePlayers) {
                             player.sendMessage("there is not enough player to start the game")
@@ -199,7 +210,7 @@ class MinigameSelect(plugin: Trashpixl?, main: JavaPlugin) :
             }
         }
     }
-    fun sendPlayerTogGame(numberOfPlayersRequired: Int) { 
+    fun sendPlayerToGame(numberOfPlayersRequired: Int) { 
 
         var playerSent = 0
         for (p2 in Bukkit.getServer().onlinePlayers) { // taking all the player

@@ -18,7 +18,7 @@ class OnCommandFreeFalling : CommandExecutor { // creating the class death and i
         label: String,
         args: Array<out String>?
     ): Boolean {
-        if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerCamelFight) {
+        if (Bukkit.getServer().onlinePlayers.size == Variable.numberOfPlayerCamelFight) {//todo we just need the coord and everything should work
             Variable.activeMinigame = true
             // set the activeMinigame to true
             val xGame = 0.0 // the x coord of the game
