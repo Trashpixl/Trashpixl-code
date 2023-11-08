@@ -88,6 +88,7 @@ class Trashpixl : JavaPlugin() {
                 ?.setExecutor(OnCommandDodgeBall()) // init the command for the dodge ball
         this.getCommand("onCommandCamelFight")
                 ?.setExecutor(OnCommandCamelFight()) // init the command for the tnt start
+            this.getCommand("onCommandFreeFalling")?.setExecutor(OnCommandFreeFalling())
     }
     private fun registerHandler() {
         ChanceToDie(this) // start the chance to die handler

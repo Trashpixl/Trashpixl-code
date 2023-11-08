@@ -36,5 +36,6 @@ class Variable {
         val numberOfPlayerSearchAndFind = 2 // store the number of player for pvp
         val numberOfPlayerTag = 2 // store the number of player for pvp
         val numberOfPlayerTnt = 2 // store the number of player for pvp
+        val numberOfPlayerFreeFalling = 2
     }
 }

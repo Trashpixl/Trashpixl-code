@@ -33,7 +33,7 @@ class OnCommandButton4 : CommandExecutor { // creating the class death and imple
                 p.inventory.clear() // clear his inventory
             }
 
-            
+            Variable.playerArray!!.clear()
 
             for (player in getServer().onlinePlayers) { // get all the player in the server
                 Variable.playerArray!!.add(player.name) // add the player name to the array

@@ -39,9 +39,9 @@ class OnCommandCamelFight :
                     Location(
                             Bukkit.getServer().getWorld("world"),
                             0.0,
-                            -40.0,
+                            -45.0,
                             0.0
-                    ) // todo change this to the actual spawn location
+                    ) 
             spawnCamel(spawnLocation)
         }
         return false

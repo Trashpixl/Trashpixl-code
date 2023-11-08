@@ -30,10 +30,11 @@ fun timer() { // function that run every tick
                 player.chat("You won!")
             }
             player.health = 0.0
-            stopTheGame()
+            Variable.time = LocalTime.now()
+            //stopTheGame()
         }
     }
-    if(Variable.time != null && LocalTime.now() >= Variable.time?.plusSeconds(125) && Variable.serverType == 1 && getMinigame() == 11){
+    if(Variable.time != null && LocalTime.now() >= Variable.time?.plusSeconds(25) && Variable.serverType == 1 && getMinigame() == 11){
         for (player in getServer().onlinePlayers) {
             if(player == Variable.finder){
                 player.chat("You were not fast enough!")
@@ -42,7 +43,9 @@ fun timer() { // function that run every tick
                 player.chat("You won!")
             }
             player.health = 0.0
-            stopTheGame()
+            Variable.time = LocalTime.now()
+            //stopTheGame()
+          
         }
     }
 }

@@ -1,11 +1,12 @@
 package trashpixl.trashpixl.handler // define the package
 
 import SendPlayerBetweenServer
-import java.time.LocalTime
 import org.bukkit.Bukkit
 import org.bukkit.Bukkit.getServer
+import org.bukkit.entity.Entity
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.entity.EntityDamageEvent
 import org.bukkit.event.player.PlayerRespawnEvent
 import org.bukkit.plugin.java.JavaPlugin
 import trashpixl.trashpixl.Trashpixl
@@ -24,7 +25,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
     @EventHandler // says that this is an event handler
     fun onPlayerDead(ev: PlayerRespawnEvent) {
 
-        var playerCount: Int = 0 // create the player count var
+        var playerCount = 0 // create the player count var
 
         if (getMinigame() in 1..7 || getMinigame() in 9..10 || getMinigame() == 14
         ) { // check if the data that we found correspond to the one require to start the handler
@@ -61,31 +62,13 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                         mainPlugin
                 ) // send the player to the location
             }
-        }//todo check wtf is going on with hide and seek
-        /*if (getMinigame() == 11) { // check if the minigame 11 is going
-            if (Variable.serverType == 1) { // check if we are in server one
-                SendPlayerBetweenServer(
-                        "lobby",
-                        ev.player,
-                        mainPlugin
-                ) // send the player to the location
-                Variable.playerArray = mutableListOf()
-
-                for (player in getServer().onlinePlayers) { // get all the player in the server
-                    Variable.playerArray!!.add(player.name) // add all player to the array
-                }
-
-                Variable.playerArray!!.sort() // sort the array
-                Variable.time = LocalTime.now() // reset the time
-                Variable.playerArrayNumber = 0 // reset the array cursor
-            }
-        }*/
-        if (getMinigame() == 15) {
+        }
+        if (getMinigame() == 15 && getMinigame() == 13) {
             if (Variable.serverType == 1) { // check if we are in the server 1
                 SendPlayerBetweenServer(
-                        "lobby",
-                        ev.player,
-                        mainPlugin
+                    "lobby",
+                    ev.player,
+                    mainPlugin
                 ) // send the player to the location
             }
             playerCount = 0 // reset the player count
@@ -96,13 +79,14 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                 for (p in getServer().onlinePlayers) { // getting all the player in the server
                     p.chat("congratulation you won the match") // send the win message
                     SendPlayerBetweenServer(
-                            "lobby",
-                            p,
-                            mainPlugin
+                        "lobby",
+                        p,
+                        mainPlugin
                     ) // send the player to the location
-                    Variable.activeMinigame = false // set the active minigame to false
+                    stopTheGame()
                 }
             }
+        }
 
             if (getMinigame() == 8){//add this so if they fight they wont respawn
                 SendPlayerBetweenServer(
@@ -117,7 +101,33 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                     ev.player,
                     mainPlugin
                 ) // send the player to the location
+                if (getServer().onlinePlayers.size == 1){
+                    for (p in getServer().onlinePlayers) { // getting all the player in the server
+                       p.health = 0.0
+                    }
+                }
+                if (getServer().onlinePlayers.isEmpty()) {
+                    Variable.tag = null
+                    Variable.finder = null
+                    stopTheGame()
+                }
+            }
+        if(getMinigame() == 16){
+            if((ev.player as Entity).lastDamageCause!!.cause == EntityDamageEvent.DamageCause.VOID){//todo check if that work
+                ev.player.chat("You won this game!")
+            }
+            if((ev.player as Entity).lastDamageCause!!.cause == EntityDamageEvent.DamageCause.FALL){//todo check if that work
+                ev.player.chat("You didn't make it!")
+            }
+            SendPlayerBetweenServer(
+                "lobby",
+                ev.player,
+                mainPlugin
+            ) // send the player to the location
+            if (getServer().onlinePlayers.isEmpty()) {
+                stopTheGame()
             }
         }
+        }
     }
-}
+

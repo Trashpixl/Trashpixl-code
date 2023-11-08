@@ -42,7 +42,7 @@ class OnCommandHideAndSeek :
                     "you are the finder"
             ) // send to message to indicate that the player is the tag
             val blackoutEffect =
-                    PotionEffect(PotionEffectType.BLINDNESS, 8 * 20, 1) // create the potion effect
+                    PotionEffect(PotionEffectType.BLINDNESS, 10 * 20, 10) // create the potion effect
             Variable.finder?.addPotionEffect(blackoutEffect) // add the potion effect to the player
             Variable.isBlindFinder = true // set the player to be blind
             Variable.preventBreakedBlock = true // set the preventBreakedBlocks to true

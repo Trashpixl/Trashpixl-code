@@ -27,23 +27,12 @@ class ChanceToDie(plugin: Trashpixl?) : Listener { // creating the class
                         if ((1..10).random() == 1) { // check if the player is lucky
                             p.health = 0.0 // if not kill the player
                             Variable.playerArray?.removeAt(Variable.playerArrayNumber)
-                            p.chat("im dead")
                         }
                         else {
-                            p.chat(Variable.playerArray!!.size.toString())
-                            p.chat(Variable.playerArrayNumber.toString())
                             if (Variable.playerArrayNumber + 1 < Variable.playerArray!!.size) { // check if the player array number is smaller than the array
                                 Variable.playerArrayNumber++ // if it is add one to the array number
-                                p.chat("add one more to the array number")
-                                p.chat(Variable.playerArray!!.size.toString())
-                                p.chat(Variable.playerArrayNumber.toString())
-                                p.chat(Variable.playerArray!![0])
-                                p.chat(Variable.playerArray!![1])
-                                //p.chat(Variable.playerArray!![2])
-                                //p.chat(Variable.playerArray!![3])
                             } else {
                                 Variable.playerArrayNumber = 0 // if not set the array number to 0
-                                p.chat("reset the array number")
                             }
                         }
                         for (player in getServer().onlinePlayers) { // loop through all the players
