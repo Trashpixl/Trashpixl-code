@@ -201,25 +201,25 @@ fun copyGame(game: String) {
                 copy.copy(x1, y1, z1, x2, y2, z2)
         }
         if (game == "anvilRain") {//todo add the coords
-                val x1 = 0
-                val y1 = 0
-                val z1 = 0
+                val x1 = 126
+                val y1 = -64
+                val z1 = 281
 
-                val x2 = 0
-                val y2 = 0
-                val z2 = 0
+                val x2 = 96
+                val y2 = -32
+                val z2 = 311
 
                 val copy = WorldEditCopy()
                 copy.copy(x1, y1, z1, x2, y2, z2)
         }
         if (game == "fireTrap") {//todo add the coords
-                val x1 = 0
-                val y1 = 0
-                val z1 = 0
+                val x1 = 126
+                val y1 = -64
+                val z1 = 281
 
-                val x2 = 0
-                val y2 = 0
-                val z2 = 0
+                val x2 = 96
+                val y2 = -32
+                val z2 = 311
 
                 val copy = WorldEditCopy()
                 copy.copy(x1, y1, z1, x2, y2, z2)
