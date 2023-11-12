@@ -51,4 +51,10 @@ commands:
   onCommandFreeFalling:  
     description: command for free falling
     usage: /<command>
+  onCommandAnvilrain:
+    description: command for anvil rain
+    usage: /<command>
+  onCommandFiretrap:
+    description: command for fire trap
+    usage: /<command>
  

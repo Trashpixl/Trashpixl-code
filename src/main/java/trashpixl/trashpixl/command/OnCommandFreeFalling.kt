@@ -26,7 +26,7 @@ class OnCommandFreeFalling : CommandExecutor { // creating the class death and i
             val zGame = 0.0 // the z coord of the game
             var offsetSpawnX = -1
             var offsetSpawnZ = 0
-            copyGame("") // copy the game todo add the real copy name
+            copyGame("freeFalling") // copy the game 
             for (p in Bukkit.getServer().onlinePlayers) { // get all the player in the server
                 if(offsetSpawnX == 15){
                     offsetSpawnX = 0

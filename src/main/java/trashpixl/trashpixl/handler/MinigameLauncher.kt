@@ -36,6 +36,8 @@ class MinigameLauncher(plugin: Trashpixl?) : Listener {
                     14 -> Bukkit.dispatchCommand(p, "onCommandDodgeBall")//dispatch command for dodge ball
                     15 -> Bukkit.dispatchCommand(p, "onCommandCamelFight")//dispatch command for tnt tag
                     16 -> Bukkit.dispatchCommand(p, "onCommandFreeFalling")//dispatch command for free falling
+                    17 -> Bukkit.dispatchCommand(p, "onCommandAnvilRain")//dispatch command for free falling
+                    18 -> Bukkit.dispatchCommand(p, "onCommandFireTrap")//dispatch command for free falling
                 }  
             }
         }

@@ -56,7 +56,15 @@ class Trashpixl : JavaPlugin() {
                        
                     }
                 }
-                .runTaskTimer(this, 0L, 100L) // run the timer immediately and at every 40 tick
+                .runTaskTimer(this, 0L, 100L)
+            object : BukkitRunnable() {
+                    // create a new runnable
+                    override fun run() { // run the runnable
+                            anvilSpawner()
+                            fireSpawner()
+                    }
+            }
+                    .runTaskTimer(this, 0L, 50L)
     }
     private fun registerCommand() {
         this.getCommand("onCommandPvp")
@@ -89,6 +97,8 @@ class Trashpixl : JavaPlugin() {
         this.getCommand("onCommandCamelFight")
                 ?.setExecutor(OnCommandCamelFight()) // init the command for the tnt start
             this.getCommand("onCommandFreeFalling")?.setExecutor(OnCommandFreeFalling())
+        this.getCommand("onCommandAnvilRain")?.setExecutor(OnCommandAnvilRain())
+        this.getCommand("onCommandFireTrap")?.setExecutor(OnCommandFireTrap())
     }
     private fun registerHandler() {
         ChanceToDie(this) // start the chance to die handler

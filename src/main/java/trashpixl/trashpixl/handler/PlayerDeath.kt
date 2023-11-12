@@ -27,7 +27,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
 
         var playerCount = 0 // create the player count var
 
-        if (getMinigame() in 1..7 || getMinigame() in 9..10 || getMinigame() == 14
+        if (getMinigame() in 1..7 || getMinigame() in 9..10 || getMinigame() == 14 || getMinigame() in (17..18)
         ) { // check if the data that we found correspond to the one require to start the handler
             val name: String = ev.player.name // name variable to store the player name
             if (Variable.serverType == 1) { // check if we are in the server 1
@@ -44,7 +44,7 @@ class PlayerDeath(plugin: Trashpixl?, main: JavaPlugin) : Listener {
                             p.sendMessage(
                                     "congratulation you won the match"
                             ) // send the win message
-                            Variable.activeMinigame = false // set the active minigame to false
+
                             SendPlayerBetweenServer(
                                     "lobby",
                                     p,
